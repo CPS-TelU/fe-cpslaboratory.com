@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { didactGothic } from "@/styles/font";
+import { didactGothic, poppins } from "@/styles/font";
 
 
 const Footer = () => {
   return (
-    <footer className={`${didactGothic.variable} py-8 shadow-lg`}>
+    <footer className={`${poppins.className} py-8 shadow-lg`}>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start px-6 md:px-12 lg:px-24 space-y-6 md:space-y-0">
         <div className="flex flex-col items-start">
           <Image src="/logocps.png" alt="logo" width={150} height={50} />
