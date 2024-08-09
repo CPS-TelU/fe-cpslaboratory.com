@@ -1,9 +1,14 @@
-import { DM_Sans, Didact_Gothic } from "next/font/google";
+import { DM_Sans, Poppins, Didact_Gothic } from "next/font/google";
 
 export const dmSans = DM_Sans({
     subsets: ["latin"],
     weight: ["400", "500", "700"],
     variable: "--font-dm-sans",
+});
+export const poppins = Poppins({
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
+    variable: "--font-poppins",
 });
 
 export const didactGothic = Didact_Gothic({

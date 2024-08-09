@@ -9,9 +9,9 @@ const Header = () => {
   const pathname = usePathname(); // Gunakan usePathname untuk mendapatkan path saat ini
 
   return (
-    <header className={`${dmSans.variable} z-[99999] fixed top-0 w-full`}>
+    <header className={`${dmSans.className} z-[99999] fixed top-0 w-full`}>
       <nav
-        className="mx-auto flex max-w-[1200px] items-center justify-between p-4 rounded-full bg-white shadow-lg"
+        className="mx-auto hidden lg:flex max-w-[1200px] items-center justify-between p-4 rounded-full bg-white shadow-lg"
         style={{ transform: "translateY(40%)" }}
       >
         <div className="flex items-center gap-8">
