@@ -8,7 +8,7 @@ const HomeLayout = () => {
     <div className="w-full">
       <SectionContainer fullWidth>
         <Hero />
-        <Information/>
+        <Information />
       </SectionContainer>
     </div>
   );

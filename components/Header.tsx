@@ -63,19 +63,29 @@ const Header = () => {
               >
                 Activity
               </span>
-              <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md hidden group-hover:block">
+              <div className="absolute left-0 mt-2 w-44 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-200">
                 <Link
-                  href="/activity/event1"
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  href="/open-laboratory"
+                  className="block px-4 py-2 text-gray-700 hover:text-red-600"
                 >
-                  Event 1
+                  Open Laboratory
                 </Link>
-                <Link
-                  href="/activity/event2"
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                <a
+                  href="https://cyberacademy.cpsrg.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-4 py-2 text-gray-700 hover:text-red-600"
                 >
-                  Event 2
-                </Link>
+                  Cyber Academy
+                </a>
+                <a
+                  href="https://cyberrecruitment.cpsrg.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-4 py-2 text-gray-700 hover:text-red-600"
+                >
+                  Cyber Recruitment
+                </a>
               </div>
             </div>
           </div>
