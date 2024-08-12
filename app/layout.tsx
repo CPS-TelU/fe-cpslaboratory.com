@@ -4,9 +4,6 @@ import Head from "next/head";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"; // Import Footer
-import { didactGothic, poppins } from "@/styles/font";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Cyber Physical System Laboratory",
@@ -26,7 +23,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
-        <Footer /> {/* Tambahkan Footer di sini */}
+        <Footer /> 
       </body>
     </html>
   );

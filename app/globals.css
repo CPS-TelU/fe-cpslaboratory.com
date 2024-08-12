@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Didact+Gothic&family=Quicksand:wght@300..700&display=swap');
 @layer base {
   :root {
     --background: 240 7% 96.5%; 
@@ -47,12 +46,8 @@
   -webkit-text-fill-color: transparent;
 }
 .gradient-text-about {
-  background: linear-gradient(90deg, #BA2025 5%, #FFDCDC 55%);
+  background: linear-gradient(90deg, #BA2025 40%, #FFDCDC 110%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.didact-gothic-regular {
-  font-family: "Didact Gothic", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
