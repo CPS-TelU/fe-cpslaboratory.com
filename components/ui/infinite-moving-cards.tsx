@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export const InfiniteMovingCards = ({
   items,
   direction = "left",
-  speed = "fast",
+  speed = "slow",
   pauseOnHover = true,
   className,
 }: {

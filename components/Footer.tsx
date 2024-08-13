@@ -14,15 +14,6 @@ const Footer = () => {
             Telkom University Landmark Tower (13.12)
           </p>
           <p className="text-sm text-gray-700">Bandung, Jawa Barat</p>
-          <div className="mt-4 flex items-center">
-            <FaEnvelope className="text-gray-700 mr-2" />
-            <a
-              href="mailto:cpslaboratory@telkomuniversity.ac.id"
-              className="text-sm text-gray-700 hover:text-red-600"
-            >
-              cpslaboratory@telkomuniversity.ac.id
-            </a>
-          </div>
         </div>
         <div className="flex flex-col items-start">
           <p className="text-lg font-semibold mb-4">Contact Us</p>
@@ -44,7 +35,7 @@ const Footer = () => {
               <FaLinkedin size={24} />
             </a>
             <a
-              href="mailto:cpslaboratory@telkomuniversity.ac.id"
+              href="/contact"
               className="text-gray-700 hover:text-red-600"
             >
               <FaEnvelope size={24} />

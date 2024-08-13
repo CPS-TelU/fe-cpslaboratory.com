@@ -1,7 +1,7 @@
-import Activity from "../contents/Activity";
-import Blog from "../contents/Blog";
-import Hero from "../contents/Hero";
-import Information from "../contents/Information";
+import Activity from "../contents/HomeActivity";
+import Blog from "../contents/HomeBlog";
+import Hero from "../contents/HomeHero";
+import Information from "../contents/HomeInformation";
 import SectionContainer from "../utils/SectionsContainer";
 
 const HomeLayout = () => {
