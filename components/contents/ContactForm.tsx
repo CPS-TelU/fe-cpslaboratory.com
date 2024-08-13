@@ -26,7 +26,6 @@ const ContactForm: React.FC = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    
     if (value.trim() !== '') {
       setError(null);
     }
@@ -34,7 +33,6 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
 
     if (!formData.name || !formData.email || !formData.phone || !formData.message) {
       setError("You have to fill in the form first");
@@ -59,7 +57,6 @@ const ContactForm: React.FC = () => {
         setSuccess(true);
         setFormData({ name: '', email: '', phone: '', message: '' });
 
-        
         setTimeout(() => {
           setSuccess(false);
         }, 3000);
@@ -75,10 +72,10 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className={`my-12 ${poppins.className}`}>
-      <h1 className="text-[60px] bg-gradient-to-r from-[#BA2025] to-[#FFDCDC] bg-clip-text text-transparent font-extrabold text-center">We're all ears!</h1>
-      <h2 className="text-[20px] text-[#575757] text-center">Share your ideas, critiques, and suggestions with us</h2>
-      <div className="outline outline-1 outline-gray-500 outline-[rgba(0,0,0,0.1)] rounded-md p-8 my-20 mx-auto w-[950px]">
+    <div className={`my-12 px-4 ${poppins.className}`}>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] bg-gradient-to-r from-[#BA2025] to-[#FFDCDC] bg-clip-text text-transparent font-extrabold text-center">We're all ears!</h1>
+      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-[20px] text-[#575757] text-center mt-4">Share your ideas, critiques, and suggestions with us</h2>
+      <div className="outline outline-1 outline-gray-500 outline-[rgba(0,0,0,0.1)] rounded-md p-6 sm:p-8 my-10 lg:my-20 mx-auto max-w-lg sm:max-w-xl md:max-w-2xl lg:w-[950px]">
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="flex flex-col lg:flex-row lg:space-x-6">
             <div className="flex-1 space-y-6">
