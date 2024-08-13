@@ -60,7 +60,7 @@ const ContactForm: React.FC = () => {
     <div className={`my-12  ${poppins.className}`}>
       <h1 className="text-[60px] bg-gradient-to-r from-[#BA2025] to-[#FFDCDC] bg-clip-text text-transparent font-extrabold text-center">We're all ears!</h1>
       <h2 className="text-[20px] text-[#575757] text-center">Share your ideas, critiques, and suggestions with us</h2>
-      <div className="bg-[rgba(217,217,217,0.1)] shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] p-8 my-20 mx-auto max-w-full">
+      <div className="outline outline-1 outline-gray-500 outline-[rgba(0,0,0,0.1)] rounded-md p-8 my-20 mx-auto w-[950px]">
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="flex flex-col lg:flex-row lg:space-x-6">
             <div className="flex-1 space-y-6">
