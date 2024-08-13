@@ -8,7 +8,7 @@ const Hero = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <section className={`relative w-[350px] h-[200px] sm:h-[500px] md:w-[700px] md:h-[350px] lg:w-[1200px] lg:h-[570px] ${poppins.className}`}>
+    <section className={`relative w-[350px] h-[200px] sm:h-[500px] md:w-[700px] md:h-[350px] lg:w-[1300px] lg:h-[600px] ${poppins.className}`}>
       <div className="absolute inset-0 z-10 bg-black opacity-50 rounded-2xl"></div>
 
       {isLoading && (

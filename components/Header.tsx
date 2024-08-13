@@ -8,6 +8,13 @@ import { dmSans } from "../styles/font";
 const Header = () => {
   const pathname = usePathname(); // Gunakan usePathname untuk mendapatkan path saat ini
 
+  const handleNavigationClick = (href: string, e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (pathname === href) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <header className={`${dmSans.className} z-[99999] fixed top-0 w-full`}>
       <nav
@@ -17,7 +24,7 @@ const Header = () => {
         <div className="flex items-center gap-8">
           {/* Logo and left navigation */}
           <div className="flex items-center gap-2">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2" onClick={(e) => handleNavigationClick("/", e)}>
               <Image src="/logocps.png" alt="logo" width={130} height={50} />
             </Link>
           </div>
@@ -25,6 +32,7 @@ const Header = () => {
           <div className="hidden md:flex space-x-8 items-center">
             <Link
               href="/"
+              onClick={(e) => handleNavigationClick("/", e)}
               className={`font-medium ${
                 pathname === "/"
                   ? "text-red-600"
@@ -35,6 +43,7 @@ const Header = () => {
             </Link>
             <Link
               href="/about"
+              onClick={(e) => handleNavigationClick("/about", e)}
               className={`font-medium ${
                 pathname === "/about"
                   ? "text-red-600"
@@ -45,6 +54,7 @@ const Header = () => {
             </Link>
             <Link
               href="/blog"
+              onClick={(e) => handleNavigationClick("/blog", e)}
               className={`font-medium ${
                 pathname === "/blog"
                   ? "text-red-600"
@@ -63,18 +73,30 @@ const Header = () => {
               >
                 Activity
               </span>
-              <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md hidden group-hover:block">
+              <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Link
-                  href="/activity/event1"
+                  href="https://cyberrecruitment.cpsrg.org/" 
                   className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Event 1
+                  Open Laboratory CPS
                 </Link>
                 <Link
-                  href="/activity/event2"
+                  href="https://cyberrecruitment.cpsrg.org/"
                   className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Event 2
+                  CyberAcademy
+                </Link>
+                <Link
+                  href="https://cyberrecruitment.cpsrg.org/"
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  CyberRecruitment
                 </Link>
               </div>
             </div>
@@ -83,6 +105,7 @@ const Header = () => {
         <div className="ml-auto flex space-x-8 items-center">
           <Link
             href="/contact"
+            onClick={(e) => handleNavigationClick("/contact", e)}
             className={`font-medium ${
               pathname === "/contact"
                 ? "text-red-600"

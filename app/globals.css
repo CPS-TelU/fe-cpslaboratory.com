@@ -38,6 +38,9 @@
   }
   body {
     @apply bg-background text-foreground;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 }
 .gradient-text {
@@ -45,4 +48,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.gradient-text-about {
+  background: linear-gradient(90deg, #BA2025 40%, #FFDCDC 110%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
