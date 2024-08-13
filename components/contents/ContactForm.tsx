@@ -59,10 +59,10 @@ const ContactForm: React.FC = () => {
         setSuccess(true);
         setFormData({ name: '', email: '', phone: '', message: '' });
 
-        // Menghilangkan pesan sukses setelah beberapa saat
+        
         setTimeout(() => {
           setSuccess(false);
-        }, 3000); // 3000 ms = 3 detik
+        }, 3000);
       } else {
         console.error('Failed to send email');
         alert('Failed to send your message. Please try again later.');
