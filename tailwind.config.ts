@@ -84,7 +84,8 @@ const config: Config = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    addVariablesForColors
+    addVariablesForColors,
+    require('daisyui')
   ],
 };
 

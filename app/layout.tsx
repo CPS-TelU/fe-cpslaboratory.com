@@ -4,6 +4,7 @@ import Head from "next/head";
 import "/styles/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"; // Import Footer
+import MobileNav from "@/components/MobileNav";
 
 export const metadata: Metadata = {
   title: "Cyber Physical System Laboratory",
@@ -22,6 +23,7 @@ export default function RootLayout({
       </Head>
       <body>
         <Header />
+        <MobileNav />
         {children}
         <Footer /> 
       </body>
