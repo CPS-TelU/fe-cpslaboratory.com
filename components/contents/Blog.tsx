@@ -1,5 +1,8 @@
 import React from 'react';
 
+
+
+
 interface Post {
     title: string;
     desc: string;
@@ -66,4 +69,4 @@ const BlogPosts: React.FC = () => {
     );
 };
 
-export default BlogPosts;
+export { BlogPosts };

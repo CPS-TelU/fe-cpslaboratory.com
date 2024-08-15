@@ -1,5 +1,6 @@
+import { BlogPosts } from "../contents/Blog";
 import BlogHero from "../contents/BlogHero";
-import Blog from "../contents/Blog"
+
 import SectionContainer from "../utils/SectionsContainer";
 
 const BlogLayout = () => {
@@ -7,7 +8,7 @@ const BlogLayout = () => {
       <div className="w-full">
         <SectionContainer fullWidth>
           <BlogHero/>
-          <Blog/>
+          <BlogPosts/>
         </SectionContainer>
       </div>
     );

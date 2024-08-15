@@ -29,64 +29,69 @@ const DetailBlog: React.FC = () => {
             ProBox bukan hanya sekedar kotak keamanan, tetapi juga kumpulan teknologi canggih yang dirancang untuk memberikan tingkat keamanan tertinggi serta kemudahan penggunaan.</p>
             <h2>When does design come in handy? </h2>
 
-          <p>While it might seem like extra work at a first glance, here are some key moments in which prototyping
+          <p className="mt-5">While it might seem like extra work at a first glance, here are some key moments in which prototyping
               will come in handy:</p>
 
-          <ol>
-              <li><strong>Usability testing</strong>. Does your user know how to exit out of screens? Can they
-                  follow your intended user journey and buy something from the site you’ve designed? By running a
-                  usability test, you’ll be able to see how users will interact with your design once it’s live;
+          <ol className="list-decimal ml-6">
+              <li>. Hubungkan alat ProBox ke sumber daya listrik menggunakan adaptor, kemudian alat akan mulai mengalirkan daya ke semua komponen alat.
               </li>
-              <li><strong>Involving stakeholders</strong>. Need to check if your GDPR consent boxes are displaying
-                  properly? Pass your prototype to your data protection team and they can test it for real;</li>
-              <li><strong>Impressing a client</strong>. Prototypes can help explain or even sell your idea by
-                  providing your client with a hands-on experience;</li>
-              <li><strong>Communicating your vision</strong>. By using an interactive medium to preview and test
-                  design elements, designers and developers can understand each other — and the project — better.
+              <li>ESP8266 akan memulai proses untuk menghubungkan ke jaringan WiFi yang telah diatur sebelumnya.</li>
+              <li>ProBox akan berada dalam mode standby, menunggu pendeteksian kartu yang telah didaftarkan.</li>
+              <li>Jika kartu tersebut didekatkan ke posisi RFID, maka sistem akan membaca kartu tersebut serta data kartu akan dibandingkan dengan database kartu yang telah terdaftar.
               </li>
           </ol>
         </section>
       </article>
       
       <section style={{ maxWidth: '800px', margin: '40px auto', padding: '20px' }}>
-        <div className="gradient-text text-3xl font-semibold">Our Latest Blog</div> 
-        <div style={{ display: 'flex', gap: '20px' }}>
+        <div className="gradient-text text-3xl font-semibold mt-[10px]">Our Latest Blog</div> 
+        <div style={{ display: 'flex', gap: '50px', marginTop:'20px' }}>
           <Link href="/post/1">
             <div style={{ flex: 1 }}>
               <Image
-                src="/images/related-post-1.png" 
+                src="/probox-image.jpg" 
                 alt="Related Post 1"
-                width={250}
-                height={140}
+                width={368}
+                height={405}
                 style={{ borderRadius: '8px' }}
+                className="w-full h-auto object-cover"
               />
-              <p>Game Changers 2024: Perluasan Kejuaraan & Kebijakan Mobilitas Baru</p>
+              <span className="block text-gray-600 text-sm mt-4"> tanggal </span>
+              <h1 className="mt-2 text-gray-800 duration-150 group-hover:text-indigo-600 font-semibold">Game Changers 2024: Perluasan Kejuaraan & Kebijakan Mobilitas Baru</h1>
+              <p className="mt-2 text-[14px]">The powerful gravity waves resulting from the impact of the planets' moons â€” four in total â€” were finally resolved in 2015 when gravitational</p>
             </div>
           </Link>
 
           <Link href="/post/2">
             <div style={{ flex: 1 }}>
               <Image
-                src="/images/related-post-2.png" 
+                src="/LogoAbout.png" 
                 alt="Related Post 2"
-                width={250}
-                height={140}
+                width={368}
+                height={405}
                 style={{ borderRadius: '8px' }}
+                className="w-full h-auto object-cover"
               />
-              <p>Game Changers 2024: Perluasan Kejuaraan & Kebijakan Mobilitas Baru</p>
+              <span className="mt-4 block text-gray-600 text-sm"> tanggal </span>
+              <h1 className="mt-2  text-gray-800 duration-150 group-hover:text-indigo-600 font-semibold">Game Changers 2024: Perluasan Kejuaraan & Kebijakan Mobilitas Baru</h1>
+              <p className="mt-2 text-[14px]">I hope I remembered all the stuff that they needed to know. They're like, 'okay,' and write it in their little reading notebooks.</p>
             </div>
           </Link>
 
           <Link href="/post/3">
             <div style={{ flex: 1 }}>
               <Image
-                src="/images/related-post-3.png" 
+                src="/image.png" 
                 alt="Related Post 3"
-                width={250}
-                height={140}
+                width={368}
+                height={405}
                 style={{ borderRadius: '8px' }}
+                className="w-full h-auto object-cover"
+
               />
-              <p>Game Changers 2024: Perluasan Kejuaraan & Kebijakan Mobilitas Baru</p>
+             <span className="mt-4 block text-gray-600 text-sm"> tanggal </span>
+              <h1 className="mt-2 text-gray-800 duration-150 group-hover:text-indigo-600 font-semibold">Game Changers 2024: Perluasan Kejuaraan & Kebijakan Mobilitas Baru</h1>
+              <p className="mt-2 text-[14px]">According to him, â€œI'm still surprised that this has happened. But we are surprised because we are so surprised.â€More revelations.</p>
             </div>
           </Link>
         </div>
