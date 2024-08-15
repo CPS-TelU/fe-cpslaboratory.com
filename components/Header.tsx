@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <header className={`${dmSans.className} z-[99999] fixed top-0 w-full`}>
       <nav
-        className="mx-auto hidden lg:flex max-w-[1200px] items-center justify-between p-4 rounded-full bg-white shadow-lg"
+        className="mx-auto hidden md:flex max-w-[700px] lg:max-w-[1000px] xl:max-w-[1200px] items-center justify-between p-4 rounded-full bg-white shadow-lg"
         style={{ transform: "translateY(40%)" }}
       >
         <div className="flex items-center gap-8">
@@ -29,7 +29,7 @@ const Header = () => {
             </Link>
           </div>
           <div className="bg-gray-200 h-10 w-[0.125rem] rounded-full hidden sm:block" />
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden md:flex space-x-7 lg:space-x-8 items-center">
             <Link
               href="/"
               onClick={(e) => handleNavigationClick("/", e)}
@@ -37,7 +37,7 @@ const Header = () => {
                 pathname === "/"
                   ? "text-red-600"
                   : "text-gray-700 hover:text-red-600"
-              }`}
+              } text-[14px] lg:text-[15px]`}
             >
               Home
             </Link>
@@ -48,7 +48,7 @@ const Header = () => {
                 pathname === "/about"
                   ? "text-red-600"
                   : "text-gray-700 hover:text-red-600"
-              }`}
+              } text-[14px] lg:text-[15px]`}
             >
               About Us
             </Link>
@@ -59,7 +59,7 @@ const Header = () => {
                 pathname === "/blog"
                   ? "text-red-600"
                   : "text-gray-700 hover:text-red-600"
-              }`}
+              } text-[14px] lg:text-[15px]`}
             >
               Blog
             </Link>
@@ -69,11 +69,11 @@ const Header = () => {
                   pathname.startsWith("/activity")
                     ? "text-red-600"
                     : "text-gray-700 hover:text-red-600"
-                } cursor-pointer`}
+                } text-[14px] lg:text-[15px] cursor-pointer`}
               >
                 Activity
               </span>
-              <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute left-0 mt-2 w-44 lg:w-48 bg-white shadow-lg rounded-md opacity-0 text-[14px] lg:text-[15px] group-hover:opacity-100 transition-opacity duration-300">
                 <Link
                   href="https://cyberrecruitment.cpsrg.org/" 
                   className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
@@ -88,7 +88,7 @@ const Header = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  CyberAcademy
+                  Cyber Academy
                 </Link>
                 <Link
                   href="https://cyberrecruitment.cpsrg.org/"
@@ -96,7 +96,7 @@ const Header = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  CyberRecruitment
+                  Cyber Recruitment
                 </Link>
               </div>
             </div>
@@ -110,7 +110,7 @@ const Header = () => {
               pathname === "/contact"
                 ? "text-red-600"
                 : "text-gray-700 hover:text-red-600"
-            }`}
+            } text-[14px] lg:text-[15px]`}
           >
             Contact
           </Link>
@@ -118,7 +118,7 @@ const Header = () => {
             href="https://rhnworks.my.id"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"
+            className="bg-red-600 text-white text-[14px] lg:text-[15px] px-4 py-2 rounded-full hover:bg-red-700"
           >
             e-Learning
           </a>

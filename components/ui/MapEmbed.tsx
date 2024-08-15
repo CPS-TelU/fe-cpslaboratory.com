@@ -11,7 +11,7 @@ const MapEmbed: React.FC = () => {
           border: "1px solid #BA2025", // Set border size and color
           borderRadius: "20px",
         }}
-        className="w-[300px] h-[170px] md:w-[350px] md:h-[200px] lg:w-[400px] lg:h-[210px] xl:w-[500px] lg:h-[250px]"
+        className="w-[300px] h-[170px] sm:w-[250px] sm:h-[180px] md:w-[300px] md:h-[200px] lg:w-[400px] lg:h-[210px] xl:w-[500px] lg:h-[250px]"
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"

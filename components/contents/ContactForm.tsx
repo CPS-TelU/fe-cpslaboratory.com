@@ -1,7 +1,6 @@
 "use client";
-
-import { poppins } from '@/styles/font';
-import React, { useState } from 'react';
+import { poppins } from "@/styles/font";
+import React, { useState } from "react";
 
 interface FormData {
   name: string;
@@ -12,16 +11,18 @@ interface FormData {
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -32,10 +33,10 @@ const ContactForm: React.FC = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/sendEmail', {
-        method: 'POST',
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -44,23 +45,27 @@ const ContactForm: React.FC = () => {
 
       if (response.ok) {
         setSuccess(true);
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
-        console.error('Failed to send email');
-        alert('Failed to send your message. Please try again later.');
+        console.error("Failed to send email");
+        alert("Failed to send your message. Please try again later.");
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
       setLoading(false);
-      alert('An error occurred. Please try again later.');
+      alert("An error occurred. Please try again later.");
     }
   };
 
   return (
     <div className={`my-12  ${poppins.className}`}>
-      <h1 className="text-[60px] bg-gradient-to-r from-[#BA2025] to-[#FFDCDC] bg-clip-text text-transparent font-extrabold text-center">We're all ears!</h1>
-      <h2 className="text-[20px] text-[#575757] text-center">Share your ideas, critiques, and suggestions with us</h2>
-      <div className="bg-[rgba(217,217,217,0.1)] shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] p-8 my-20 mx-auto max-w-full">
+      <h1 className="text-[38px] sm:text-[48px] md:text-[60px] bg-gradient-to-r from-[#BA2025] to-[#FFDCDC] bg-clip-text text-transparent font-extrabold text-center">
+        We're all ears!
+      </h1>
+      <h2 className="text-[13px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-[#575757] text-center">
+        Share your ideas, critiques, and suggestions with us
+      </h2>
+      <div className="bg-[rgba(217,217,217,0.1)] shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] p-8 my-10 sm:my-20 max-w-full lg:w-[800px]">
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="flex flex-col lg:flex-row lg:space-x-6">
             <div className="flex-1 space-y-6">
@@ -76,7 +81,9 @@ const ContactForm: React.FC = () => {
                 />
               </div>
               <div>
-                <label className="text-gray-800 text-sm block mb-2">Your Email</label>
+                <label className="text-gray-800 text-sm block mb-2">
+                  Your Email
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -87,7 +94,9 @@ const ContactForm: React.FC = () => {
                 />
               </div>
               <div>
-                <label className="text-gray-800 text-sm block mb-2">Phone Number</label>
+                <label className="text-gray-800 text-sm block mb-2">
+                  Phone Number
+                </label>
                 <input
                   type="text"
                   name="phone"
@@ -99,7 +108,9 @@ const ContactForm: React.FC = () => {
               </div>
             </div>
             <div className="flex-1 mt-6 lg:mt-0">
-              <label className="text-gray-800 text-sm block mb-2">Tell Us Your Ideas and Critiques</label>
+              <label className="text-gray-800 text-sm block mb-2">
+                Tell Us Your Ideas and Critiques
+              </label>
               <textarea
                 name="message"
                 placeholder="Tell Us Your Ideas and Critiques"
@@ -115,9 +126,13 @@ const ContactForm: React.FC = () => {
             className="text-white bg-[#BA2025] hover:bg-red-600 font-semibold rounded-md text-sm px-6 py-3 w-full"
             disabled={loading}
           >
-            {loading ? 'Submitting...' : 'Submit Here'}
+            {loading ? "Submitting..." : "Submit Here"}
           </button>
-          {success && <p className="text-green-600 text-center mt-4">Thank you! Your message has been sent.</p>}
+          {success && (
+            <p className="text-green-600 text-center mt-4">
+              Thank you! Your message has been sent.
+            </p>
+          )}
         </form>
       </div>
     </div>

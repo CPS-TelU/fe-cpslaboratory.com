@@ -1,3 +1,4 @@
+import AboutGallery from "../contents/AboutGallery";
 import AboutHero from "../contents/AboutHero";
 import SectionContainer from "../utils/SectionsContainer";
 
@@ -6,6 +7,7 @@ const AboutLayout = () => {
       <div className="w-full">
         <SectionContainer fullWidth>
           <AboutHero />
+          <AboutGallery />
         </SectionContainer>
       </div>
     );

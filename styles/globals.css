@@ -35,6 +35,7 @@
 @layer base {
   * {
     @apply border-border;
+    transform: translateZ(0);
   }
   body {
     @apply bg-background text-foreground;
