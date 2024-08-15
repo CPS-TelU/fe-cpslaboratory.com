@@ -5,11 +5,11 @@ import Link from "next/link";
 const Information = () => {
   return (
     <section className={`py-12 text-center ${poppins.className}`}>
-      <h2 className="text-3xl font-semibold gradient-text mb-4">What We Do</h2>
-      <p className="text-lg text-gray-700 mb-2">
+      <h2 className="text-5xl font-semibold gradient-text mb-4">What We Do</h2>
+      <p className="text-2xl text-gray-700 mb-2">
         In Cyber Physical System Laboratory
       </p>
-      <p className="text-lg text-gray-700 mb-10">
+      <p className="text-2xl text-gray-700 mb-10">
         we focus on many things such as:
       </p>
 
@@ -53,7 +53,7 @@ const Information = () => {
           </div>
         </div>
       </div>
-      <Link href="/about" className="text-xl text-red-600 underline">
+      <Link href="/about" className="text-xl bg-red-600 text-white py-2 px-6 rounded-2xl mt-8 inline-block hover:bg-red-700 transition-colors duration-300">
         More
       </Link>
     </section>

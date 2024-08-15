@@ -20,7 +20,7 @@ const Activity = () => {
       image: "/image.png",
       title: "Cyber Recruitment",
       description:
-        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       link: "https://cyberrecruitment.cpsrg.org/",
     },
   ];

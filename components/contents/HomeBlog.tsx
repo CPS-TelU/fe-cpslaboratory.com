@@ -82,10 +82,11 @@ const Blog: React.FC = () => {
 </div>
 
 
+<Link
+  href="/blog" className="text-xl bg-red-600 text-white py-2 px-6 rounded-2xl mt-8 inline-block hover:bg-red-700 transition-colors duration-300">
+  More
+</Link>
 
-      <Link href="/blog" className="text-xl text-red-600 underline mt-8 block">
-        More
-      </Link>
     </section>
   );
 };
