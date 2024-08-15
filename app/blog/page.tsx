@@ -1,11 +1,7 @@
-import React from "react";
-
-const BlogPage: React.FC = () => {
-  return (
-    <main className="relative flex flex-col items-center justify-center px-4 !z-[999] pt-36">
-      
-    </main>
-  );
-};
-
-export default BlogPage;
+export default function Blog() {
+    return (
+      <main className="relative flex flex-col items-center justify-center px-4 pt-20 z-[999]">
+        INI BLOG
+      </main>
+    );
+  }

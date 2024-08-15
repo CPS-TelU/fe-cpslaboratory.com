@@ -1,11 +1,9 @@
-import React from "react";
+import ContactLayout from "@/components/layouts/ContactLayout";
 
-const Contactpage: React.FC = () => {
-  return (
-    <main className="relative flex flex-col items-center justify-center px-4 !z-[999] pt-36">
-      
-    </main>
-  );
-};
-
-export default Contactpage;
+export default function Contact() {
+    return (
+      <main className="relative flex flex-col items-center justify-center px-4 pt-20 z-[999]">
+        <ContactLayout/>
+      </main>
+    );
+  }
