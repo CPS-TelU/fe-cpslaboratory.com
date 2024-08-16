@@ -63,7 +63,7 @@ const Blog: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 sm:px-8 lg:px-16 cursor-pointer">
   {posts.slice(1).map((post, index) => (
-    <div key={index} className="relative group"> {/* Add relative positioning to the parent div */}
+    <div key={index} className="relative group"> 
       <Image
         src={post.img}
         alt={post.title}
@@ -72,7 +72,7 @@ const Blog: React.FC = () => {
         className="object-cover w-full h-[300px] rounded-lg"
       />
       <div className="absolute inset-0 flex items-end p-4 rounded-lg bg-black bg-opacity-50 opacity-70 group-hover:opacity-100 transition-opacity">
-        {/* Title overlay with absolute positioning */}
+       
         <h3 className="text-lg font-semibold text-white transform transition-all duration-300 ease-in-out group-hover:translate-y-[-10px]">
           {post.title}
         </h3>
