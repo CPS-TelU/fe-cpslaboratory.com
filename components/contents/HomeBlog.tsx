@@ -17,7 +17,6 @@ const posts: Post[] = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dictum mauris quis massa eleifend, at dignissim leo accumsan. Integer varius mi vel mauris tincidunt sagittis. Donec ac elit non sapien dictum faucibus.",
     img: "/probox-image.jpg",
     date: "June 27, 2024",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dictum mauris quis massa eleifend, at dignissim leo accumsan. Integer varius mi vel mauris tincidunt sagittis.",
     href: "javascript:void(0)",
   },
   {

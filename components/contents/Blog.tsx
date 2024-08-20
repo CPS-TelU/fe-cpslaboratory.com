@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import Link from 'next/link';
 import { poppins } from "@/styles/font";
 
@@ -21,34 +20,42 @@ const BlogPosts: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
-    const NEWS_API_URL = "https://newsapi.org/v2/everything?q=tesla&from=2024-07-20&sortBy=publishedAt";
-    const NEWS_API_KEY = "fb312606d99b4b1f9c1d1a92176546fa"; // Replace with your actual API key
+    const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API;
 
     useEffect(() => {
+        if (!STRAPI_API_URL) {
+            setError("STRAPI API URL is not defined");
+            setLoading(false);
+            return;
+        }
+
         const fetchPosts = async () => {
             try {
-                const response = await axios.get(NEWS_API_URL, {
-                    headers: {
-                        Authorization: `Bearer ${NEWS_API_KEY}`,
-                    },
-                });
-                console.log(response.data);
-
-                if (response.data) {
-                    const fetchedPosts = response.data.articles.map((article: any, index: number) => {
+                const response = await fetch(STRAPI_API_URL);
+    
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+    
+                const data = await response.json();
+                console.log(data);
+    
+                if (data.data) {
+                    const fetchedPosts = data.data.map((item: any) => {
+                        const { id, attributes } = item;
                         return {
-                            id: index.toString(),
-                            title: article.title || 'No Title',
-                            author: article.author || 'Unknown Author',
-                            desc: article.description || 'No Description Available',
-                            content: article.content || 'No Content Available',
-                            img: article.urlToImage || '/default-image.jpg',
-                            date: article.publishedAt || 'No Date',
-                            href: article.url || '#',
+                            id: id.toString(),
+                            title: attributes.title || 'No Title',
+                            author: attributes.author || 'Unknown Author',
+                            desc: attributes.description || 'No Description Available',
+                            content: attributes.Content.map((contentItem: any) => contentItem.children.map((child: any) => child.text).join('')).join('\n') || 'No Content Available',
+                            img: attributes.image?.url || '/default-image.jpg',
+                            date: attributes.publishedAt || 'No Date',
+                            href: attributes.url || '#',
                         };
                     });
                     setPosts(fetchedPosts);
-
+    
                     if (fetchedPosts.length === 0) {
                         setError("No blog posts available.");
                     }
@@ -56,21 +63,21 @@ const BlogPosts: React.FC = () => {
                     setError("No data found");
                 }
             } catch (error) {
-                setError("Error fetching posts from NewsAPI");
-                console.error('Error fetching posts from NewsAPI:', error);
+                setError("Error fetching posts from API");
+                console.error('Error fetching posts from API:', error);
             } finally {
                 setLoading(false);
             }
         };
-
+    
         fetchPosts();
-    }, [NEWS_API_URL, NEWS_API_KEY]);
-
+    }, [STRAPI_API_URL]);
+    
     if (loading) return <p>Loading posts...</p>;
     if (error) return <p>{error}</p>;
 
     return (
-        <section className={`py-12 ${poppins.className} `}>
+        <section className={`py-12 ${poppins.className}`}>
             <div className="w-[1258px] mx-auto px-4 md:px-8 relative">
                 <ul className="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
                     {posts.map((item) => (
@@ -81,7 +88,7 @@ const BlogPosts: React.FC = () => {
                                         src={item.img}
                                         loading="lazy"
                                         alt={item.title}
-                                        className=" rounded-lg mx-auto w-[368px] h-[237px] transition-transform duration-300 ease-in-out group-hover:scale-110"
+                                        className="rounded-lg mx-auto w-[368px] h-[237px] transition-transform duration-300 ease-in-out group-hover:scale-110"
                                         onError={(e) => (e.currentTarget.src = '/default-image.jpg')}
                                     />
                                 </div>
