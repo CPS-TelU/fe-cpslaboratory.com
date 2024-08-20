@@ -1,4 +1,4 @@
-import { BlogPosts } from "../contents/Blog";
+import { BlogPosts} from "../contents/Blog";
 import BlogHero from "../contents/BlogHero";
 
 import SectionContainer from "../utils/SectionsContainer";
