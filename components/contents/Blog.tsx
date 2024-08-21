@@ -49,7 +49,7 @@ const BlogPosts: React.FC = () => {
                             author: attributes.author || 'Unknown Author',
                             desc: attributes.description || 'No Description Available',
                             content: attributes.Content.map((contentItem: any) => contentItem.children.map((child: any) => child.text).join('')).join('\n') || 'No Content Available',
-                            img: attributes.image?.url || '/default-image.jpg',
+                            img: attributes.image?.url ,
                             date: attributes.publishedAt || 'No Date',
                             href: attributes.url || '#',
                         };
