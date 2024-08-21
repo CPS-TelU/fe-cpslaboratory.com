@@ -170,7 +170,7 @@ const cards = [
     id: 7,
     content: <SkeletonSeven />,
     className: "md:col-span-2",
-    thumbnail:"/image.png",
+    thumbnail:"/gallery5.png",
   },
   {
     id: 8,
