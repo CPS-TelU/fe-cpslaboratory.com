@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-interface scrollingCardsProps {
+interface ScrollingCardsProps {
   children: ReactNode;
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -13,11 +13,11 @@ interface scrollingCardsProps {
 
 export function ScrollingCards({
   children,
-  direction = "left",
+  direction ="right",
   speed = "slow",
   pauseOnHover = true,
   className,
-}: scrollingCardsProps) {
+}: ScrollingCardsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLUListElement>(null);
   const [start, setStart] = useState(false);
@@ -48,10 +48,17 @@ export function ScrollingCards({
 
   const getDirection = () => {
     if (containerRef.current) {
-      containerRef.current.style.setProperty(
-        "--animation-direction",
-        direction === "left" ? "forwards" : "reverse"
-      );
+      if (direction === "left") {
+        containerRef.current.style.setProperty(
+          "--animation-direction",
+          "forwards"
+        );
+      } else {
+        containerRef.current.style.setProperty(
+          "--animation-direction",
+          "reverse"
+        );
+      }
     }
   };
 
@@ -83,6 +90,10 @@ export function ScrollingCards({
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
+        style={{
+          animationDirection:
+            direction === "left" ? "forward" : "reverse",
+        }}
       >
         {children}
       </ul>
