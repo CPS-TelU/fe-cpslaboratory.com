@@ -51,7 +51,7 @@ export default function FlipCard({
           <img
             src={image}
             alt="image"
-            className="h-full w-full rounded-2xl object-cover shadow-2xl shadow-black/40"
+            className="h-full w-full rounded-2xl object-cover"
           />
           <h2 className="absolute top-1 left-1/2 transform -translate-x-1/2 text-4xl font-bold bg-gradient-to-r from-[#BA2025] to-[#FF9D9D] bg-clip-text text-transparent ">
             {kode}

@@ -70,10 +70,11 @@ export function AssistCardResearch() {
         linkedIn:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
         gitHub:"https://github.com/hokacristian",
       },
+      
   ];
 
   return (
-        <ScrollingCards direction="right" speed="slow">
+        <ScrollingCards direction="left" speed="slow" >
         <div className="flex gap-4">
           {FlipDataResearch.map((card, index) => (
             <FlipCard

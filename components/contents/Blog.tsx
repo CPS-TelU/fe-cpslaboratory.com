@@ -19,94 +19,119 @@ const BlogPosts: React.FC = () => {
     const [posts, setPosts] = useState<Post[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const [limit, setLimit] = useState<number>(6); // Initial limit of 6 posts
 
-    const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API;
+    const NEWS_API_URL = process.env.NEXT_PUBLIC_STRAPI_API;
 
     useEffect(() => {
-        if (!STRAPI_API_URL) {
-            setError("STRAPI API URL is not defined");
+        if (!NEWS_API_URL) {
+            setError("News API URL is not defined");
             setLoading(false);
             return;
         }
 
         const fetchPosts = async () => {
             try {
-                const response = await fetch(STRAPI_API_URL);
-    
+                const response = await fetch(NEWS_API_URL, {
+                    headers: {
+                        'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
+                    },
+                });
+
                 if (!response.ok) {
-                    throw new Error("Network response was not ok");
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-    
+
                 const data = await response.json();
-                console.log(data);
-    
-                if (data.data) {
-                    const fetchedPosts = data.data.map((item: any) => {
-                        const { id, attributes } = item;
+
+                if (data.articles) {
+                    const fetchedPosts = data.articles.slice(0, limit).map((item: any, index: number) => {
                         return {
-                            id: id.toString(),
-                            title: attributes.title || 'No Title',
-                            author: attributes.author || 'Unknown Author',
-                            desc: attributes.description || 'No Description Available',
-                            content: attributes.Content.map((contentItem: any) => contentItem.children.map((child: any) => child.text).join('')).join('\n') || 'No Content Available',
-                            img: attributes.image?.url ,
-                            date: attributes.publishedAt || 'No Date',
-                            href: attributes.url || '#',
+                            id: index.toString(),
+                            title: item.title || 'No Title',
+                            author: item.author || 'Unknown Author',
+                            desc: item.description || 'No Description Available',
+                            content: item.content || 'No Content Available',
+                            img: item.urlToImage || '/default-image.jpg',
+                            date: item.publishedAt || 'No Date',
+                            href: item.url || '#',
                         };
                     });
                     setPosts(fetchedPosts);
-    
+
                     if (fetchedPosts.length === 0) {
-                        setError("No blog posts available.");
+                        setError("No news articles available.");
                     }
                 } else {
                     setError("No data found");
                 }
-            } catch (error) {
-                setError("Error fetching posts from API");
-                console.error('Error fetching posts from API:', error);
+            } catch (err) {
+                if (err instanceof Error) {
+                    setError(`Error fetching posts from API: ${err.message}`);
+                } else {
+                    setError("An unknown error occurred.");
+                }
+                console.error('Error fetching posts from API:', err);
             } finally {
                 setLoading(false);
             }
         };
-    
+
         fetchPosts();
-    }, [STRAPI_API_URL]);
-    
+    }, [NEWS_API_URL, limit]);
+
+    const loadMorePosts = () => {
+        setLimit((prevLimit) => prevLimit + 6);
+    };
+
     if (loading) return <p>Loading posts...</p>;
     if (error) return <p>{error}</p>;
 
     return (
         <section className={`py-12 ${poppins.className}`}>
-            <div className="w-[1258px] mx-auto px-4 md:px-8 relative">
-                <ul className="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="w-full px-4 sm:px-8 lg:px-16 mx-auto max-w-[1330px]">
+                <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {posts.map((item) => (
-                        <li className="w-full mx-auto group sm:max-w-sm" key={item.id}>
+                        <li className="relative group cursor-pointer" key={item.id}>
                             <Link href={item.href} target="_blank" rel="noopener noreferrer">
-                                <div className="overflow-hidden rounded-lg">
+                                <div className="relative">
                                     <img
                                         src={item.img}
                                         loading="lazy"
                                         alt={item.title}
-                                        className="rounded-lg mx-auto w-[368px] h-[237px] transition-transform duration-300 ease-in-out group-hover:scale-110"
+                                        className="object-cover w-full h-[300px] rounded-lg"
                                         onError={(e) => (e.currentTarget.src = '/default-image.jpg')}
                                     />
-                                </div>
-                                <div className="mt-3 space-y-2">
-                                    <span className="block text-gray-600 text-sm">
-                                        {new Date(item.date).toLocaleDateString()} {item.author && ` || ${item.author}`}
-                                    </span>
-                                    <h3 className="text-lg text-gray-800 duration-150 group-hover:text-red-600 font-semibold">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-gray-500 text-sm duration-150 group-hover:text-gray-800">
-                                        {item.desc}
-                                    </p>
+                                    <div className="absolute inset-0 flex flex-col justify-end p-4 rounded-lg bg-black bg-opacity-50 opacity-70 group-hover:opacity-100 transition-opacity">
+                                        <div className="justify-end transform transition-all duration-300 ease-in-out group-hover:translate-y-[-20px]">
+                                            <div className="absolute bottom-0 left-0 transform transition-all duration-600 ease-in-out group-hover:translate-y-[-10px] group-hover:relative pt-2">
+                                                <span className="text-sm text-white opacity-90 mb-1 block">
+                                                    {new Date(item.date).toLocaleDateString()} {item.author && ` || ${item.author}`}
+                                                </span>
+                                                <h3 className="text-lg font-semibold text-white translate-y-0">
+                                                    {item.title}
+                                                </h3>
+                                            </div>
+                                            <p className="text-sm text-white mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                                                {item.desc}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </Link>
                         </li>
                     ))}
                 </ul>
+                {posts.length > 0 && (
+                    <div className="flex justify-center mt-8">
+                    <button
+                        onClick={loadMorePosts}
+                        className="mt-8 text-xl bg-red-600 text-white py-2 px-6 rounded-2xl hover:bg-red-700 transition-colors duration-300"
+                    >
+                        Load More
+                    </button>
+                </div>
+                )}
             </div>
         </section>
     );

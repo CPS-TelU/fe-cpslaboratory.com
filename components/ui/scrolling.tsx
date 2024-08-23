@@ -13,7 +13,7 @@ interface ScrollingCardsProps {
 
 export function ScrollingCards({
   children,
-  direction ="right",
+  direction ,
   speed = "slow",
   pauseOnHover = true,
   className,
@@ -47,18 +47,21 @@ export function ScrollingCards({
   };
 
   const getDirection = () => {
-    if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "forwards"
-        );
+    if (scrollerRef.current) {
+      const scrollerWidth = scrollerRef.current.scrollWidth;
+      const containerWidth = containerRef.current?.offsetWidth || 0;
+
+      if (direction === "right") {
+        scrollerRef.current.style.transform = `translateX(0)`;
       } else {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "reverse"
-        );
+        scrollerRef.current.style.transform = `translateX(0)`;
       }
+
+      // Set animation direction using keyframes
+      containerRef.current?.style.setProperty(
+        "--animation-direction",
+        direction === "left" ? "forwards" : "reverse"
+      );
     }
   };
 
