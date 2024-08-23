@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import axios from 'axios';
 import { poppins } from "@/styles/font";
 
 interface Post {
@@ -21,42 +22,34 @@ const BlogPosts: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [limit, setLimit] = useState<number>(6); // Initial limit of 6 posts
 
-    const NEWS_API_URL = process.env.NEXT_PUBLIC_STRAPI_API;
+    const NEWS_API_URL = "https://newsapi.org/v2/everything?q=apple&from=2024-08-22&to=2024-08-22&sortBy=popularity&apiKey=fb312606d99b4b1f9c1d1a92176546fa";
 
     useEffect(() => {
-        if (!NEWS_API_URL) {
-            setError("News API URL is not defined");
-            setLoading(false);
-            return;
-        }
-
         const fetchPosts = async () => {
             try {
-                const response = await fetch(NEWS_API_URL, {
+                const response = await axios.get(NEWS_API_URL, {
                     headers: {
-                        'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
+                        'Accept': 'application/json',
                     },
                 });
 
-                if (!response.ok) {
+                if (response.status !== 200) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
 
-                const data = await response.json();
+                const data = response.data;
 
                 if (data.articles) {
-                    const fetchedPosts = data.articles.slice(0, limit).map((item: any, index: number) => {
-                        return {
-                            id: index.toString(),
-                            title: item.title || 'No Title',
-                            author: item.author || 'Unknown Author',
-                            desc: item.description || 'No Description Available',
-                            content: item.content || 'No Content Available',
-                            img: item.urlToImage || '/default-image.jpg',
-                            date: item.publishedAt || 'No Date',
-                            href: item.url || '#',
-                        };
-                    });
+                    const fetchedPosts = data.articles.slice(0, limit).map((item: any, index: number) => ({
+                        id: index.toString(),
+                        title: item.title || 'No Title',
+                        author: item.author || 'Unknown Author',
+                        desc: item.description || 'No Description Available',
+                        content: item.content || 'No Content Available',
+                        img: item.urlToImage || '/default-image.jpg',
+                        date: item.publishedAt || 'No Date',
+                        href: item.url || '#',
+                    }));
                     setPosts(fetchedPosts);
 
                     if (fetchedPosts.length === 0) {
@@ -78,7 +71,7 @@ const BlogPosts: React.FC = () => {
         };
 
         fetchPosts();
-    }, [NEWS_API_URL, limit]);
+    }, [limit]);
 
     const loadMorePosts = () => {
         setLimit((prevLimit) => prevLimit + 6);
@@ -124,13 +117,13 @@ const BlogPosts: React.FC = () => {
                 </ul>
                 {posts.length > 0 && (
                     <div className="flex justify-center mt-8">
-                    <button
-                        onClick={loadMorePosts}
-                        className="mt-8 text-xl bg-red-600 text-white py-2 px-6 rounded-2xl hover:bg-red-700 transition-colors duration-300"
-                    >
-                        Load More
-                    </button>
-                </div>
+                        <button
+                            onClick={loadMorePosts}
+                            className="mt-8 text-xl bg-red-600 text-white py-2 px-6 rounded-2xl hover:bg-red-700 transition-colors duration-300"
+                        >
+                            Load More
+                        </button>
+                    </div>
                 )}
             </div>
         </section>

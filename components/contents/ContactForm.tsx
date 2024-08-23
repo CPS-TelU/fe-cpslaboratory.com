@@ -1,7 +1,7 @@
 "use client";
 
-import { poppins } from '@/styles/font';
 import React, { useState } from 'react';
+import { poppins } from '@/styles/font';
 
 interface FormData {
   name: string;
@@ -21,6 +21,7 @@ const ContactForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -56,25 +57,32 @@ const ContactForm: React.FC = () => {
       if (response.ok) {
         setSuccess(true);
         setFormData({ name: '', email: '', phone: '', message: '' });
-
+        setIsModalOpen(true);
         setTimeout(() => {
           setSuccess(false);
+          setIsModalOpen(false);
         }, 3000);
       } else {
         console.error('Failed to send email');
-        alert('Failed to send your message. Please try again later.');
+        setError('Failed to send your message. Please try again later.');
+        setIsModalOpen(true);
       }
     } catch (error) {
       console.error('Error:', error);
       setLoading(false);
-      alert('An error occurred. Please try again later.');
+      setError('An error occurred. Please try again later.');
+      setIsModalOpen(true);
     }
   };
 
   return (
     <div className={`my-12 px-4 ${poppins.className}`}>
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] bg-gradient-to-r from-[#BA2025] to-[#FFDCDC] bg-clip-text text-transparent font-extrabold text-center">We're all ears!</h1>
-      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-[20px] text-[#575757] text-center mt-4">Share your ideas, critiques, and suggestions with us</h2>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] bg-gradient-to-r from-[#BA2025] to-[#FFDCDC] bg-clip-text text-transparent font-extrabold text-center">
+        We're all ears!
+      </h1>
+      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-[20px] text-[#575757] text-center mt-4">
+        Share your ideas, critiques, and suggestions with us
+      </h2>
       <div className="outline outline-1 outline-gray-500 outline-[rgba(0,0,0,0.1)] rounded-md p-6 sm:p-8 my-10 lg:my-20 mx-auto max-w-lg sm:max-w-xl md:max-w-2xl lg:w-[950px]">
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="flex flex-col lg:flex-row lg:space-x-6">
@@ -133,9 +141,42 @@ const ContactForm: React.FC = () => {
             {loading ? 'Submitting...' : 'Submit Here'}
           </button>
           {error && <p className="text-red-600 text-center mt-4">{error}</p>}
-          {success && <p className="text-green-600 text-center mt-4">Thank you! Your message has been sent.</p>}
         </form>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="fixed inset-0 bg-black bg-opacity-50" onClick={() => setIsModalOpen(false)}></div>
+          <div className="relative p-4 bg-white rounded-lg shadow-lg max-w-md w-full">
+            <button
+              type="button"
+              className="absolute top-3 right-3 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex justify-center items-center"
+              onClick={() => setIsModalOpen(false)}
+            >
+              <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+              </svg>
+              <span className="sr-only">Close modal</span>
+            </button>
+            <div className="p-4 text-center">
+              <svg className="mx-auto mb-4 text-gray-400 w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+              </svg>
+              <h3 className="mb-5 text-lg font-normal text-green-500">
+                {success ? 'Thank you! Your message has been sent.' : error || 'Something went wrong.'}
+              </h3>
+              <button
+                type="button"
+                className="text-white bg-red-600 hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5"
+                onClick={() => setIsModalOpen(false)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
