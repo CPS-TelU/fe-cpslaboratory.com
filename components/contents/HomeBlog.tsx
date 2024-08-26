@@ -69,7 +69,9 @@ const Blog: React.FC = () => {
               {posts[0].title}
             </h3>
             <p className="text-[18px] sm:text-[20px] text-gray-700">
-              {posts[0].desc}
+              {posts[0]?.desc && posts[0].desc.length > 100 
+                ? `${posts[0].desc.substring(0, 255)}...` 
+                : posts[0]?.desc}
             </p>
           </div>
         </div>
@@ -86,18 +88,20 @@ const Blog: React.FC = () => {
               className="object-cover w-full h-[200px] rounded-lg"
             />
             <div className="text-left absolute inset-0 flex flex-col justify-end p-4 rounded-lg bg-black bg-opacity-50 opacity-70 group-hover:opacity-100 transition-opacity">
-              <div className="justify-end transform transition-all duration-300 ease-in-out group-hover:translate-y-[-20px]">
-                <div className="translate-y-[100px] transform transition-all duration-500 ease-in-out group-hover:translate-y-[-10px]">
-                <span className="text-sm text-white opacity-90 mb-1">
+              <div className="justify-end transform transition-all duration-300 ease-in-out group-hover:translate-y-[-10px]">
+                <div className="translate-y-[60px] transform transition-all duration-500 ease-in-out group-hover:translate-y-[-10px]">
+                <span className="text-xs text-white opacity-90 mb-1">
                   {post.date} | {post.author}
                 </span>
-                <h3 className="text-lg font-semibold text-white translate-y-0">
+                <h3 className="text-base font-semibold text-white translate-y-0">
                   {post.title}
                 </h3>
                 </div>
-                <p className="text-sm text-white mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                  {post.desc}
-                </p>
+                {post.desc && (
+                  <p className="text-xs text-white mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                    {post.desc.length > 100 ? `${post.desc.substring(0, 255)}...` : post.desc}
+                  </p>
+                )}
               </div>
             </div>
           </div>
