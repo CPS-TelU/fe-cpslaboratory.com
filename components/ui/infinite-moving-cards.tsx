@@ -74,7 +74,7 @@ export const InfiniteMovingCards = ({
       } else if (speed === "normal") {
         containerRef.current.style.setProperty("--animation-duration", "40s");
       } else {
-        containerRef.current.style.setProperty("--animation-duration", "80s");
+        containerRef.current.style.setProperty("--animation-duration", "200s");
       }
     }
   };
@@ -107,10 +107,10 @@ export const InfiniteMovingCards = ({
               objectFit="cover"
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 p-6 flex flex-col justify-between">
-              <h3 className="text-4xl font-bold text-white">{item.title}</h3>
-              <div>
-                <p className="text-sm text-white mb-4">{item.description}</p>
+            <div className="absolute inset-0 bg-black bg-opacity-50 p-6 flex flex-col justify-end">
+              <h3 className="text-2xl font-bold text-white mb-2 text-left">{item.title}</h3>
+              <div className="flex justify-between items-starts">
+                <p className="text-sm text-white mb-4 text-left w-[400px]">{item.description}</p>
                 <Link
                   href={item.link}
                   target="_blank"

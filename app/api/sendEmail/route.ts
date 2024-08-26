@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import React from 'react';
-import contactFormEmail from "@/app/email/contact-form-email";
+import ContactFormEmail from "@/components/contents/contact-form-email";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -14,7 +14,7 @@ export async function POST(request: Request) {
             to: 'cpslaboratory@365.telkomuniversity.ac.id',
             subject: 'Message From Cytizen ',
             reply_to: email,
-            react: React.createElement(contactFormEmail, {
+            react: React.createElement(ContactFormEmail, {
                 name: name,
                 email: email,
                 phone: phone,

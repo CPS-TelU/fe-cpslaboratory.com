@@ -1,5 +1,5 @@
 import Activity from "../contents/HomeActivity";
-import Blog from "../contents/HomeBlog";
+import { Blog } from "../contents/HomeBlog";
 import Hero from "../contents/HomeHero";
 import Information from "../contents/HomeInformation";
 import SectionContainer from "../utils/SectionsContainer";

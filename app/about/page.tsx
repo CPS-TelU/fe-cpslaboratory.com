@@ -1,4 +1,7 @@
+import { LayoutGrid } from "@/components/ui/layout-grid";
 import AboutLayout from "@/components/layouts/AboutLayout";
+
+
 
 export default function About() {
     return (

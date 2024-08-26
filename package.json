@@ -9,22 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
     "@next/font": "^14.2.5",
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@react-email/components": "^0.0.22",
+    "axios": "^1.7.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "email": "^0.2.6",
-    "framer-motion": "^11.3.24",
+    "framer-motion": "^11.3.28",
     "lucide-react": "^0.424.0",
     "next": "14.2.5",
     "react": "^18.3.1",
     "react-email": "^2.1.6",
-    "@react-email/components": "^0.0.22",
     "react-icons": "^5.2.1",
     "react-npm": "2.6.1",
     "resend": "^3.5.0",
-    "tailwind-merge": "^2.5.1",
+    "styled-components": "^6.1.12",
+    "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
