@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import { poppins } from "@/styles/font";
+import { motion } from "framer-motion"
 
 interface Post {
     id: string;
@@ -22,7 +23,7 @@ const BlogPosts: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [limit, setLimit] = useState<number>(6); // Initial limit of 6 posts
 
-    const NEWS_API_URL = "https://newsapi.org/v2/everything?q=apple&from=2024-08-22&to=2024-08-22&sortBy=popularity&apiKey=fb312606d99b4b1f9c1d1a92176546fa";
+    const NEWS_API_URL = "https://be-cps-laboratory.vercel.app/apiv1/allBlogs";
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -38,16 +39,18 @@ const BlogPosts: React.FC = () => {
                 }
 
                 const data = response.data;
+                console.log(data);
+                
 
-                if (data.articles) {
-                    const fetchedPosts = data.articles.slice(0, limit).map((item: any, index: number) => ({
+                if (data) {
+                    const fetchedPosts = data.slice(0, limit).map((item: any, index: number) => ({
                         id: index.toString(),
                         title: item.title || 'No Title',
-                        author: item.author || 'Unknown Author',
+                        author: item.author ||  'Unknown Author',
                         desc: item.description || 'No Description Available',
                         content: item.content || 'No Content Available',
-                        img: item.urlToImage || '/default-image.jpg',
-                        date: item.publishedAt || 'No Date',
+                        img: item.image_0 || '/default-image.jpg',
+                        date: item.create_at || 'No Date',
                         href: item.url || '#',
                     }));
                     setPosts(fetchedPosts);
