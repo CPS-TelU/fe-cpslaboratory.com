@@ -16,12 +16,12 @@ interface Post {
 }
 
 const DetailBlog: React.FC = () => {
-  const { id } = useParams(); // Mengambil ID dari URL
+  const { slug } = useParams(); // Mengambil ID dari URL
   const [post, setPost] = useState<Post | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const BLOG_API_URL = `https://be-cps-laboratory.vercel.app/apiv1/blogs/${id}`;
+  const BLOG_API_URL = `https://be-cps-laboratory.vercel.app/apiv1/blogs/${slug}`;
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -64,7 +64,7 @@ const DetailBlog: React.FC = () => {
     };
 
     fetchPost();
-  }, [id]);
+  }, [slug]);
 
   if (loading) return <p>Loading post...</p>;
   if (error) return <p>{error}</p>;
