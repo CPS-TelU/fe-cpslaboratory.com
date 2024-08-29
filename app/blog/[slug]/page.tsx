@@ -78,7 +78,7 @@ const DetailBlog: React.FC = () => {
       <article style={{ maxWidth: "1200px", margin: "0 auto", padding: "20px" }}>
         <header>
           <h1 className="text-3xl font-bold">{post.title}</h1>
-          <p>{post.date} | {post.author}</p>
+          <p> {new Date(post.date).toLocaleDateString()} | {post.author}</p>
         </header>
         <div style={{ margin: "20px 0" }}>
           <img
