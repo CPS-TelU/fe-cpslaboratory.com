@@ -15,6 +15,7 @@ const MapEmbed: React.FC = () => {
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
+        title="Google Maps"
       ></iframe>
     </div>
   );
