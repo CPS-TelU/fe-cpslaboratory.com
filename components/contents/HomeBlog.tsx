@@ -147,7 +147,7 @@ const Blog: React.FC = () => {
               />
               <div className="text-left absolute inset-0 flex flex-col justify-end p-4 rounded-lg bg-black bg-opacity-50 opacity-70 group-hover:opacity-100 transition-opacity">
                 <div className="justify-end transform transition-all duration-300 ease-in-out group-hover:translate-y-[-10px]">
-                  <div className="translate-y-[60px] transform transition-all duration-500 ease-in-out group-hover:translate-y-[-10px]">
+                  <div className="translate-y-[30px] transform transition-all duration-500 ease-in-out group-hover:translate-y-[-10px]">
                     <span className="text-xs text-white opacity-90 mb-1">
                       {post.date} | {post.author}
                     </span>

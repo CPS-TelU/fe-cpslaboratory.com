@@ -50,13 +50,13 @@ const Hero = () => {
         variants={fadeInUp}
       >
         <motion.p
-          className="text-white text-xl sm:text-2xl font-medium"
+          className="text-white text-xl sm:text-lg font-medium"
           variants={fadeInUp}
         >
           Cyber Physical System Laboratory
         </motion.p>
         <motion.h1
-          className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mt-2"
+          className="text-3xl sm:text-xl lg:text-5xl font-semibold text-white mt-2"
           variants={fadeInUp}
         >
           <span className="gradient-text">CONNECT THE NODE,</span> CONNECT THE
