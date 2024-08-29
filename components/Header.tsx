@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation"; // Import usePathname
 import { dmSans } from "../styles/font";
+import Navbar from "./MobileNav";
 
 const Header = () => {
   const pathname = usePathname(); // Gunakan usePathname untuk mendapatkan path saat ini
@@ -124,6 +125,7 @@ const Header = () => {
           </a>
         </div>
       </nav>
+    <Navbar />
     </header>
   );
 };

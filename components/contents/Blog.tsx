@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -11,18 +11,18 @@ interface Post {
     desc: string;
     img: string;
     date: string;
-    href: string;
     content: string;
     author: string;
+    href: string;
 }
 
 const BlogPosts: React.FC = () => {
     const [posts, setPosts] = useState<Post[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-    const [limit, setLimit] = useState<number>(6); // Initial limit of 6 posts
+    const [limit, setLimit] = useState<number>(6);
 
-    const NEWS_API_URL = "https://newsapi.org/v2/everything?q=apple&from=2024-08-22&to=2024-08-22&sortBy=popularity&apiKey=fb312606d99b4b1f9c1d1a92176546fa";
+    const NEWS_API_URL = "https://be-cps-laboratory.vercel.app/apiv1/allBlogs";
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -38,17 +38,17 @@ const BlogPosts: React.FC = () => {
                 }
 
                 const data = response.data;
-
-                if (data.articles) {
-                    const fetchedPosts = data.articles.slice(0, limit).map((item: any, index: number) => ({
-                        id: index.toString(),
+                
+                if (data) {
+                    const fetchedPosts = data.slice(0, limit).map((item: any) => ({
+                        id: item.id,
                         title: item.title || 'No Title',
                         author: item.author || 'Unknown Author',
                         desc: item.description || 'No Description Available',
                         content: item.content || 'No Content Available',
-                        img: item.urlToImage || '/default-image.jpg',
-                        date: item.publishedAt || 'No Date',
-                        href: item.url || '#',
+                        img: item.image_0 || '/default-image.jpg',
+                        date: item.create_at || 'No Date',
+                        href: `/blog/${item.id}`,  // URL dinamis berdasarkan ID
                     }));
                     setPosts(fetchedPosts);
 
@@ -86,7 +86,7 @@ const BlogPosts: React.FC = () => {
                 <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {posts.map((item) => (
                         <li className="relative group cursor-pointer" key={item.id}>
-                            <Link href={item.href} target="_blank" rel="noopener noreferrer">
+                            <Link href={item.href} passHref>
                                 <div className="relative">
                                     <img
                                         src={item.img}
