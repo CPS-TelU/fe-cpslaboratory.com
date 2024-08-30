@@ -52,16 +52,18 @@ const Blog: React.FC = () => {
         const data = response.data;
 
         if (data) {
-          const fetchedPosts = data.slice(0, limit).map((item: any, index: number) => ({
-            id: index.toString(),
-            title: item.title || "No Title",
-            author: item.author || "Unknown Author",
-            desc: item.description || "No Description Available",
-            content: item.content || "No Content Available",
-            img: item.image_0 || "/default-image.jpg",
-            date: item.create_at || "No Date",
-            href: item.url || "#",
-          }));
+          const fetchedPosts = data
+            .slice(0, limit)
+            .map((item: any, index: number) => ({
+              id: index.toString(),
+              title: item.title || "No Title",
+              author: item.author || "Unknown Author",
+              desc: item.description || "No Description Available",
+              content: item.content || "No Content Available",
+              img: item.image_0 || "/default-image.jpg",
+              date: item.create_at || "No Date",
+              href: `/blog/${item.id}`,
+            }));
           setPosts(fetchedPosts);
 
           if (fetchedPosts.length === 0) {
@@ -98,7 +100,6 @@ const Blog: React.FC = () => {
       <h2 className="text-[50px] font-semibold gradient-text mb-8 text-left px-4 sm:px-8 lg:px-16">
         Blog
       </h2>
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 px-4 sm:px-8 lg:px-16 max-width-[1200px]">
         <motion.div
           ref={ref1}
@@ -107,28 +108,29 @@ const Blog: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="col-span-2 rounded-lg overflow-hidden cursor-pointer"
         >
-          <img
-            src={posts[0].img}
-            alt={posts[0].title}
-            width={800}
-            height={500}
-            className="object-cover w-full h-[400px] rounded-lg"
-          />
-          <div className="text-left p-4">
-            <span className="text-sm text-black opacity-90 mb-1">
-              {posts[0].date} | {posts[0].author}
-            </span>
-            <h3 className="text-[40px] sm:text-[40px] font-semibold text-black mb-2">
-              {posts[0].title}
-            </h3>
-            <p className="text-[18px] sm:text-[20px] text-gray-700">
-              {posts[0]?.desc && posts[0].desc.length > 100
-                ? `${posts[0].desc.substring(0, 255)}...`
-                : posts[0]?.desc}
-            </p>
-          </div>
+          <Link href={posts[0].href} passHref>
+            <img
+              src={posts[0].img}
+              alt={posts[0].title}
+              width={800}
+              height={500}
+              className="object-cover w-full h-[400px] rounded-lg"
+            />
+            <div className="text-left p-4">
+              <span className="text-sm text-black opacity-90 mb-1">
+              {new Date(posts[0].date).toLocaleDateString()} | {posts[0].author}
+              </span>
+              <h3 className="text-[40px] sm:text-[40px] font-semibold text-black mb-2">
+                {posts[0].title}
+              </h3>
+              <p className="text-[18px] sm:text-[20px] text-gray-700">
+                {posts[0]?.desc && posts[0].desc.length > 100
+                  ? `${posts[0].desc.substring(0, 255)}...`
+                  : posts[0]?.desc}
+              </p>
+            </div>
+          </Link>
         </motion.div>
-
         <motion.div
           ref={ref2}
           initial={{ opacity: 0, x: 100 }}
@@ -137,38 +139,39 @@ const Blog: React.FC = () => {
           className="grid grid-rows-3 gap-8"
         >
           {posts.slice(1, 4).map((post, index) => (
-            <div key={index} className="relative group">
-              <img
-                src={post.img}
-                alt={post.title}
-                width={400}
-                height={200}
-                className="object-cover w-full h-[200px] rounded-lg"
-              />
-              <div className="text-left absolute inset-0 flex flex-col justify-end p-4 rounded-lg bg-black bg-opacity-50 opacity-70 group-hover:opacity-100 transition-opacity">
-                <div className="justify-end transform transition-all duration-300 ease-in-out group-hover:translate-y-[-10px]">
-                  <div className="translate-y-[30px] transform transition-all duration-500 ease-in-out group-hover:translate-y-[-10px]">
-                    <span className="text-xs text-white opacity-90 mb-1">
-                      {post.date} | {post.author}
-                    </span>
-                    <h3 className="text-base font-semibold text-white translate-y-0">
-                      {post.title}
-                    </h3>
+            <Link href={post.href} passHref>
+              <div key={index} className="relative group">
+                <img
+                  src={post.img}
+                  alt={post.title}
+                  width={400}
+                  height={200}
+                  className="object-cover w-full h-[200px] rounded-lg"
+                />
+                <div className="text-left absolute inset-0 flex flex-col justify-end p-4 rounded-lg bg-black bg-opacity-50 opacity-70 group-hover:opacity-100 transition-opacity">
+                  <div className="justify-end transform transition-all duration-300 ease-in-out group-hover:translate-y-[-10px]">
+                    <div className="translate-y-[30px] transform transition-all duration-500 ease-in-out group-hover:translate-y-[-10px]">
+                      <span className="text-m text-white mb-1">
+                      {new Date(post.date).toLocaleDateString()} | {post.author}
+                      </span>
+                      <h3 className="text-base font-semibold text-white translate-y-0">
+                        {post.title}
+                      </h3>
+                    </div>
+                    {post.desc && (
+                      <p className="text-xs text-white mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                        {post.desc.length > 100
+                          ? `${post.desc.substring(0, 255)}...`
+                          : post.desc}
+                      </p>
+                    )}
                   </div>
-                  {post.desc && (
-                    <p className="text-xs text-white mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                      {post.desc.length > 100
-                        ? `${post.desc.substring(0, 255)}...`
-                        : post.desc}
-                    </p>
-                  )}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </motion.div>
       </div>
-
       <Link
         href="/blog"
         className="text-xl bg-red-600 text-white py-2 px-6 rounded-2xl mt-8 inline-block hover:bg-red-700 transition-colors duration-300"
@@ -179,4 +182,4 @@ const Blog: React.FC = () => {
   );
 };
 
-export  { Blog };
+export { Blog };
