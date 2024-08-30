@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { poppins } from "@/styles/font";
 import axios from "axios";
+import { SkeletonDetailBlog } from "@/components/ui/SkeletonCard";
+
 
 interface Post {
   id: string;
@@ -16,7 +18,7 @@ interface Post {
 }
 
 const DetailBlog: React.FC = () => {
-  const { slug } = useParams(); // Mengambil ID dari URL
+  const { slug } = useParams(); 
   const [post, setPost] = useState<Post | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -66,12 +68,16 @@ const DetailBlog: React.FC = () => {
     fetchPost();
   }, [slug]);
 
-  if (loading) return <p>Loading post...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <SkeletonDetailBlog />; 
+  if (error) return <p className="flex space-x-2 justify-center items-center h-screen">{error}</p>;
 
   if (!post) {
     return <div>Post not found</div>;
   }
+
+  
+    
+  
 
   return (
     <section className={` ${poppins.className}`} style={{ marginTop: "130px", color: "#333" }}>
@@ -84,17 +90,18 @@ const DetailBlog: React.FC = () => {
           <img
             src={post.img}
             alt={post.title}
-            width={1100}
+            width={1200}
             height={700}
             style={{ borderRadius: "8px" }}
           />
         </div>
-        <section>
+        <section className="max-w-[1300px] margin-auto ">
           <p>{post.desc}</p>
           <br />
           <p>{post.content}</p>
         </section>
       </article>
+
     </section>
   );
 };

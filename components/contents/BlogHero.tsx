@@ -12,20 +12,13 @@ const fadeInUpVariants = {
 };
 
 const BlogHero = () => {
-  const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <motion.section
+    <section
       className={`relative w-[350px] h-[200px] sm:h-[500px] md:w-[700px] md:h-[350px] lg:w-[1200px] lg:h-[600px] ${poppins.className}`}
-      initial="hidden"
-      animate="visible"
-      variants={fadeInUpVariants} // Apply the animation to the entire section
+      // Apply the animation to the entire section
     >
       <div className="absolute inset-0 z-10 bg-black opacity-50 rounded-2xl"></div>
-
-      {isLoading && (
-        <Skeleton className="absolute inset-0 w-full h-full rounded-2xl" />
-      )}
 
       <Image
         src="/blogh.jpg"
@@ -33,24 +26,24 @@ const BlogHero = () => {
         layout="fill"
         objectFit="cover"
         className="rounded-2xl"
-        onLoadingComplete={() => setIsLoading(false)}
+        
       />
 
       <div className="absolute bottom-0 left-0 z-20 flex flex-col items-start justify-start p-6 sm:p-8 lg:p-12">
-        <motion.p
+        <p
           className="text-white text-xl sm:text-4xl font-semibold"
-          variants={fadeInUpVariants}
+           
         >
           Blog
-        </motion.p>
-        <motion.h1
+        </p>
+        <h1
           className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mt-2"
-          variants={fadeInUpVariants}
+          
         >
           <span className="gradient-text">CYBER PHYSICAL SYSTEM LAB</span>
-        </motion.h1>
+        </h1>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
