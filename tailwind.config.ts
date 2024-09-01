@@ -60,7 +60,7 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-         scroll: {
+        scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
           },
@@ -84,7 +84,7 @@ const config: Config = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    addVariablesForColors
+    addVariablesForColors,
   ],
 };
 

@@ -75,7 +75,7 @@ export function AssistCardPracticum() {
   return (
     
       <section className={`mb-24 ${poppins.className}`}>
-        <ScrollingCards direction="left" speed="slow">
+       
         <div className="flex gap-4">
           {FlipDataPracticum.map((card, index) => (
             <FlipCard
@@ -95,7 +95,6 @@ export function AssistCardPracticum() {
             />
           ))}
         </div>
-        </ScrollingCards>
       </section>
     
   );

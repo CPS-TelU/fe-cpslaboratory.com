@@ -2,6 +2,8 @@ import { poppins } from "@/styles/font";
 import FlipCard from "../ui/FlipCard";
 import { AssistCardPracticum } from "./Asisstants/Practicum";
 import { AssistCardResearch } from "./Asisstants/Research";
+import ModalComponent from "./Asisstants/ShowAllAss";
+import { ScrollingCards } from "@/components/ui/scrolling";
 
 export function AssistCard() {
   return (
@@ -15,8 +17,16 @@ export function AssistCard() {
             <span className="text-gray-700 text-[40px] font-medium px-28">2024/2025</span>
             <div className="flex-grow border-t-4 border-gray-400 max-w-[400px]" />
         </div>
-          <AssistCardPracticum/>
-          <AssistCardResearch/>
+        <ScrollingCards direction="left" speed="slow">
+            <AssistCardPracticum/>
+        </ScrollingCards>
+          <ScrollingCards direction="right" speed="slow" className="relative transform translate-x-1/4">
+            <AssistCardResearch/>
+          </ScrollingCards>
+          
+          <div className="flex justify-center">
+            <ModalComponent/>
+          </div>
       </section>
     
   );
