@@ -24,8 +24,9 @@ const DetailBlog: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const BLOG_API_URL = `https://be-cps-laboratory.vercel.app/apiv1/blogs/${slug}`;
-  const RELATED_POSTS_API_URL = "https://be-cps-laboratory.vercel.app/apiv1/allBlogs";
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const ALLBLOGS_API_URL = `${API_BASE_URL}`;
+  const BLOG_API_URL = `${API_BASE_URL}/${slug}`;
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -69,7 +70,7 @@ const DetailBlog: React.FC = () => {
 
     const fetchRelatedPosts = async () => {
       try {
-        const response = await axios.get(RELATED_POSTS_API_URL, {
+        const response = await axios.get(ALLBLOGS_API_URL, {
           headers: {
             Accept: "application/json",
           },

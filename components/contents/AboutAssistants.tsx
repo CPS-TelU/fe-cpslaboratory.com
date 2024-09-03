@@ -9,7 +9,7 @@ export function AssistCard() {
   return (
     
       <section className={`py-12 ${poppins.className}`}>
-        <h2 className="text-[50px] font-semibold text-[#BA2025] mb-8 text-center px-4 sm:px-8 lg:px-16">
+        <h2 className="gradient-text-about text-[50px] font-semibold mb-8 text-center px-4 sm:px-8 lg:px-16">
           Our Assistants  
         </h2>
         <div className="relative flex items-center justify-center mb-12 mt-[-45px]">

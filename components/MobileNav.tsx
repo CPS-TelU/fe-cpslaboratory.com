@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { dmSans } from "@/styles/font";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +11,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 lg:block lg:hidden max-h-screen overflow-y-auto">
+    <nav
+      className={`${dmSans.className} bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 lg:block lg:hidden max-h-screen overflow-y-auto`}
+    >
       <div className="flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           href="/"
@@ -26,12 +29,14 @@ const Navbar = () => {
           />
         </Link>
         <div className="flex space-x-3 rtl:space-x-reverse">
-          <button
-            type="button"
-            className="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center"
+        <a
+            href="https://lms.cpslaboratory.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-red-600 text-white text-m px-4 py-2 rounded-full hover:bg-red-700"
           >
-            E-Learning
-          </button>
+            e-Learning
+          </a>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
