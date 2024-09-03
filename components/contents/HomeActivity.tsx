@@ -26,10 +26,11 @@ const Activity = () => {
   ];
 
   return (
-    
     <section className={`py-12 text-center ${poppins.className}`}>
-       <h2 className="text-3xl font-semibold gradient-text mb-8 px-4 sm:px-8 lg:px-16">Activity</h2>
-      <div className="h-[20rem] rounded-md flex flex-col antialiased dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <h2 className="text-3xl font-semibold gradient-text mb-8 px-4 sm:px-8 lg:px-16">
+        Activity
+      </h2>
+      <div className="h-[15rem] sm:h-[20rem] rounded-md flex flex-col antialiased dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards items={items} direction="left" speed="slow" />
       </div>
     </section>

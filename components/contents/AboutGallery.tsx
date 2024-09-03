@@ -1,10 +1,14 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { LayoutGrid } from "../ui/layout-grid";
+import { poppins } from "@/styles/font";
  
 export function Gallery() {
   return (
-    <div className="h-screen py-20 w-full">
+    <div  className={`${poppins.className} h-screen py-20 w-full`}>
+      <h2 className="gradient-text-about text-[50px] font-semibold mb-8 text-center px-4 sm:px-8 lg:px-16">
+          Our Gallery
+        </h2>
       <LayoutGrid cards={cards} />
     </div>
   );
