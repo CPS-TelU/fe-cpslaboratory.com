@@ -74,26 +74,25 @@ export function AssistCardResearch() {
   ];
 
   return (
-        <ScrollingCards direction="left" speed="slow" >
-        <div className="flex gap-4">
-          {FlipDataResearch.map((card, index) => (
-            <FlipCard
-              key={index}
-              image={card.image}
-              kode={card.kode}
-              name={card.name}
-              university={card.university}
-              major={card.major}
-              rotate={card.rotate}
-              division="Research Division"
-              role={card.role}
-              instagram={card.instagram}
-              linkedIn={card.linkedIn}
-              gitHub={card.gitHub}
-              className=""
-            />
-          ))}
-        </div>
-        </ScrollingCards>
+    
+    <div className="flex gap-4 ">
+      {FlipDataResearch.map((card, index) => (
+        <FlipCard
+          key={index}
+          image={card.image}
+          kode={card.kode}
+          name={card.name}
+          university={card.university}
+          major={card.major}
+          rotate={card.rotate}
+          division="Research Division"
+          role={card.role}
+          instagram={card.instagram}
+          linkedIn={card.linkedIn}
+          gitHub={card.gitHub}
+          className=""
+        />
+      ))}
+    </div>
   );
 }
