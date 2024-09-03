@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import { poppins } from "@/styles/font";
+import { Skeleton } from "@/components/ui/skeleton"; 
+import { SkeletonCard } from '../ui/SkeletonCard';
 
 interface Post {
     id: string;
@@ -40,7 +42,10 @@ const BlogPosts: React.FC = () => {
                 const data = response.data;
                 
                 if (data) {
-                    const fetchedPosts = data.slice(0, limit).map((item: any) => ({
+                    // Sort posts by date (newest first)
+                    const sortedPosts = data.sort((a: any, b: any) => new Date(b.create_at).getTime() - new Date(a.create_at).getTime());
+
+                    const fetchedPosts = sortedPosts.slice(0, limit).map((item: any) => ({
                         id: item.id,
                         title: item.title || 'No Title',
                         author: item.author || 'Unknown Author',
@@ -48,13 +53,18 @@ const BlogPosts: React.FC = () => {
                         content: item.content || 'No Content Available',
                         img: item.image_0 || '/default-image.jpg',
                         date: item.create_at || 'No Date',
-                        href: `/blog/${item.id}`,  // URL dinamis berdasarkan ID
+                        href: `/blog/${item.id}`,  // Dynamic URL based on ID
                     }));
-                    setPosts(fetchedPosts);
 
-                    if (fetchedPosts.length === 0) {
-                        setError("No news articles available.");
-                    }
+                    setTimeout(() => {
+                        setPosts(fetchedPosts);
+
+                        if (fetchedPosts.length === 0) {
+                            setError("No news articles available.");
+                        }
+                        setLoading(false);
+                    }, 500);
+
                 } else {
                     setError("No data found");
                 }
@@ -65,7 +75,6 @@ const BlogPosts: React.FC = () => {
                     setError("An unknown error occurred.");
                 }
                 console.error('Error fetching posts from API:', err);
-            } finally {
                 setLoading(false);
             }
         };
@@ -77,8 +86,23 @@ const BlogPosts: React.FC = () => {
         setLimit((prevLimit) => prevLimit + 6);
     };
 
-    if (loading) return <p>Loading posts...</p>;
-    if (error) return <p>{error}</p>;
+    if (loading) {
+        return (
+            <section className={`py-12 ${poppins.className}`}>
+                <div className="w-full px-4 sm:px-8 lg:px-16 mx-auto max-w-[1330px]">
+                    <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {Array(limit).fill(0).map((_, index) => (
+                            <li key={index} className="relative">
+                                <SkeletonCard />
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </section>
+        );
+    }
+
+    if (error) return <p className='flex space-x-2 justify-center items-center h-screen'>{error}</p>;
 
     return (
         <section className={`py-12 ${poppins.className}`}>
