@@ -107,14 +107,18 @@ export const InfiniteMovingCards = ({
               objectFit="cover"
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 p-6 flex flex-col justify-end">
-              <h3 className="text-2xl font-bold text-white mb-2 text-left">{item.title}</h3>
-              <div className="flex justify-between items-starts">
-                <p className="text-sm text-white mb-4 text-left w-[400px]">{item.description}</p>
+            <div className="absolute inset-0 bg-black bg-opacity-50 p-4 sm:p-6 flex flex-col justify-end">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 text-left">
+                {item.title}
+              </h3>
+              <div className="flex justify-between items-start">
+                <p className="text-xs sm:text-sm md:text-base text-white mb-4 text-left max-w-[60%] sm:max-w-[70%]">
+                  {item.description}
+                </p>
                 <Link
                   href={item.link}
                   target="_blank"
-                  className="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 transition inline-block"
+                  className="bg-red-600 text-white px-3 py-2 sm:px-4 sm:py-2 text-sm rounded-full hover:bg-red-700 transition inline-block"
                 >
                   Find More
                 </Link>

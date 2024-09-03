@@ -24,12 +24,13 @@ const BlogPosts: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [limit, setLimit] = useState<number>(6);
 
-    const NEWS_API_URL = "https://be-cps-laboratory.vercel.app/apiv1/allBlogs";
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+    const ALLBLOGS_API_URL = `${API_BASE_URL}`;
 
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await axios.get(NEWS_API_URL, {
+                const response = await axios.get(ALLBLOGS_API_URL, {
                     headers: {
                         'Accept': 'application/json',
                     },

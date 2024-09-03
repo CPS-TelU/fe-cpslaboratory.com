@@ -78,7 +78,7 @@ const ContactForm: React.FC = () => {
   return (
     <div className={`my-12 px-4 ${poppins.className}`}>
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] bg-gradient-to-r from-[#BA2025] to-[#FFDCDC] bg-clip-text text-transparent font-extrabold text-center">
-        We're all ears!
+        We&apos;re all ears!
       </h1>
       <h2 className="text-lg sm:text-xl md:text-2xl lg:text-[20px] text-[#575757] text-center mt-4">
         Share your ideas, critiques, and suggestions with us
@@ -92,7 +92,7 @@ const ContactForm: React.FC = () => {
                 <input
                   type="text"
                   name="name"
-                  placeholder="Bill Gates"
+                  placeholder="Juned"
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full rounded-md py-2.5 px-4 border text-sm outline-black-500"
@@ -103,7 +103,7 @@ const ContactForm: React.FC = () => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="billybitty@gmail.com"
+                  placeholder="juned@gmail.com"
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full rounded-md py-2.5 px-4 border text-sm outline-black-500"
@@ -114,7 +114,7 @@ const ContactForm: React.FC = () => {
                 <input
                   type="text"
                   name="phone"
-                  placeholder="0812xxxxxxxx"
+                  placeholder="08123456789"
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full rounded-md py-2.5 px-4 border text-sm outline-black-500"
