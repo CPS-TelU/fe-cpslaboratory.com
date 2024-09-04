@@ -1,39 +1,61 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { dmSans } from "@/styles/font";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      closeMenu();
+    }
+  };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   return (
     <nav
+      ref={menuRef}
       className={`${dmSans.className} bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 lg:block lg:hidden max-h-screen overflow-y-auto`}
     >
       <div className="flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link
-          href="/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
-        >
+        <Link href="/" onClick={closeMenu} className="flex items-center space-x-3 rtl:space-x-reverse">
           <Image
             src="/logocps.png"
-            className="h-8"
+            className="h-8 left-6"
             alt="Logo"
-            width={110} // Set the desired width
-            height={50} // Set the desired height
-            style={{ objectFit: "contain" }} // Ensures the image fits within the given dimensions while maintaining its aspect ratio
+            width={110}
+            height={50}
+            style={{ objectFit: "contain" }}
           />
         </Link>
         <div className="flex space-x-3 rtl:space-x-reverse">
-        <a
+          <a
             href="https://lms.cpslaboratory.com"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-red-600 text-white text-m px-4 py-2 rounded-full hover:bg-red-700"
+            onClick={closeMenu} // Close the menu when clicking this external link
           >
             e-Learning
           </a>
@@ -71,46 +93,34 @@ const Navbar = () => {
         >
           <ul className="flex flex-col p-4 sm:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 sm:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 sm:bg-white dark:bg-gray-800 sm:dark:bg-gray-900 dark:border-gray-700">
             <li>
-              <Link
-                href="/"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:hover:text-blue-700 sm:p-0 sm:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700"
-                aria-current="page"
-              >
+              <Link href="/" onClick={closeMenu} className="block py-2 px-3 sm:ml-8 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">
                 Home
               </Link>
             </li>
             <li>
-              <Link
-                href="/about"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:hover:text-blue-700 sm:p-0 sm:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700"
-              >
+              <Link href="/about" onClick={closeMenu} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700">
                 About Us
               </Link>
             </li>
             <li>
-              <Link
-                href="/blog"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:hover:text-blue-700 sm:p-0 sm:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700"
-              >
+              <Link href="/blog" onClick={closeMenu} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700">
                 Blog
               </Link>
             </li>
             <li>
-              <Link
-                href="/contact"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:hover:text-blue-700 sm:p-0 sm:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700"
-              >
+              <Link href="/contact" onClick={closeMenu} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700">
                 Contact
               </Link>
             </li>
             <li className="relative group">
-              <span className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:hover:text-blue-700 sm:p-0 sm:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer">
+              <span className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer">
                 Activity
               </span>
-              <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute left-28 bottom-[-5px] mt-2 ml-10 w-42 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Link
                   href="https://cyberrecruitment.cpsrg.org/"
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  onClick={closeMenu} // Close the menu when clicking this link
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-700"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -118,7 +128,8 @@ const Navbar = () => {
                 </Link>
                 <Link
                   href="https://cyberrecruitment.cpsrg.org/"
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  onClick={closeMenu} // Close the menu when clicking this link
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-700"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -126,7 +137,8 @@ const Navbar = () => {
                 </Link>
                 <Link
                   href="https://cyberrecruitment.cpsrg.org/"
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  onClick={closeMenu} // Close the menu when clicking this link
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-700"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

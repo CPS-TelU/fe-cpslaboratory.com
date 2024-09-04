@@ -31,7 +31,7 @@ const AboutHero: React.FC = () => {
         variants={zoomIn} // Applying the zoomIn animation
       >
         <motion.h1
-          className="text-[32px] sm:text-[40px] md:text-[45px] lg:text-[50px] font-semibold gradient-text-about"
+          className="text-[12vw] sm:text-[12px] md:text-[10vw] lg:text-[5vw] font-semibold gradient-text-about"
           variants={zoomIn} // Applying the zoomIn animation
         >
           Hi Cytizen!

@@ -23,13 +23,12 @@ const Blog: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [limit, setLimit] = useState<number>(6); // Initial limit of 6 posts
 
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const ALLBLOGS_API_URL = `${API_BASE_URL}`;
+  const NEWS_API_URL = "https://be-cps-laboratory.vercel.app/api/Blogs";
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get(ALLBLOGS_API_URL, {
+        const response = await axios.get(NEWS_API_URL, {
           headers: {
             Accept: "application/json",
           },
@@ -53,7 +52,7 @@ const Blog: React.FC = () => {
               date: item.create_at || "No Date",
               href: `/blog/${item.id}`,
             }))
-            .sort((a: Post, b: Post) => new Date(b.date).getTime() - new Date(a.date).getTime()) // Sort by date
+            .sort((a : Post, b : Post) => new Date(b.date).getTime() - new Date(a.date).getTime()) // Sort by date
             .slice(0, limit);
 
           setPosts(fetchedPosts);
@@ -89,10 +88,10 @@ const Blog: React.FC = () => {
 
   return (
     <section className={`py-12 text-center ${poppins.className}`}>
-      <h2 className="text-3xl sm:text-4xl font-semibold gradient-text mb-8 text-left px-4 sm:px-8 lg:px-16">
+      <h2 className="text-[8vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] font-semibold gradient-text mb-8 text-left px-4 sm:px-8 lg:px-32">
         Blog
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 px-4 sm:px-8 lg:px-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 px-4 sm:px-8 lg:px-32">
         <div className="col-span-2 rounded-lg overflow-hidden cursor-pointer">
           <Link href={posts[0].href} passHref>
             <img
@@ -100,46 +99,48 @@ const Blog: React.FC = () => {
               alt={posts[0].title}
               width={800}
               height={500}
-              className="object-cover w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-lg"
+              className="object-cover w-full sm:w-full md:w-[100vw] lg:w-[50vw] h-[50vw] sm:h-[40vw] md:h-[30vw] lg:h-[25vw] rounded-lg"
             />
-            <div className="text-left p-4">
+            <div className="text-left p-4 ">
               <span className="text-sm text-black opacity-90 mb-1">
                 {new Date(posts[0].date).toLocaleDateString()} | {posts[0].author}
               </span>
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-black mb-2">
+              <h3 className="text-[6vw] sm:text-[4vw] md:text-[3vw] lg:text-[2vw] font-semibold text-black mb-2">
                 {posts[0].title}
               </h3>
-              <p className="text-sm sm:text-base md:text-lg text-gray-700">
-                {posts[0]?.desc && posts[0].desc.length > 255
-                  ? `${posts[0].desc.substring(0, 255)}...`
+              <p className="lg:w-[50vw]  text-[4vw] sm:text-[3vw] md:text-[2vw] lg:text-[1.5vw] text-gray-700">
+                {posts[0]?.desc && posts[0].desc.length > 100
+                  ? `${posts[0].desc.substring(0, 100)}...`
                   : posts[0]?.desc}
               </p>
             </div>
           </Link>
         </div>
-        <div className="grid grid-rows-3 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-rows-3 gap-8 justify-center w-[83vw] sm:w-full md:w-[100vw] lg:w-[32vw]">
           {posts.slice(1, 4).map((post, index) => (
-            <Link href={post.href} passHref key={index}>
-              <div className="relative group">
+            <Link href={post.href} passHref>
+              <div key={index} className="relative group ">
                 <img
                   src={post.img}
                   alt={post.title}
                   width={400}
                   height={200}
-                  className="object-cover w-full h-[150px] sm:h-[175px] md:h-[200px] rounded-lg"
+                  className="object-cover w-full h-[200px] rounded-lg"
                 />
                 <div className="text-left absolute inset-0 flex flex-col justify-end p-4 rounded-lg bg-black bg-opacity-50 opacity-70 group-hover:opacity-100 transition-opacity">
-                  <div className="transform transition-all duration-300 ease-in-out group-hover:translate-y-[-10px]">
-                    <span className="text-xs sm:text-sm text-white mb-1">
-                      {new Date(post.date).toLocaleDateString()} | {post.author}
-                    </span>
-                    <h3 className="text-sm sm:text-base font-semibold text-white">
-                      {post.title}
-                    </h3>
+                  <div className="justify-end transform transition-all duration-300 ease-in-out group-hover:translate-y-[-10px]">
+                    <div className="translate-y-[30px] transform transition-all duration-500 ease-in-out group-hover:translate-y-[-10px]">
+                      <span className="text-m text-white mb-1">
+                        {new Date(post.date).toLocaleDateString()} | {post.author}
+                      </span>
+                      <h3 className="text-base font-semibold text-white translate-y-0">
+                        {post.title}
+                      </h3>
+                    </div>
                     {post.desc && (
-                      <p className="hidden sm:block text-xs text-white mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                      <p className="text-xs text-white mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
                         {post.desc.length > 100
-                          ? `${post.desc.substring(0, 100)}...`
+                          ? `${post.desc.substring(0, 50)}...`
                           : post.desc}
                       </p>
                     )}
@@ -152,12 +153,12 @@ const Blog: React.FC = () => {
       </div>
       <Link
         href="/blog"
-        className="text-lg sm:text-xl bg-red-600 text-white py-2 px-6 rounded-2xl mt-8 inline-block hover:bg-red-700 transition-colors duration-300"
+        className="text-xl bg-red-600 text-white py-2 px-6 rounded-2xl mt-8 inline-block hover:bg-red-700 transition-colors duration-300"
       >
         More
       </Link>
     </section>
-  );
+  );  
 };
 
 export { Blog };
