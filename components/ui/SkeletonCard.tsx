@@ -5,13 +5,13 @@ export function SkeletonCard() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     <div className="flex flex-col space-y-3">
-      <Skeleton className="h-[300px] w-[380px] rounded-xl bg-gray-200" />
+      <Skeleton className="h-[300px] lg:w-[400px] w-[320px] rounded-xl bg-gray-200" />
       <div className="space-y-2">
       <div className="absolute inset-0 flex flex-col justify-end p-4 rounded-lg ">
         <div className="justify-end">
             <div className="absolute bottom-0 left-0 transform transition-all">
             <Skeleton className="h-4 w-[200px] bg-gray-300 absolute bottom-16 left-6  " />
-            <Skeleton className="h-4 w-[300px] bg-gray-300 absolute bottom-8 left-6" />
+            <Skeleton className="h-4 w-[250px] lg:w-[300px] bg-gray-300 absolute bottom-8 left-6" />
             </div>
             </div>
         </div>
