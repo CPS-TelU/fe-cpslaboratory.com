@@ -87,8 +87,8 @@ const Blog: React.FC = () => {
   }
 
   return (
-    <section className={`py-12 text-center ${poppins.className}`}>
-      <h2 className="text-[8vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] font-semibold gradient-text mb-8 text-left px-4 sm:px-8 lg:px-32">
+    <section className={`py-0 top-[0px] text-center ${poppins.className}`}>
+      <h2 className="text-center lg:text-left md:text-center sm:text-center text-[12vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] font-semibold text-red-600 mb-8 text-left px-4 sm:px-8 lg:px-32">
         Blog
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 px-4 sm:px-8 lg:px-32">
@@ -153,7 +153,7 @@ const Blog: React.FC = () => {
       </div>
       <Link
         href="/blog"
-        className="text-xl bg-red-600 text-white py-2 px-6 rounded-2xl mt-8 inline-block hover:bg-red-700 transition-colors duration-300"
+        className="text-xl bg-red-600 text-white py-2 px-6 rounded-2xl mt-4 inline-block hover:bg-red-700 transition-colors duration-300"
       >
         More
       </Link>

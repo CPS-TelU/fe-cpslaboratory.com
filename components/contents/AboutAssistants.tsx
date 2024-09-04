@@ -8,7 +8,7 @@ import { ScrollingCards } from "@/components/ui/scrolling";
 export function AssistCard() {
   return (
     
-      <section className={`py-12 mt-[30px] lg:mt-[100px] ${poppins.className}`}>
+      <section className={`py-8 mt-[5px] lg:mt-[100px] ${poppins.className}`}>
         <h2 className="gradient-text-about text-[10vw] lg:text-[4vw] md:text-[9vw] sm:text-[40px] font-semibold mb-8 text-center px-4 sm:px-8 lg:px-16">
           Our Assistants  
         </h2>
