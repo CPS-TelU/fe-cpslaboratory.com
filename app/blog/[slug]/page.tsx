@@ -134,14 +134,7 @@ const DetailBlog: React.FC = () => {
         <header>
           <h1 className="text-3xl font-bold">{post.title}</h1>
           <p className="flex items-center mt-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 mr-2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            </svg>
-            {new Date(post.date).toLocaleDateString()} 
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 ml-12 ">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
-            </svg>
-            {post.author}
+            {new Date(post.date).toLocaleDateString()} | {post.author}
           </p>
         </header>
         <div style={{ margin: "20px 0" }}>
@@ -164,7 +157,7 @@ const DetailBlog: React.FC = () => {
 
       {/* Section for Related Posts */}
       <section style={{ maxWidth: "1200px", margin: "50px auto" }}>
-        <h2 className="text-4xl text-red-600 font-semibold mb-6">Related Posts</h2>
+        <h2 className="text-4xl text-red-600 font-semibold mb-6 md:ml-6 ml-6 ">Related Posts</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {relatedPosts.map((relatedPost) => (
             <div key={relatedPost.id} className="p-4 border rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer ">
@@ -179,7 +172,8 @@ const DetailBlog: React.FC = () => {
               <p className="text-sm text-gray-500 mb-2">
                 {new Date(relatedPost.date).toLocaleDateString()} | {relatedPost.author}
               </p>
-              <p className="text-sm text-gray-700">{relatedPost.desc}</p>
+              <p className="text-sm text-gray-700">
+                {relatedPost.desc.length > 100 ? `${relatedPost.desc.slice(0, 75)}...` : relatedPost.desc}</p>
               </Link>
             </div>
           ))}
