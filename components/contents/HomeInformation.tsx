@@ -30,91 +30,97 @@ const Information = () => {
   });
 
   return (
-    <section className={`py-12 text-center ${poppins.className}`} ref={sectionRef}>
+    <section className={`py-20 text-center ${poppins.className}`} ref={sectionRef}>
       <motion.h2
-        className="text-4xl sm:text-5xl font-semibold gradient-text mb-4"
+        className="text-[7vw] md:text-[5vw] lg:text-[4vw] sm:text-[5vw] font-semibold gradient-text mb-4"
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        variants={fadeInUp} // Use fadeInUp for heading
+        variants={fadeInUp}
       >
         What We Do
       </motion.h2>
       <motion.p
-        className="text-lg sm:text-2xl text-gray-700 mb-2"
+        className="text-[4vw] md:text-[3vw] lg:text-[1.7vw] text-gray-700 mb-2"
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        variants={fadeInUp} // Use fadeInUp for subheading
+        variants={fadeInUp}
       >
         In Cyber Physical System Laboratory
       </motion.p>
       <motion.p
-        className="text-lg sm:text-2xl text-gray-700 mb-10"
+        className="text-[4vw] md:text-[3vw] lg:text-[1.7vw] text-gray-700 mb-10"
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        variants={fadeInUp} // Use fadeInUp for subheading
+        variants={fadeInUp}
       >
-        we focus on many things such as:
+        We focus on many things such as:
       </motion.p>
 
-      <div className="mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-8">
+      <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8 px-3">
         <motion.div
-          className="bg-white rounded-lg shadow-lg overflow-hidden"
+          className="bg-white  w-full sm:w-[30vw] md:w-[28vw] lg:w-[26vw] h-[40vw] sm:h-[22vw] md:h-[30vw] lg:h-[20vw] rounded-lg shadow-lg overflow-hidden"
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          variants={fadeInLeft} // Use fadeInLeft for Network
+          variants={fadeInLeft}
         >
-          <Image
-            src="/network.jpg"
-            alt="Network"
-            width={400}
-            height={300}
-            className="object-cover w-full h-40 sm:h-48"
-          />
-          <div className="p-4">
-            <h3 className="text-xl sm:text-2xl font-semibold gradient-text">Network</h3>
+          <div className="relative w-full sm:w-[30vw] md:w-[28vw] lg:w-[28vw] h-[30vw] sm:h-[24vw] md:h-[22vw] lg:h-[15vw]">
+            <Image
+              src="/network.jpg"
+              alt="Network"
+              layout="fill"
+              objectFit="cover"
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <div className="p-2">
+            <h3 className="text-center text-[4vw] md:text-[3vw] lg:text-[2vw] font-semibold gradient-text">Network</h3>
           </div>
         </motion.div>
 
         <motion.div
-          className="bg-white rounded-lg shadow-lg overflow-hidden"
+          className="bg-white  w-full sm:w-[30vw] md:w-[28vw] lg:w-[26vw] h-[40vw] sm:h-[22vw] md:h-[30vw] lg:h-[20vw] rounded-lg shadow-lg overflow-hidden"
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          variants={fadeInUp} // Use fadeInUp for Software Dev
+          variants={fadeInUp}
         >
-          <Image
-            src="/softdev.jpg"
-            alt="Software Development"
-            width={400}
-            height={300}
-            className="object-cover w-full h-40 sm:h-48"
-          />
-          <div className="p-4">
-            <h3 className="text-xl sm:text-2xl font-semibold gradient-text">Software Dev</h3>
+          <div className="relative w-full sm:w-[30vw] md:w-[28vw] lg:w-[30vw] h-[30vw] sm:h-[24vw] md:h-[22vw] lg:h-[15vw]">
+            <Image
+              src="/softdev.jpg"
+              alt="Software Development"
+              layout="fill"
+              objectFit="cover"
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <div className="p-2 sm:p-3 ">
+            <h3 className="text-center text-[4vw] md:text-[3vw] lg:text-[2vw] font-semibold gradient-text">Software Dev</h3>
           </div>
         </motion.div>
 
         <motion.div
-          className="bg-white rounded-lg shadow-lg overflow-hidden"
+          className="bg-white  w-full sm:w-[30vw] md:w-[28vw] lg:w-[26vw] h-[40vw] sm:h-[22vw] md:h-[30vw] lg:h-[20vw] rounded-lg shadow-lg overflow-hidden"
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          variants={fadeInRight} // Use fadeInRight for IOT
+          variants={fadeInRight}
         >
-          <Image
-            src="/iot.jpg"
-            alt="IOT"
-            width={400}
-            height={300}
-            className="object-cover w-full h-40 sm:h-48"
-          />
-          <div className="p-4">
-            <h3 className="text-xl sm:text-2xl font-semibold gradient-text">IOT</h3>
+          <div className="relative w-full sm:w-[30vw] md:w-[28vw] lg:w-[30vw] h-[30vw] sm:h-[24vw] md:h-[22vw] lg:h-[15vw]">
+            <Image
+              src="/iot.jpg"
+              alt="IOT"
+              layout="fill"
+              objectFit="cover"
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <div className="p-2">
+            <h3 className="text-center text-[4vw] md:text-[3vw] lg:text-[2vw] font-semibold gradient-text">IOT</h3>
           </div>
         </motion.div>
       </div>
 
       <Link
         href="/about"
-        className="text-lg sm:text-xl bg-red-600 text-white py-2 px-6 rounded-2xl mt-8 inline-block hover:bg-red-700 transition-colors duration-300"
+        className="text-[5vw] sm:text-[4vw] md:text-[3vw] lg:text-[2vw]  bg-red-600 text-white py-2 px-6 rounded-2xl mt-8 inline-block hover:bg-red-700 transition-colors duration-300"
       >
         More
       </Link>

@@ -131,7 +131,7 @@ const BlogPosts: React.FC = () => {
                                                 </h3>
                                             </div>
                                             <p className="text-sm text-white mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                                                {item.desc.length > 100 ? `${item.desc.substring(0, 255)}...` : item.desc}
+                                                {item.desc.length > 100 ? `${item.desc.substring(0, 100)}...` : item.desc}
                                             </p>
                                         </div>
                                     </div>

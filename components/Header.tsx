@@ -1,5 +1,5 @@
 "use client"; // Pastikan ini ada di bagian atas file
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation"; // Import usePathname
@@ -8,13 +8,35 @@ import Navbar from "./MobileNav";
 
 const Header = () => {
   const pathname = usePathname(); // Gunakan usePathname untuk mendapatkan path saat ini
+  const [isActivityOpen, setIsActivityOpen] = useState(false); // State to manage dropdown visibility
+  const dropdownRef = useRef<HTMLDivElement>(null); // Ref to detect clicks outside
 
-  const handleNavigationClick = (href: string, e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleNavigationClick = (
+    href: string,
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
     if (pathname === href) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
+
+  const toggleActivityDropdown = () => {
+    setIsActivityOpen(!isActivityOpen);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsActivityOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className={`${dmSans.className} z-[99999] fixed top-0 w-full`}>
@@ -25,7 +47,11 @@ const Header = () => {
         <div className="flex items-center gap-8">
           {/* Logo and left navigation */}
           <div className="flex items-center gap-2">
-            <Link href="/" className="flex items-center gap-2" onClick={(e) => handleNavigationClick("/", e)}>
+            <Link
+              href="/"
+              className="flex items-center gap-2"
+              onClick={(e) => handleNavigationClick("/", e)}
+            >
               <Image src="/logocps.png" alt="logo" width={130} height={50} />
             </Link>
           </div>
@@ -64,42 +90,45 @@ const Header = () => {
             >
               Blog
             </Link>
-            <div className="relative group">
+            <div className="relative" ref={dropdownRef}>
               <span
-                className={`font-medium ${
+                className={`font-medium cursor-pointer ${
                   pathname.startsWith("/activity")
                     ? "text-red-600"
                     : "text-gray-700 hover:text-red-600"
-                } cursor-pointer`}
+                }`}
+                onClick={toggleActivityDropdown} // Toggle dropdown on click
               >
                 Activity
               </span>
-              <div className="absolute left-0 mt-6 w-40 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Link
-                  href="https://cyberrecruitment.cpsrg.org/" 
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Open Laboratory
-                </Link>
-                <Link
-                  href="https://cyberrecruitment.cpsrg.org/"
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  CyberAcademy
-                </Link>
-                <Link
-                  href="https://cyberrecruitment.cpsrg.org/"
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  CyberRecruitment
-                </Link>
-              </div>
+              {isActivityOpen && ( // Conditionally render dropdown
+                <div className="absolute left-0 mt-6 w-40 bg-white shadow-lg rounded-md">
+                  <Link
+                    href="https://cyberrecruitment.cpsrg.org/"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Open Laboratory
+                  </Link>
+                  <Link
+                    href="https://cyberrecruitment.cpsrg.org/"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    CyberAcademy
+                  </Link>
+                  <Link
+                    href="https://cyberrecruitment.cpsrg.org/"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    CyberRecruitment
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -125,7 +154,7 @@ const Header = () => {
           </a>
         </div>
       </nav>
-    <Navbar />
+      <Navbar />
     </header>
   );
 };

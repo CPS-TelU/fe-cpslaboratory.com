@@ -6,7 +6,7 @@ import { poppins } from "@/styles/font";
 export function Gallery() {
   return (
     <div  className={`${poppins.className} h-screen py-20 w-full`}>
-      <h2 className="gradient-text-about text-[50px] font-semibold mb-8 text-center px-4 sm:px-8 lg:px-16">
+      <h2 className="gradient-text-about text-[10vw] lg:text-[5vw] md:text-[9vw] sm:text-[40px] font-semibold  text-center px-4 sm:px-8 lg:px-16">
           Our Gallery
         </h2>
       <LayoutGrid cards={cards} />
@@ -137,49 +137,49 @@ const cards = [
   {
     id: 1,
     content: <SkeletonOne />,
-    className: "md:col-span-1  ",
+    className: "col-span-3 lg:col-span-1 md:col-span-5 sm:col-span-1 ",
     thumbnail:"/gallery1.png",
   },
   {
     id: 2,
     content: <SkeletonTwo />,
-    className: "col-span-2",
+    className: "col-span-1 lg:col-span-2 md:col-span-3 sm:col-span-1",
     thumbnail: "/gallery2.png",
   },
   {
     id: 3,
     content: <SkeletonThree />,
-    className: "col-span-1",
+    className: "col-span-2 lg:col-span-1 md:col-span-3 sm:col-span-1",
     thumbnail:"/gallery3.png",
   },
   {
     id: 4,
     content: <SkeletonFour />,
-    className: "md:col-span-2",
+    className: "col-span-3 md:col-span-5 sm:col-span-1 lg:col-span-2",
     thumbnail:"/gallery4.png",
   },
   {
     id: 5,
     content: <SkeletonFive />,
-    className: "col-span-2",
+    className: "col-span-2 lg:col-span-2 md:col-span-5 sm:col-span-1",
     thumbnail:"/heroimage.jpg",
   },
   {
     id: 6,
     content: <SkeletonSix />,
-    className: "md:col-span-1",
+    className: "col-span-1 lg:col-span-1 md:col-span-3 sm:col-span-1",
     thumbnail:"/probox-logo.png",
   },
   {
     id: 7,
     content: <SkeletonSeven />,
-    className: "md:col-span-2",
+    className: "col-span-1 lg:col-span-2 md:col-span-3 sm:col-span-1",
     thumbnail:"/gallery5.png",
   },
   {
     id: 8,
     content: <SkeletonEight />,
-    className: "col-span-1",
+    className: "col-span-2 lg:col-span-1 md:col-span-5 sm:col-span-1",
     thumbnail:"/ion.png",
   },
 
