@@ -32,7 +32,7 @@ const Information = () => {
   return (
     <section className={`py-20 text-center ${poppins.className}`} ref={sectionRef}>
       <motion.h2
-        className="text-[7vw] md:text-[5vw] lg:text-[4vw] sm:text-[5vw] font-semibold gradient-text mb-4"
+        className="text-[7vw] md:text-[5vw] lg:text-[3vw] sm:text-[5vw] font-semibold gradient-text mb-4"
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={fadeInUp}
@@ -40,7 +40,7 @@ const Information = () => {
         What We Do
       </motion.h2>
       <motion.p
-        className="text-[4vw] md:text-[3vw] lg:text-[1.7vw] text-gray-700 mb-2"
+        className="text-[4vw] md:text-[3vw] lg:text-[1.5vw] text-gray-700 mb-2"
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={fadeInUp}
@@ -58,7 +58,7 @@ const Information = () => {
 
       <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8 px-3">
         <motion.div
-          className="bg-white  w-full sm:w-[30vw] md:w-[28vw] lg:w-[26vw] h-[40vw] sm:h-[22vw] md:h-[30vw] lg:h-[20vw] rounded-lg shadow-lg overflow-hidden"
+          className="bg-white w-full sm:w-[30vw] md:w-[28vw] lg:w-[26vw] h-[40vw] sm:h-[22vw] md:h-[30vw] lg:h-[20vw] rounded-lg shadow-lg overflow-hidden"
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={fadeInLeft}
@@ -120,7 +120,7 @@ const Information = () => {
 
       <Link
         href="/about"
-        className="text-[5vw] sm:text-[4vw] md:text-[3vw] lg:text-[2vw]  bg-red-600 text-white py-2 px-6 rounded-2xl mt-8 inline-block hover:bg-red-700 transition-colors duration-300"
+        className="text-[4vw] sm:text-[4vw] md:text-[3vw] lg:text-[1.3vw]  bg-red-600 text-white py-2 px-6 rounded-2xl mt-8 inline-block hover:bg-red-700 transition-colors duration-300"
       >
         More
       </Link>
