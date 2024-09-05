@@ -21,10 +21,6 @@ import {
     message?: string;
   }
   
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "";
-  
   export const RecentEmail = ({
     name,
     email,
@@ -133,12 +129,6 @@ import {
   const paragraph = {
     fontSize: 16,
   };
-  
-  const logo = {
-    padding: "30px 20px",
-  };
-  
-  
   const content = {
     border: "1px solid rgb(0,0,0, 0.1)",
     borderRadius: "3px",
@@ -151,8 +141,4 @@ import {
   
   const boxInfos = {
     padding: "20px",
-  };
-  
-  const containerImageFooter = {
-    padding: "45px 0 0 0",
   };
