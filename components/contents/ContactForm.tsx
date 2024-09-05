@@ -144,16 +144,21 @@ const ContactForm: React.FC = () => {
         </form>
       </div>
 
-      {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="fixed inset-0 bg-black bg-opacity-50" onClick={() => setIsModalOpen(false)}></div>
           <div className="relative p-4 bg-white rounded-lg shadow-lg max-w-md w-full">
             <div className="p-4 text-center">
-              <svg className="mx-auto mb-4 text-green-500 w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l3 3L15 7"/>
-              </svg>
-              <h3 className="mb-5 text-lg font-normal text-green-500">
+              {success ? (
+                <svg className="mx-auto mb-4 text-green-500 w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l3 3L15 7"/>
+                </svg>
+              ) : (
+                <svg className="mx-auto mb-4 text-red-500 w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 5l10 10M5 15L15 5"/>
+                </svg>
+              )}
+              <h3 className={`mb-5 text-lg font-normal ${success ? 'text-green-500' : 'text-red-500'}`}>
                 {success ? 'Thank you! Your message has been sent.' : error || 'Something went wrong.'}
               </h3>
               <button
