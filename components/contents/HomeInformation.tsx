@@ -48,7 +48,7 @@ const Information = () => {
         In Cyber Physical System Laboratory
       </motion.p>
       <motion.p
-        className="text-[4vw] md:text-[3vw] lg:text-[1.7vw] text-gray-700 mb-10"
+        className="text-[4vw] md:text-[3vw] lg:text-[1.5vw] text-gray-700 mb-10"
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={fadeInUp}
