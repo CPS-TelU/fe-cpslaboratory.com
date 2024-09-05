@@ -44,10 +44,10 @@ const Hero = () => {
       </div>
 
       <div className="absolute bottom-0 left-0 z-20 flex flex-col items-start justify-start p-6 sm:p-8 lg:p-12">
-        <p className="text-white text-[2vw] sm:text-[2vw] md:text-[1.5vw] lg:text-[1.2vw] xl:text-[1vw] font-medium">
+        <p className="text-white text-[2vw] sm:text-[18px] md:text-[1.5vw] lg:text-[1.2vw] xl:text-[1vw] font-medium">
           Cyber Physical System Laboratory
         </p>
-        <h1 className="relative text-[3vw] sm:text-[2vw] md:text-[3vw] lg:text-[3vw] xl:text-[2vw] font-semibold text-white mt-2">
+        <h1 className="relative text-[3vw] sm:text-[23px] md:text-[3vw] lg:text-[3vw] xl:text-[2vw] font-semibold text-white mt-2">
           <span className="gradient-text">CONNECT THE NODE,</span> CONNECT THE
           WORLD
         </h1>

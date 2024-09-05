@@ -112,7 +112,7 @@ const Navbar = () => {
               <Link
                 href="/"
                 onClick={closeMenu}
-                className="block py-2 px-3 sm:ml-8 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 px-3 sm:ml-8 text-gray-900 rounded hover:bg-gray-100 md:hover:text-red-700 hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700"
                 aria-current="page"
               >
                 Home
@@ -147,7 +147,7 @@ const Navbar = () => {
             </li>
             <li className="relative">
               <span
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer"
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer"
                 onClick={toggleActivityDropdown}
               >
                 Activity
