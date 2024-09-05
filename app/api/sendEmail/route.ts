@@ -6,9 +6,7 @@ import ContactFormEmail from "@/components/contents/contact-form-email";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
-    
         const { email, message, name, phone } = await request.json();
-
         await resend.emails.send({
             from: 'onboarding@resend.dev',
             to: 'cpslaboratory@365.telkomuniversity.ac.id',
@@ -19,12 +17,9 @@ export async function POST(request: Request) {
                 email: email,
                 phone: phone,
                 message: message,
-                
             }),
         });
-
         return NextResponse.json({
             status: 'OK',
         });
-   
 }
