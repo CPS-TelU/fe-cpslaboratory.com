@@ -1,9 +1,23 @@
-import React from "react";
+'use client';
+
+import React, { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 import { poppins } from "@/styles/font";
+import { Skeleton } from "@/components/ui/skeleton"; 
+import { SkeletonActivity } from "../ui/SkeletonCard";
+
+interface Item {
+  image: string;
+  title: string;
+  description: string;
+  link: string;
+}
 
 const Activity = () => {
-  const items = [
+  const [items, setItems] = useState<Item[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  const activityItems = [
     {
       image: "/image.png",
       title: "Open Laboratory CPS 2025",
@@ -19,11 +33,23 @@ const Activity = () => {
     {
       image: "/image.png",
       title: "Cyber Recruitment",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       link: "https://cyberrecruitment.cpsrg.org/",
     },
   ];
+
+  useEffect(() => {
+    setTimeout(() => {
+      setItems(activityItems);
+      setLoading(false);
+    }, 500); // Simulasi delay 500ms sebelum loading selesai
+  }, []);
+
+  if (loading) {
+    return (
+     <SkeletonActivity/>
+    );
+  }
 
   return (
     <section className={`py-12 text-center ${poppins.className}`}>
