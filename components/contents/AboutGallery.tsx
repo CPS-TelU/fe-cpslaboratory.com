@@ -6,7 +6,7 @@ import { poppins } from "@/styles/font";
 export function Gallery() {
   return (
     <div  className={`${poppins.className} h-screen py-20 w-full`}>
-      <h2 className="gradient-text-about text-[10vw] lg:text-[5vw] md:text-[9vw] sm:text-[40px] font-semibold  text-center px-4 sm:px-8 lg:px-16">
+      <h2 className="gradient-text-about text-[10vw] lg:text-[4vw] md:text-[9vw] sm:text-[40px] font-semibold  text-center px-4 sm:px-8 lg:px-16">
           Our Gallery
         </h2>
       <LayoutGrid cards={cards} />
