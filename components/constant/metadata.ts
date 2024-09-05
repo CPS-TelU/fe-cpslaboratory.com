@@ -16,8 +16,8 @@ export const METADATA = {
       url: 'https://cpslaboratory.com',
       title: "Cyber Physical System Laboratory | Telkom University",
       description:
-        "Cyber Physical System Laboratory adalah laboratorium riset di Telkom University dengan fokus pada IoT, Jaringan, dan Software Development.",
-      siteName: "Cyber Physical System Laboratory",
+        "Cyber Physical System Laboratory Telkom University adalah laboratorium riset di Telkom University dengan fokus pada IoT, Jaringan, dan Software Development.",
+      siteName: "Cyber Physical System Laboratory Telkom University",
     },
     twitter: {
       card: 'summary_large_image',
