@@ -82,14 +82,9 @@ const DetailBlog: React.FC = () => {
 
         const data = response.data;
         if (data && Array.isArray(data)) {
-          console.log("Original data:", data);  // Debugging: cek data yang didapatkan
-
-          // Urutkan post berdasarkan tanggal terbaru
           const sortedPosts = data.sort((a: any, b: any) => new Date(b.create_at).getTime() - new Date(a.create_at).getTime());
-
-          // Filter post yang sedang ditampilkan dan ambil 3 post terbaru
           const filteredPosts = sortedPosts
-            .filter((p: Post) => p.id !== slug) // Pastikan post saat ini tidak termasuk dalam related posts
+            .filter((p: Post) => p.id !== slug)
             .slice(0, 3)
             .map((post) => ({
               id: post.id,
@@ -100,8 +95,6 @@ const DetailBlog: React.FC = () => {
               img: post.image_0 || "/default-image.jpg",
               date: post.create_at || "No Date",
             }));
-
-          console.log("Filtered related posts:", filteredPosts); // Debugging: cek hasil filtering
           setRelatedPosts(filteredPosts);
         } else {
           setError("No related posts found");
@@ -152,10 +145,6 @@ const DetailBlog: React.FC = () => {
           <p>{post.content}</p>
         </section>
       </article>
-
-
-
-      {/* Section for Related Posts */}
       <section style={{ maxWidth: "1200px", margin: "50px auto" }}>
         <h2 className="text-4xl text-red-600 font-semibold mb-6 md:ml-6 ml-6 ">Related Posts</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
