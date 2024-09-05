@@ -3,7 +3,17 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Head from "./head";
+import { METADATA } from "@/components/constant/metadata";
+
+export const metadata: Metadata = {
+  description: METADATA.description,
+  keywords: METADATA.keyword,
+  creator: METADATA.creator,
+  authors: {
+    name: METADATA.creator,
+    url: METADATA.authors.url,
+  }
+};
 
 export default function RootLayout({
   children,
@@ -13,7 +23,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Head />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
