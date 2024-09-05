@@ -53,7 +53,7 @@ const AboutHero: React.FC = () => {
             <MapEmbed />
           </motion.div>
           <motion.div
-            className="hidden md:block w-full md:w-[330px] mt-4 md:mt-0 lg:w-1/2 lg:ml-40 lg:-mt-72"
+            className="hidden md:block w-full md:w-[330px] mt-4 md:mt-0 lg:w-1/2 lg:ml-40  lg:-mt-72"
             initial="hidden"
             animate="visible"
             variants={zoomIn} // Applying the zoomIn animation
@@ -64,6 +64,7 @@ const AboutHero: React.FC = () => {
               width={400}
               height={400}
               priority
+              className="md:w-[300px] md:h-[200px] md:ml-14 lg:w-[400px] lg:h-[300px] lg:ml-0 "
             />
           </motion.div>
         </div>

@@ -15,7 +15,7 @@ const BlogHero = () => {
 
   return (
     <section
-      className={`relative w-[350px] h-[200px] sm:h-[500px] md:w-[1000px] md:h-[350px] lg:w-[1200px] lg:h-[600px] ${poppins.className}`}
+      className={`relative w-[350px] h-[200px] sm:h-[500px] md:w-[800px] md:h-[350px] lg:w-[900px] lg:h-[400px] xl:w-[1100px] xl:h-[500px] ${poppins.className}`}
       // Apply the animation to the entire section
     >
       <div className="absolute inset-0 z-10 bg-black opacity-50 rounded-2xl"></div>
