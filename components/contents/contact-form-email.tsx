@@ -39,10 +39,6 @@ import {
         <Preview>recent login</Preview>
         <Body style={main}>
           <Container>
-            <Section style={logo}>
-              <Img src="https://imgur.com/a/Tguvxxo" />
-            </Section>
-  
             <Section style={content}>
               <Row>
                 <Img
@@ -51,7 +47,6 @@ import {
                   src=""
                 />
               </Row>
-  
               <Row style={{ ...boxInfos, paddingBottom: "0" }}>
                 <Column>
                   <Heading
@@ -102,15 +97,6 @@ import {
                 </Column>
               </Row>
             </Section>
-  
-            <Section style={containerImageFooter}>
-              <Img
-                style={image}
-                width={620}
-                src={`${baseUrl}/static/yelp-footer.png`}
-              />
-            </Section>
-  
             <Text
               style={{
                 textAlign: "center",

@@ -93,7 +93,7 @@ const Blog: React.FC = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 px-4 sm:px-8 lg:px-32">
         <div className="col-span-2 rounded-lg overflow-hidden cursor-pointer">
-          <Link href={posts[0].href} passHref>
+          <Link href={posts[0].href} passHref key={posts[0].id}>
             <img
               src={posts[0].img}
               alt={posts[0].title}
@@ -118,7 +118,7 @@ const Blog: React.FC = () => {
         </div>
         <div className="grid grid-rows-3 gap-8 justify-center w-[83vw] sm:w-full md:w-[100vw] lg:w-[32vw]">
           {posts.slice(1, 4).map((post, index) => (
-            <Link href={post.href} passHref>
+            <Link href={post.href} passHref key={post.id}>
               <div key={index} className="relative group ">
                 <img
                   src={post.img}
