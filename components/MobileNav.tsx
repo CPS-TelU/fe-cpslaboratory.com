@@ -6,6 +6,7 @@ import { dmSans } from "@/styles/font";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isActivityOpen, setIsActivityOpen] = useState(false); // State for Activity dropdown
+  const [activePage, setActivePage] = useState(""); // Track active page
   const menuRef = useRef<HTMLDivElement>(null);
   const activityRef = useRef<HTMLDivElement>(null); // Ref for Activity dropdown
 
@@ -45,6 +46,20 @@ const Navbar = () => {
     };
   }, [isMenuOpen, isActivityOpen]);
 
+  // Detect current page and set active page state
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Normalize the pathname by removing trailing slashes
+      const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+      setActivePage(currentPath);
+    }
+  }, []);
+
+  const handleLinkClick = (path: string) => {
+    setActivePage(path);
+    closeMenu();
+  };
+
   return (
     <nav
       ref={menuRef}
@@ -53,7 +68,7 @@ const Navbar = () => {
       <div className="flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           href="/"
-          onClick={closeMenu}
+          onClick={() => handleLinkClick("/")}
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <Image
@@ -111,9 +126,10 @@ const Navbar = () => {
             <li>
               <Link
                 href="/"
-                onClick={closeMenu}
-                className="block py-2 px-3 sm:ml-8 text-gray-900 rounded hover:bg-gray-100 md:hover:text-red-700 hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700"
-                aria-current="page"
+                onClick={() => handleLinkClick("/")}
+                className={`block py-2 px-3 sm:ml-8 text-gray-900 rounded hover:bg-gray-100 lg:hover:text-red-700 hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white ${
+                  activePage === "/" ? "text-red-700" : ""
+                }`}
               >
                 Home
               </Link>
@@ -121,8 +137,10 @@ const Navbar = () => {
             <li>
               <Link
                 href="/about"
-                onClick={closeMenu}
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700"
+                onClick={() => handleLinkClick("/about")}
+                className={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white ${
+                  activePage === "/about" ? "text-red-700" : ""
+                }`}
               >
                 About Us
               </Link>
@@ -130,8 +148,10 @@ const Navbar = () => {
             <li>
               <Link
                 href="/blog"
-                onClick={closeMenu}
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700"
+                onClick={() => handleLinkClick("/blog")}
+                className={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white ${
+                  activePage === "/blog" ? "text-red-700" : ""
+                }`}
               >
                 Blog
               </Link>
@@ -139,8 +159,10 @@ const Navbar = () => {
             <li>
               <Link
                 href="/contact"
-                onClick={closeMenu}
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white sm:dark:hover:bg-transparent dark:border-gray-700"
+                onClick={() => handleLinkClick("/contact")}
+                className={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white ${
+                  activePage === "/contact" ? "text-red-700" : ""
+                }`}
               >
                 Contact
               </Link>
