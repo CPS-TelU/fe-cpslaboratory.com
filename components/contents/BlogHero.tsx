@@ -5,17 +5,12 @@ import Image from "next/image";
 import { Skeleton } from "../ui/skeleton";
 import { motion } from "framer-motion";
 
-// Define the fadeInUp animation variants outside the component for better readability and reusability
-const fadeInUpVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-};
 
 const BlogHero = () => {
 
   return (
     <section
-      className={`relative w-[350px] h-[200px] sm:h-[500px] md:w-[800px] md:h-[350px] lg:w-[900px] lg:h-[400px] xl:w-[1100px] xl:h-[500px] ${poppins.className}`}
+      className={`relative w-[350px] h-[200px] sm:h-[500px] md:w-[700px] md:h-[350px] lg:w-[1000px] lg:h-[400px] xl:w-[1100px] xl:h-[500px] ${poppins.className}`}
       // Apply the animation to the entire section
     >
       <div className="absolute inset-0 z-10 bg-black opacity-50 rounded-2xl"></div>
