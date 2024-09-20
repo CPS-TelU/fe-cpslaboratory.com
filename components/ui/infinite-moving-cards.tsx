@@ -83,7 +83,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 xl:max-w-[1400px] lg:max-w-[1000px] md:max-w-[800px] sm:max-w-[650px] max-w-[400px] overflow-hidden",
+        "scroller relative z-20 2xl:max-w-[1600px] xl:max-w-[1500px] lg:max-w-[1000px] md:max-w-[800px] sm:max-w-[650px] max-w-[400px] overflow-hidden",
 
         className
       )}
@@ -98,7 +98,7 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="w-[300px] md:w-[450px] lg:w-[600px] h-[200px] md:h-[250px] lg:h-[300px] max-w-full relative rounded-2xl overflow-hidden flex-shrink-0 shadow-lg"
+            className="w-[300px] md:w-[450px] lg:w-[600px] h-[200px] md:h-[250px] lg:h-[300px]  max-w-full relative rounded-2xl overflow-hidden flex-shrink-0 shadow-lg"
             key={idx}
           >
             <Image

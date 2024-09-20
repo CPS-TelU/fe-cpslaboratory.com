@@ -137,13 +137,13 @@ const cards = [
   {
     id: 1,
     content: <SkeletonOne />,
-    className: "col-span-3 lg:col-span-1 md:col-span-5 sm:col-span-1 xl:col-span-2", 
+    className: "col-span-3 lg:col-span-1 md:col-span-5 sm:col-span-1 xl:col-span-3", 
     thumbnail:"/gallery1.png",
   },
   {
     id: 2,
     content: <SkeletonTwo />,
-    className: "col-span-1 lg:col-span-2 md:col-span-3 sm:col-span-1 xl:col-span-2",
+    className: "col-span-1 lg:col-span-2 md:col-span-3 sm:col-span-1 xl:col-span-5",
     thumbnail: "/gallery2.png",
   },
   {
@@ -173,7 +173,7 @@ const cards = [
   {
     id: 7,
     content: <SkeletonSeven />,
-    className: "col-span-1 lg:col-span-2 md:col-span-3 sm:col-span-1 xl:col-span-2" ,
+    className: "col-span-1 lg:col-span-2 md:col-span-3 sm:col-span-1 xl:col-span-4" ,
     thumbnail:"/gallery5.png",
   },
   {

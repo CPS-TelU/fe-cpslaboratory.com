@@ -1,12 +1,30 @@
 "use client";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { poppins } from "@/styles/font";
 import Image from "next/image";
 import { Skeleton } from "../ui/skeleton";
 import { motion } from "framer-motion";
+import { SkeletonBlogHero } from "@/components/ui/SkeletonCard";
+
 
 
 const BlogHero = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 200); // Simulate loading delay
+
+    return () => clearTimeout(timer); // Cleanup timer on component unmount
+  }, []);
+
+  if (isLoading) {
+    return (
+        <SkeletonBlogHero /> 
+    );
+  }
 
   return (
     <section
