@@ -61,10 +61,10 @@ const AboutHero: React.FC = () => {
             <Image
               src="/LogoAbout.png"
               alt="Cyber Physical System Laboratory Logo"
-              width={400}
+              width={700}
               height={400}
               priority
-              className="md:w-[400px] md:h-[200px] md:ml-14 lg:w-[600px] lg:h-[300px] xl:w-[700px] xl:h-[280px] lg:ml-0 mr-4 "
+              className="md:w-[400px] md:h-[200px] md:ml-14 lg:w-[600px] lg:h-[200px] xl:w-[700px] xl:h-[230px] lg:ml-0 mr-4 "
             />
           </motion.div>
         </div>
