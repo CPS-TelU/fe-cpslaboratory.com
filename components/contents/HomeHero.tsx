@@ -27,7 +27,7 @@ const Hero = () => {
  
   return (
     <section
-      className={`relative w-[385px] h-[200px] sm:h-[400px] md:w-[700px] lg:w-[1000px] xl:h-[500px] md:h-[350px] sm:w-[610px] xl:w-[1100px] lg:h-[500px] ${poppins.className}`}
+      className={`relative w-[350px] h-[200px] sm:h-[400px] md:w-[700px] lg:w-[1000px] xl:h-[500px] md:h-[350px] sm:w-[610px] xl:w-[1100px] lg:h-[500px] ${poppins.className}`}
     >
       <div className="absolute inset-0 z-10 bg-black opacity-50 rounded-2xl"></div>
 
