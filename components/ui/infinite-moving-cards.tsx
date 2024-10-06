@@ -109,7 +109,7 @@ export const InfiniteMovingCards = ({
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 p-4 sm:p-6 flex flex-col justify-end">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 text-left">
+              <h3 className="text-md sm:text-lg md:text-2xl lg:text-3xl xl:text-3xl font-bold text-white mb-2 text-left max-w-[190px] sm:max-w-[190px] md:max-w-[400px] lg:max-w-[500px] xl:max-w-[600px] 2xl:max-w-[700px] break-words whitespace-normal">
                 {item.title}
               </h3>
               <div className="flex justify-between items-start">
