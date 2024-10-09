@@ -31,7 +31,7 @@ const AboutHero: React.FC = () => {
         variants={zoomIn} // Applying the zoomIn animation
       >
         <motion.h1
-          className="text-[12vw] sm:text-[12px] md:text-[10vw] lg:text-[5vw] font-semibold gradient-text-about"
+          className="text-[12vw] sm:text-[40px] md:text-[10vw] lg:text-[5vw] font-semibold gradient-text-about"
           variants={zoomIn} // Applying the zoomIn animation
         >
           Hi Cytizen!
@@ -53,7 +53,7 @@ const AboutHero: React.FC = () => {
             <MapEmbed />
           </motion.div>
           <motion.div
-            className="hidden md:block w-full md:w-[330px] mt-4 md:mt-0 lg:w-1/2 lg:ml-40 lg:-mt-72"
+            className="hidden md:block w-full md:w-[330px] mt-4 md:mt-0 lg:w-1/2 lg:ml-40  lg:-mt-72  lg:mr-24 xl:mr-32 "
             initial="hidden"
             animate="visible"
             variants={zoomIn} // Applying the zoomIn animation
@@ -61,9 +61,10 @@ const AboutHero: React.FC = () => {
             <Image
               src="/LogoAbout.png"
               alt="Cyber Physical System Laboratory Logo"
-              width={400}
+              width={700}
               height={400}
               priority
+              className="md:w-[400px] md:h-[200px] md:ml-14 lg:w-[600px] lg:h-[200px] xl:w-[700px] xl:h-[230px] lg:ml-0 mr-4 "
             />
           </motion.div>
         </div>

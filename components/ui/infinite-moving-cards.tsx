@@ -83,7 +83,8 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 max-w-full overflow-hidden",
+        "scroller relative z-20 2xl:max-w-[1600px] xl:max-w-[1500px] lg:max-w-[1000px] md:max-w-[800px] sm:max-w-[650px] max-w-[400px] overflow-hidden",
+
         className
       )}
     >
@@ -97,7 +98,7 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="w-[300px] md:w-[450px] lg:w-[600px] h-[200px] md:h-[250px] lg:h-[300px] max-w-full relative rounded-2xl overflow-hidden flex-shrink-0 shadow-lg"
+            className="w-[300px] md:w-[450px] lg:w-[600px] h-[200px] md:h-[250px] lg:h-[300px]  max-w-full relative rounded-2xl overflow-hidden flex-shrink-0 shadow-lg"
             key={idx}
           >
             <Image
@@ -108,7 +109,7 @@ export const InfiniteMovingCards = ({
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 p-4 sm:p-6 flex flex-col justify-end">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 text-left">
+              <h3 className="text-md sm:text-lg md:text-2xl lg:text-3xl xl:text-3xl font-bold text-white mb-2 text-left max-w-[190px] sm:max-w-[190px] md:max-w-[400px] lg:max-w-[500px] xl:max-w-[600px] 2xl:max-w-[700px] break-words whitespace-normal">
                 {item.title}
               </h3>
               <div className="flex justify-between items-start">

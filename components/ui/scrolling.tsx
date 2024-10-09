@@ -82,7 +82,7 @@ export function ScrollingCards({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 max-w-[1700px] overflow-hidden",
+        "scroller relative z-20  xl:max-w-[1500px] lg:max-w-[1000px] md:max-w-[780px] max-w-[400px] overflow-hidden",
         className
       )}
     >

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import axios from 'axios';
 import { poppins } from "@/styles/font";
 import { Skeleton } from "@/components/ui/skeleton"; 
-import { SkeletonCard } from '../ui/SkeletonCard';
+import { SkeletonBlog } from '../ui/SkeletonCard';
 
 interface Post {
     id: string;
@@ -90,11 +90,11 @@ const BlogPosts: React.FC = () => {
     if (loading) {
         return (
             <section className={`py-12 ${poppins.className}`}>
-                <div className="w-full px-4 sm:px-8 lg:px-16 mx-auto max-w-[1330px]">
+                <div className="w-full px-4 sm:px-8 lg:px-16  mx-auto max-w-[1330px]">
                     <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {Array(limit).fill(0).map((_, index) => (
                             <li key={index} className="relative">
-                                <SkeletonCard />
+                                <SkeletonBlog />
                             </li>
                         ))}
                     </ul>
