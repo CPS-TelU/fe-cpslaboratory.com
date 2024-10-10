@@ -19,21 +19,21 @@ const Activity = () => {
 
   const activityItems = [
     {
-      image: "/image.png",
+      image: "/Oplab.jpg",
       title: "Open Laboratory CPS 2025",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      link: "https://cyberacademy.cpsrg.org/",
+      description: "Ini kesempatan kalian untuk mengenal lebih dalam melalui acara OPEN LABORATORY CYBER PHYSICAL SYSTEM 2024!",
+      link: "https://bit.ly/OpenLabCPS2024",
     },
     {
       image: "/image.png",
       title: "Cyber Academy 2025",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "Berminat untuk mempelajari lebih dalam tentang LINUX, IOT & WEB DEV❓ Yuk kita belajar bareng di CYBER ACADEMY!",
       link: "https://cyberacademy.cpsrg.org/",
     },
     {
       image: "/image.png",
       title: "Cyber Recruitment",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: " OPEN RECRUITMENT ASSISTANT OF CYBER PHYSICAL SYSTEM 2024 🏕️ Let’s join our journey for anyone who wants to give their best! We are waiting for you to become the best laboratory assistant from Cyber Physical System Laboratory to learn together.",
       link: "https://cyberrecruitment.cpsrg.org/",
     },
   ];

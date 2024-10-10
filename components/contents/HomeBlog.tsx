@@ -23,7 +23,7 @@ const Blog: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [limit, setLimit] = useState<number>(6); // Initial limit of 6 posts
 
-  const NEWS_API_URL = "https://be-cps-laboratory.vercel.app/api/Blogs";
+  const NEWS_API_URL = "https://be-cps-laboratory-git-main-junaidi-rahmats-projects.vercel.app/api/blogs";
 
   useEffect(() => {
     const fetchPosts = async () => {

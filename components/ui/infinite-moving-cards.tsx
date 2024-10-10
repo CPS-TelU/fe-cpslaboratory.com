@@ -113,8 +113,10 @@ export const InfiniteMovingCards = ({
                 {item.title}
               </h3>
               <div className="flex justify-between items-start">
-                <p className="text-xs sm:text-sm md:text-base text-white mb-4 text-left max-w-[60%] sm:max-w-[70%]">
-                  {item.description}
+                <p className="text-xs sm:text-sm md:text-base text-white mb-4 text-justify max-w-[60%] sm:max-w-[70%]">
+                  {item.description.length > 100
+                  ? `${item.description.substring(0, 100)}...`
+                  : item.description}
                 </p>
                 <Link
                   href={item.link}
