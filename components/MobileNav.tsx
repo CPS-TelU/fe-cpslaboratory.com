@@ -180,7 +180,7 @@ const Navbar = () => {
                   className="absolute left-28 bottom-[-5px] mt-2 ml-10 w-42 bg-white shadow-lg rounded-md transition-opacity duration-300"
                 >
                   <Link
-                    href="https://cyberrecruitment.cpsrg.org/"
+                    href="https://bit.ly/OpenLabCPS2024"
                     onClick={closeMenu}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-700"
                     target="_blank"

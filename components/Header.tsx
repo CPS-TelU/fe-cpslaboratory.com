@@ -104,7 +104,7 @@ const Header = () => {
               {isActivityOpen && ( // Conditionally render dropdown
                 <div className="absolute left-0 mt-6 w-40 bg-white shadow-lg rounded-md">
                   <Link
-                    href="https://cyberrecruitment.cpsrg.org/"
+                    href="https://bit.ly/OpenLabCPS2024"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                     target="_blank"
                     rel="noopener noreferrer"
