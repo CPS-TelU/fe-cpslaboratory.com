@@ -19,21 +19,21 @@ const Activity = () => {
 
   const activityItems = [
     {
-      image: "/image.png",
+      image: "/Oplab.jpg",
       title: "Open Laboratory CPS 2025",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      link: "https://cyberacademy.cpsrg.org/",
+      description: "Ini kesempatan kalian untuk mengenal lebih dalam melalui acara OPEN LABORATORY CYBER PHYSICAL SYSTEM 2024!",
+      link: "https://bit.ly/OpenLabCPS2024",
     },
     {
       image: "/image.png",
       title: "Cyber Academy 2025",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "Berminat untuk mempelajari lebih dalam tentang LINUX, IOT & WEB DEV❓ Yuk kita belajar bareng di CYBER ACADEMY!",
       link: "https://cyberacademy.cpsrg.org/",
     },
     {
       image: "/image.png",
       title: "Cyber Recruitment",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: " OPEN RECRUITMENT ASSISTANT OF CYBER PHYSICAL SYSTEM 2024 🏕️ Let’s join our journey for anyone who wants to give their best! We are waiting for you to become the best laboratory assistant from Cyber Physical System Laboratory to learn together.",
       link: "https://cyberrecruitment.cpsrg.org/",
     },
   ];
@@ -53,7 +53,7 @@ const Activity = () => {
 
   return (
     <section className={`py-12 text-center ${poppins.className}`}>
-      <h2 className="text-[9vw] lg:text-[4vw] md:text-[9vw] sm:text-[40px] font-semibold text-red-600 mb-2 px-4 sm:px-8 lg:px-16">
+      <h2 className="text-[9vw] xl:text-[50px] lg:text-[4vw] md:text-[9vw] sm:text-[40px] font-semibold text-red-600 mb-2 px-4 sm:px-8 lg:px-16">
         Activity
       </h2>
       <div className="h-[15rem] sm:h-[20rem] rounded-md flex flex-col antialiased dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
