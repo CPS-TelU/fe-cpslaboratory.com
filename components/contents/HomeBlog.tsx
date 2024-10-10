@@ -58,7 +58,7 @@ const Blog: React.FC = () => {
           setPosts(fetchedPosts);
 
           if (fetchedPosts.length === 0) {
-            setError("No news articles available.");
+            setError("Sorry theres no articles available.");
           }
         } else {
           setError("No data found");
