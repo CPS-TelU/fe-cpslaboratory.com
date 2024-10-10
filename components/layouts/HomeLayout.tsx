@@ -10,7 +10,7 @@ const HomeLayout = () => {
       <SectionContainer fullWidth>
         <Hero />
         <Information/>
-        <Blog/>
+        {/* <Blog/> */}
         <Activity/>
       </SectionContainer>
     </div>
