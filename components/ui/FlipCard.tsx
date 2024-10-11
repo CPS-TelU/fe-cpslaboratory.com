@@ -33,17 +33,29 @@ export default function FlipCard({
   ...props
 }: FlipCardProps) {
   const rotationClass = {
-    x: ["group-hover:[transform:rotateX(180deg)]", "[transform:rotateX(180deg)]"],
-    y: ["group-hover:[transform:rotateY(180deg)]", "[transform:rotateY(180deg)]"],
+    x: [
+      "group-hover:[transform:rotateX(180deg)]",
+      "[transform:rotateX(180deg)]",
+    ],
+    y: [
+      "group-hover:[transform:rotateY(180deg)]",
+      "[transform:rotateY(180deg)]",
+    ],
   };
   const self = rotationClass[rotate];
 
   return (
-    <div className={cn("cursor-pointer group h-80 w-56 [perspective:1000px]", className)} {...props}>
+    <div
+      className={cn(
+        "cursor-pointer group h-80 w-56 [perspective:1000px]",
+        className
+      )}
+      {...props}
+    >
       <div
         className={cn(
           "relative h-full rounded-2xl transition-all duration-500 [transform-style:preserve-3d]",
-          self[0],
+          self[0]
         )}
       >
         {/* Front */}
@@ -56,7 +68,7 @@ export default function FlipCard({
           <h2 className="absolute top-1 left-1/2 transform -translate-x-1/2 text-4xl font-bold bg-gradient-to-r from-[#BA2025] to-[#FF9D9D] bg-clip-text text-transparent ">
             {kode}
           </h2>
-          <h3 className="absolute top-[40px] left-1/2 transform -translate-x-1/2 text-base font-bold bg-gradient-to-r from-[#BA2025] to-[#FF9D9D] bg-clip-text text-transparent whitespace-nowrap text-center w-full">
+          <h3 className="absolute top-[40px] left-1/2 transform -translate-x-1/2 text-[11px] font-bold bg-gradient-to-r from-[#BA2025] to-[#FF9D9D] bg-clip-text text-transparent whitespace-nowrap text-center w-full">
             {division}
           </h3>
 
@@ -98,13 +110,28 @@ export default function FlipCard({
             </p>
 
             <div className="absolute bottom-8 left-8 w-full flex space-x-5 cursor-pointer">
-              <Link href={instagram} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-red-600">
+              <Link
+                href={instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-red-600"
+              >
                 <FaInstagram size={42} />
               </Link>
-              <Link href={linkedIn} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-red-600">
+              <Link
+                href={linkedIn}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-red-600"
+              >
                 <FaLinkedin size={42} />
               </Link>
-              <Link href={gitHub} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-red-600">
+              <Link
+                href={gitHub}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-red-600"
+              >
                 <FaGithub size={42} />
               </Link>
             </div>
