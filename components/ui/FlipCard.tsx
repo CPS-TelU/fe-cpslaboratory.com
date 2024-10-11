@@ -12,9 +12,9 @@ type FlipCardProps = {
   className: string;
   role: string;
   division: string;
-  instagram: string;
-  linkedIn: string;
-  gitHub: string;
+  instagram?: string;
+  linkedin?: string;
+  github?: string;
 };
 
 export default function FlipCard({
@@ -28,8 +28,8 @@ export default function FlipCard({
   role,
   division,
   instagram,
-  linkedIn,
-  gitHub,
+  linkedin,
+  github,
   ...props
 }: FlipCardProps) {
   const rotationClass = {
@@ -98,15 +98,21 @@ export default function FlipCard({
             </p>
 
             <div className="absolute bottom-8 left-8 w-full flex space-x-5 cursor-pointer">
-              <Link href={instagram} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-red-600">
-                <FaInstagram size={42} />
-              </Link>
-              <Link href={linkedIn} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-red-600">
-                <FaLinkedin size={42} />
-              </Link>
-              <Link href={gitHub} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-red-600">
-                <FaGithub size={42} />
-              </Link>
+              {instagram && (
+                <Link href={instagram} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-red-600">
+                  <FaInstagram size={42} />
+                </Link>
+              )}
+              {linkedin && (
+                <Link href={linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-red-600">
+                  <FaLinkedin size={42} />
+                </Link>
+              )}
+              {github && (
+                <Link href={github} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-red-600">
+                  <FaGithub size={42} />
+                </Link>
+              )}
             </div>
           </div>
         </div>

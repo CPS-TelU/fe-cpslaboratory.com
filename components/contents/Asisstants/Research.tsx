@@ -1,98 +1,102 @@
-import { poppins } from "@/styles/font";
+"use client";
+
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import FlipCard from "@/components/ui/FlipCard";
-import { ScrollingCards } from "@/components/ui/scrolling";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
-export function AssistCardResearch() {
-  const FlipDataResearch = [
-    {
-      university: "Telkom University",
-      major:"S1 Teknik Telekomunikasi",
-      image: "/photoAssistant.jpg",
-      rotate: "y" as const,
-      name: "Raihan Putra Doang",
-      kode: "RHN",
-      division:"Research Assistant",
-      role: "coordinator",
-      instagram:"https://www.instagram.com/hoka.csa/",
-      linkedIn:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
-      gitHub:"https://github.com/hokacristian",
-    },
-    {
-      university: "Telkom University",
-      major:"S1 Teknik Telekomunikasi",
-      image: "/photoAssistant.jpg",
-      rotate: "y" as const,
-      name: "Hoka Christian Son",
-      kode: "OKA",
-      division:"Research Assistant",
-      role: "coordinator",
-      instagram:"https://www.instagram.com/hoka.csa/",
-      linkedIn:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
-      gitHub:"https://github.com/hokacristian",
-    },
-    {
-      university: "Telkom University",
-      major:"S1 Teknik Telekomunikasi",
-      image: "/photoAssistant.jpg",
-      rotate: "y" as const,
-      name: "Mitchell Affandi Harahap",
-      kode: "MMA",
-      division:"Research Assistant",
-      role: "Public Relation",
-      instagram:"https://www.instagram.com/hoka.csa/",
-      linkedIn:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
-      gitHub:"https://github.com/hokacristian",
-    },
-    {
-        university: "Telkom University",
-        major:"S1 Teknik Telekomunikasi",
-        image: "/photoAssistant.jpg",
-        rotate: "y" as const,
-        name: "Athalah Rafif Irsyach Sarbrani",
-        kode: "ATX",
-        division:"Research Assistant",
-        role: "Public Relation",
-        instagram:"https://www.instagram.com/hoka.csa/",
-        linkedIn:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
-        gitHub:"https://github.com/hokacristian",
-      },
-      {
-        university: "Telkom University",
-        major:"S1 Teknik Telekomunikasi",
-        image: "/photoAssistant.jpg",
-        rotate: "y" as const,
-        name: "Adam Wisnu Pradana",
-        kode: "AWP",
-        division:"Research Assistant",
-        role: "Public Relation",
-        instagram:"https://www.instagram.com/hoka.csa/",
-        linkedIn:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
-        gitHub:"https://github.com/hokacristian",
-      },
-      
-  ];
+interface Assistant {
+  id: string;
+  image: string;
+  kode: string;
+  name: string;
+  major: string;
+  role: string;
+  division: string;
+  instagram?: string;
+  linkedin?: string;
+  github?: string;
+}
+
+export const AssistCardResearch: React.FC = () => {
+  const [assistants, setAssistants] = useState<Assistant[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const API_BASE_URL = "https://be-cps-laboratory.vercel.app/api/assistants";
+
+  useEffect(() => {
+    const fetchAssistants = async () => {
+      try {
+        const response = await axios.get(API_BASE_URL, {
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.status !== 200) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = response.data;
+
+        if (data) {
+          const fetchedAssistants = data.map((item: any) => ({
+            id: item.id,
+            image: item.image || "/default-image.jpg",
+            kode: item.kode,
+            name: item.name || "No Name",
+            major: item.major || "Unknown Major",
+            role: item.role || "Unknown Role",
+            division: item.division || "Unknown Division",
+            instagram: item.instagram || "",
+            linkedin: item.linkedin || "",
+            github: item.github || "",
+          }));
+
+          setAssistants(fetchedAssistants);
+          console.log(data);
+          setLoading(false);
+        } else {
+          setError("No data found");
+          setLoading(false);
+        }
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(`Error fetching assistants from API: ${err.message}`);
+        } else {
+          setError("An unknown error occurred.");
+        }
+        setLoading(false);
+      }
+    };
+
+    fetchAssistants();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
 
   return (
     
-    <div className="flex gap-4 ">
-      {FlipDataResearch.map((card, index) => (
+    <div className="flex gap-4">
+      {assistants.map((assistant,index) => (
         <FlipCard
-          key={index}
-          image={card.image}
-          kode={card.kode}
-          name={card.name}
-          university={card.university}
-          major={card.major}
-          rotate={card.rotate}
-          division="Research Division"
-          role={card.role}
-          instagram={card.instagram}
-          linkedIn={card.linkedIn}
-          gitHub={card.gitHub}
+          key={`${assistant.id}-${index}`}
+          image={assistant.image}
+          kode={assistant.kode}
+          name={assistant.name}
+          university="Telkom University" // Static data
+          major={assistant.major}
+          rotate="y" // Assuming all cards rotate in the y-axis
+          division="Research Assistant"
+          role={assistant.role}
+          instagram={assistant.instagram}
+          linkedin={assistant.linkedin}
+          github={assistant.github}
           className=""
         />
       ))}
     </div>
   );
-}
+};
