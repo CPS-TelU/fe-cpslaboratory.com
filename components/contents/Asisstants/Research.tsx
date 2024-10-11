@@ -56,7 +56,6 @@ export const AssistCardResearch: React.FC = () => {
           }));
 
           setAssistants(fetchedAssistants);
-          console.log(data);
           setLoading(false);
         } else {
           setError("No data found");
