@@ -31,5 +31,5 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - name: Change Directory
-      run: cd /home/cpslaboratory/actions-runner/_work/fe-cpslaboratory.com/fe-cpslaboratory.com
+      run: cd ~/actions-runner/_work/fe-cpslaboratory.com/fe-cpslaboratory.com
     - run: pm2 restart 0
