@@ -14,7 +14,7 @@ export default function RecruitmentHero() {
                         className="rounded-lg lg:min-w-[1200px] lg:max-h-[330px] object-cover"
                     />
                 </div>
-                <h1 className={`mt-6 text-4xl font-extrabold gradient-text-2  ${dmSans.className}`}>CPS CYBER RECRUITMENT</h1>
+                <h1 className={`mt-6 text-4xl font-bold gradient-text-2  ${dmSans.className}`}>CPS CYBER RECRUITMENT</h1>
                 <p className={`mt-4 text-lg font-light text-gray-700 max-w-4xl mx-auto ${poppins.className}`}>
                     Passionate about tech? Join the Cyber Physical System Lab! Explore Networks, IoT, and Software Development while working on impactful projects. Apply now!
                 </p>
