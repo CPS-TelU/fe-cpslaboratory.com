@@ -39,7 +39,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`${dmSans.className} z-[99999] fixed top-0 w-full`}>
+    <header className={`${dmSans.className} z-[99998] fixed top-0 w-full`}>
       <nav
         className="mx-auto hidden lg:flex max-w-[1200px] items-center justify-between p-4 rounded-full bg-white shadow-lg"
         style={{ transform: "translateY(40%)" }}

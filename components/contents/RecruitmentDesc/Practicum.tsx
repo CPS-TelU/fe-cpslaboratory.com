@@ -1,8 +1,17 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { poppins } from "@/styles/font";
 import Link from "next/link";
+import RecruitmentForm from "../RecruitmentForm";
 
 const Practicum = () => {
+const [isFormOpen, setIsFormOpen] = useState(false);
+
+  const openForm = () => setIsFormOpen(true);
+  const closeForm = () => setIsFormOpen(false);
+
+
   return (
     <div className={`${poppins.className} min-h-screen flex flex-col items-center py-8`}>
       {/* Container Utama */}
@@ -23,16 +32,21 @@ const Practicum = () => {
 
           {/* Tombol */}
           <div className="flex mt-2 mb-6 space-x-4">
-            <button className="px-6 py-2 bg-red-600 text-white font-medium rounded-full shadow-md hover:bg-red-700 transition duration-300">
-              APPLY NOW <span className="ml-1">&rarr;</span>
+            <button 
+              onClick={openForm}
+              className="relative rounded-full px-5 py-2.5 overflow-hidden group bg-[#BA2025] relative hover:bg-gradient-to-r hover:from-[#ba2025] hover:to-red-600 text-white hover:ring-2 hover:ring-offset-2 hover:ring-red-600 transition-all ease-out duration-300"
+            >
+              <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+              <span className="relative">Apply Now <span className="ml-1">&rarr;</span></span>
             </button>
             <Link href="/recruitment" passHref>
-            <button className="px-6 py-2 bg-gray-200 text-gray-700 font-medium rounded-full shadow-md hover:bg-gray-300 transition duration-300">
-              BACK
-            </button>
+              <button className="px-6 py-2 bg-white text-gray-700 font-medium rounded-full shadow-md hover:bg-gray-300 transition duration-300">
+                Back
+              </button>
             </Link>
           </div>
         </div>
+
 
         {/* Garis Bawah */}
         <div className="w-full p-2 mb-8 border-b border-gray-300"></div>
@@ -40,7 +54,7 @@ const Practicum = () => {
         {/* Grid Layout: Job Description, Requirements, Benefit */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-xl border border-gray-300">
           {/* Kolom Kiri */}
-          <div className="p-4 space-y-8">
+          <div className="p-4 space-y-8 ">
             {/* Job Description */}
             <div>
               <h3 className="text-lg font-semibold text-gray-800 pb-2 border-b border-gray-300">
@@ -48,8 +62,8 @@ const Practicum = () => {
               </h3>
               <p className="text-gray-600 mt-4 leading-relaxed">
                 The Practicum Division Assistant is responsible for organizing and{" "}
-                <span className="text-red-600 font-semibold">managing hands-on learning experiences</span>{" "}
-                in the <span className="text-red-600 font-semibold">laboratory</span>. This role includes assisting
+                <span className="bg-gradient-to-r from-[#BA2025] to-[#000000] text-transparent bg-clip-text">managing hands-on learning experiences</span>{" "}
+                in the laboratory. This role includes assisting
                 in preparing materials, guiding students during practical sessions, ensuring proper use of
                 equipment, and maintaining a safe and productive learning environment.
               </p>
@@ -81,6 +95,8 @@ const Practicum = () => {
           </div>
         </div>
       </div>
+
+      {isFormOpen && <RecruitmentForm onClose={closeForm} />}
     </div>
   );
 };
