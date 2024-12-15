@@ -29,7 +29,7 @@ const Hero = () => {
     <section
       className={`relative w-[350px] h-[200px] sm:h-[400px] md:w-[700px] lg:w-[1000px] xl:h-[500px] md:h-[350px] sm:w-[610px] xl:w-[1100px] lg:h-[500px] ${poppins.className}`}
     >
-      <div className="absolute inset-0 z-10 bg-black opacity-50 rounded-2xl"></div>
+      <div className=" absolute inset-0 z-10 bg-black opacity-50 rounded-2xl"></div>
 
       <div className="relative w-full h-full">
         <Image
@@ -43,7 +43,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="absolute bottom-0 left-0 z-20 flex flex-col items-start justify-start p-6 sm:p-8 lg:p-12">
+      <div className=" absolute bottom-0 left-0 z-20 flex flex-col items-start justify-start p-6 sm:p-8 lg:p-12">
         <p className="text-white text-[2vw] sm:text-[18px] md:text-[1.5vw] lg:text-[1.2vw] xl:text-[1vw] font-medium">
           Cyber Physical System Laboratory
         </p>

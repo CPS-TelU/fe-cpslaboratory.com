@@ -1,13 +1,13 @@
 import { poppins } from "@/styles/font";
 import Link from "next/link";
 import React from "react";
-import { FiSearch } from "react-icons/fi"; // Import ikon kaca pembesar dari Feather Icons
+import { FiSearch } from "react-icons/fi";
 
 const RecruitmentCard = () => {
   return (
     <div className={` ${poppins.className} p-4`}>
-      <h2 className="text-3xl font-semibold mb-4 lg:min-w-[1200px]">
-        Open for Cyber Recruitment
+      <h2 className="text-3xl gradient-text font-semibold mb-4 lg:min-w-[1200px]">
+        Opportunities Open for:
       </h2>
 
       <div className="space-y-6 mt-8">
@@ -16,7 +16,7 @@ const RecruitmentCard = () => {
           <div className="group flex pl-4 items-center border-b pb-4 hover:bg-gray-200 hover:rounded-xl  transition-transform duration-300 cursor-pointer">
             <img
               src="/logocps.png"
-              alt="Logo"
+              alt="Practicum Division Logo"
               className="w-24 h-20 object-contain"
             />
             <div className="ml-4 flex-1">
@@ -28,12 +28,11 @@ const RecruitmentCard = () => {
                 Division
               </h3>
               <p className="text-sm text-gray-500">
-                The Practicum Division Assistant is responsible for organizing
-                and managing hands-on learning experiences in the laboratory
+                Be a part of our Practicum Division, where you'll help organize and lead practical sessions in our labs, shaping hands-on learning experiences for students.
               </p>
             </div>
             <div className="p-4 group-hover:scale-110 group-hover:text-red-600 transition-transform duration-300">
-                <FiSearch className="text-xl" /> {/* Ikon kaca pembesar */}
+              <FiSearch className="text-xl" />
             </div>
           </div>
         </Link>
@@ -43,7 +42,7 @@ const RecruitmentCard = () => {
           <div className="group flex items-center pl-4 border-b pb-4 hover:bg-gray-200 hover:rounded-xl transition-transform duration-500 ease-in-out cursor-pointer">
             <img
               src="/logocps.png"
-              alt="Logo"
+              alt="Research Division Logo"
               className="w-24 h-20 object-contain"
             />
             <div className="ml-4 flex-1">
@@ -55,12 +54,11 @@ const RecruitmentCard = () => {
                 Division
               </h3>
               <p className="text-sm text-gray-500">
-                The Research Division Assistant is responsible for organizing
-                and managing hands-on learning experiences in the laboratory
+                Join our Research Division to assist in conducting impactful research, preparing proposals, and fostering innovation within our labs.
               </p>
             </div>
             <div className="p-4 group-hover:scale-110 group-hover:text-red-600 transition-transform duration-300">
-                <FiSearch className="text-xl" /> 
+              <FiSearch className="text-xl" />
             </div>
           </div>
         </Link>
