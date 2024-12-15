@@ -198,8 +198,21 @@ const Navbar = () => {
                   >
                     CyberAcademy
                   </Link>
+                  
                 </div>
+                
               )}
+            </li>
+            <li>
+              <Link
+                href="/recruitment"
+                onClick={() => handleLinkClick("/recruitment")}
+                className={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  hover:bg-transparent hover:text-red-700 md:p-0 sm:hover:bg-transparent sm:hover:text-red-700 sm:p-0 sm:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white ${
+                  activePage === "/recruitment" ? "text-red-700" : ""
+                }`}
+              >
+                Recruitment
+              </Link>
             </li>
           </ul>
         </div>
