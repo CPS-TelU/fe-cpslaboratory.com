@@ -1,8 +1,8 @@
-"use client"; // Pastikan ini ada di bagian atas file
+"use client"; 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation"; // Import usePathname
+import { usePathname } from "next/navigation"; 
 import { dmSans } from "../styles/font";
 import Navbar from "./MobileNav";
 
@@ -39,7 +39,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`${dmSans.className} z-[99999] fixed top-0 w-full`}>
+    <header className={`${dmSans.className} z-[99998] fixed top-0 w-full`}>
       <nav
         className="mx-auto hidden lg:flex max-w-[1200px] items-center justify-between p-4 rounded-full bg-white shadow-lg"
         style={{ transform: "translateY(40%)" }}
@@ -113,24 +113,27 @@ const Header = () => {
                     Open Laboratory
                   </Link>
                   <Link
-                    href="https://cyberrecruitment.cpsrg.org/"
+                    href="https://cyberacademy.cpslaboratory.com/"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     CyberAcademy
                   </Link>
-                  <Link
-                    href="https://cyberrecruitment.cpsrg.org/"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    CyberRecruitment
-                  </Link>
                 </div>
               )}
             </div>
+            <Link
+              href="/recruitment"
+              onClick={(e) => handleNavigationClick("/recruitment", e)}
+              className={`font-medium ${
+                pathname === "/recruitment"
+                  ? "text-red-600"
+                  : "text-gray-700 hover:text-red-600"
+              }`}
+            >
+              Recruitment
+            </Link>
           </div>
         </div>
         <div className="ml-auto flex space-x-8 items-center">

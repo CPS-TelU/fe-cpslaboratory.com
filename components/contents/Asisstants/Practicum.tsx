@@ -15,8 +15,8 @@ export function AssistCardPracticum() {
       division:"Research Assistant",
       role: "coordinator",
       instagram:"https://www.instagram.com/hoka.csa/",
-      linkedIn:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
-      gitHub:"https://github.com/hokacristian",
+      linkedin:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
+      github:"https://github.com/hokacristian",
     },
     {
       university: "Telkom University",
@@ -28,8 +28,8 @@ export function AssistCardPracticum() {
       division:"Research Assistant",
       role: "coordinator",
       instagram:"https://www.instagram.com/hoka.csa/",
-      linkedIn:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
-      gitHub:"https://github.com/hokacristian",
+      linkedin:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
+      github:"https://github.com/hokacristian",
     },
     {
       university: "Telkom University",
@@ -42,7 +42,7 @@ export function AssistCardPracticum() {
       role: "Public Relation",
       instagram:"https://www.instagram.com/hoka.csa/",
       linkedIn:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
-      gitHub:"https://github.com/hokacristian",
+      github:"https://github.com/hokacristian",
     },
     {
         university: "Telkom University",
@@ -54,8 +54,8 @@ export function AssistCardPracticum() {
         division:"Research Assistant",
         role: "Public Relation",
         instagram:"https://www.instagram.com/hoka.csa/",
-        linkedIn:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
-        gitHub:"https://github.com/hokacristian",
+        linkedin:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
+        github:"https://github.com/hokacristian",
       },
       {
         university: "Telkom University",
@@ -67,8 +67,8 @@ export function AssistCardPracticum() {
         division:"Research Assistant",
         role: "Public Relation",
         instagram:"https://www.instagram.com/hoka.csa/",
-        linkedIn:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
-        gitHub:"https://github.com/hokacristian",
+        linkedin:"https://www.linkedin.com/in/hoka-cristian-7620851b0/",
+        github:"https://github.com/hokacristian",
       },
   ];
 
@@ -89,8 +89,8 @@ export function AssistCardPracticum() {
               division="Practicum Division"
               role={card.role}
               instagram={card.instagram}
-              linkedIn={card.linkedIn}
-              gitHub={card.gitHub}
+              linkedin={card.linkedin}
+              github={card.github}
               className=""
             />
           ))}
