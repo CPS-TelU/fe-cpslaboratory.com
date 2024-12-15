@@ -20,10 +20,8 @@ const SkeletonOne = () => {
       <p className="font-bold md:text-4xl text-xl text-white">
         Research Division
       </p>
-      <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A serene and tranquil retreat, this house in the woods offers a peaceful
-        escape from the hustle and bustle of city life.
+        Explore the cutting-edge innovations and breakthroughs achieved by our Research Division. Witness the passion and dedication driving progress forward.
       </p>
     </div>
   );
@@ -35,11 +33,8 @@ const SkeletonTwo = () => {
       <p className="font-bold md:text-4xl text-xl text-white">
         Open Recruitment
       </p>
-      <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Perched high above the world, this house offers breathtaking views and a
-        unique living experience. It&apos;s a place where the sky meets home,
-        and tranquility is a way of life.
+        Join our team and become part of an inspiring journey. Discover exciting opportunities, unlock your potential, and shape the future with us.
       </p>
     </div>
   );
@@ -48,12 +43,10 @@ const SkeletonThree = () => {
   return (
     <div>
       <p className="font-bold md:text-4xl text-xl text-white">
-      CPS TUJUH BELASAN
+      CPS Celebrations
       </p>
-      <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A house surrounded by greenery and nature&apos;s beauty. It&apos;s the
-        perfect place to relax, unwind, and enjoy life.
+        Experience the vibrant spirit of CPS with our celebratory events, fostering camaraderie, creativity, and shared achievements.
       </p>
     </div>
   );
@@ -62,12 +55,10 @@ const SkeletonFour = () => {
   return (
     <div>
       <p className="font-bold md:text-4xl text-xl text-white">
-        Teamworks make a dream work
+        Teamwork Makes the Dream Work
       </p>
-      <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A house by the river is a place of peace and tranquility. It&apos;s the
-        perfect place to relax, unwind, and enjoy life.
+        Collaboration is at the heart of our success. Join hands with like-minded individuals and achieve greatness together.
       </p>
     </div>
   );
@@ -76,12 +67,10 @@ const SkeletonFive = () => {
     return (
       <div>
         <p className="font-bold md:text-4xl text-xl text-white">
-          Rivers are serene
+          A Visionary Path
         </p>
-        <p className="font-normal text-base text-white"></p>
         <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          A house by the river is a place of peace and tranquility. It&apos;s the
-          perfect place to relax, unwind, and enjoy life.
+          Embark on a journey of innovation and discovery with our team. Together, we create a legacy of excellence.
         </p>
       </div>
     );
@@ -90,12 +79,10 @@ const SkeletonFive = () => {
     return (
       <div>
         <p className="font-bold md:text-4xl text-xl text-white">
-          Rivers are serene
+          Building Future Technologies
         </p>
-        <p className="font-normal text-base text-white"></p>
         <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          A house by the river is a place of peace and tranquility. It&apos;s the
-          perfect place to relax, unwind, and enjoy life.
+          Dive into the world of advanced technology and innovation as we shape the solutions of tomorrow.
         </p>
       </div>
     );
@@ -104,12 +91,10 @@ const SkeletonFive = () => {
     return (
       <div>
         <p className="font-bold md:text-4xl text-xl text-white">
-          Rivers are serene
+          Cultivating Excellence
         </p>
-        <p className="font-normal text-base text-white"></p>
         <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          A house by the river is a place of peace and tranquility. It&apos;s the
-          perfect place to relax, unwind, and enjoy life.
+          Discover the dedication, passion, and expertise that drive our pursuit of excellence across all projects.
         </p>
       </div>
     );
@@ -118,16 +103,10 @@ const SkeletonFive = () => {
     return (
       <div>
         <p className="font-bold md:text-4xl text-xl text-white">
-          Startup or Coporate?
+          Startup or Corporate?
         </p>
-        <p className="font-normal text-base text-white"></p>
         <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Cung, siapa yang disini bingung mau intern di start up atau corporate?🤔☝🏻
-
-Yuk sini-sini merapat💫 ada bang Reyhan yang membagikan pengalamannya intern di kedua jenis company tersebut loh, Cytizen!🤩
-
-Jadi gimana kalian mau apply intern kemana nih, Cytizen? Bisikin mimin dong🫣
-
+          Are you debating between joining a startup or a corporate environment? Hear inspiring insights and advice to help you decide your future path.
         </p>
       </div>
     );

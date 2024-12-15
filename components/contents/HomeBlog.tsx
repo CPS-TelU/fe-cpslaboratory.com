@@ -21,7 +21,7 @@ const Blog: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [limit, setLimit] = useState<number>(6); // Initial limit of 6 posts
+  const [limit, setLimit] = useState<number>(6); 
 
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
   const ALLBLOGS_API_URL = `${API_BASE_URL}`;

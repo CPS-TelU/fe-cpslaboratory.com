@@ -85,7 +85,7 @@ const Navbar = () => {
             href="https://lms.cpslaboratory.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-red-600 text-white text-m px-4 py-2 rounded-full hover:bg-red-700"
+            className="bg-[#ba2025] text-white text-m px-4 py-2 rounded-full hover:from-[#ba2025] hover:to-red-600 text-white hover:ring-2 hover:ring-offset-2 hover:ring-red-600 transition-all ease-out duration-300"
             onClick={closeMenu}
           >
             e-Learning
@@ -197,15 +197,6 @@ const Navbar = () => {
                     rel="noopener noreferrer"
                   >
                     CyberAcademy
-                  </Link>
-                  <Link
-                    href="https://cyberrecruitment.cpsrg.org/"
-                    onClick={closeMenu}
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-700"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    CyberRecruitment
                   </Link>
                 </div>
               )}

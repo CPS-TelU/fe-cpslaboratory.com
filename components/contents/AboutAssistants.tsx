@@ -20,10 +20,9 @@ export function AssistCard() {
         <ScrollingCards direction="left" speed="slow">
             <AssistCardResearch/>
         </ScrollingCards>
-          {/* <ScrollingCards direction="left" speed="slow" className="relative transform ">
+          <ScrollingCards direction="right" speed="fast" className="relative transform ">
             <AssistCardResearch/>
-          </ScrollingCards> */}
-          
+          </ScrollingCards>           
       </section>
     
   );

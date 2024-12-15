@@ -23,13 +23,12 @@ export const AssistCardResearch: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const ALLASSISTANT_API_URL = `${API_BASE_URL}/assistants`;
+  const API_BASE_URL = "https://be-cps-laboratory.vercel.app/api/assistants";
 
   useEffect(() => {
     const fetchAssistants = async () => {
       try {
-        const response = await axios.get(ALLASSISTANT_API_URL, {
+        const response = await axios.get(API_BASE_URL, {
           headers: {
             Accept: "application/json",
           },
@@ -49,13 +48,14 @@ export const AssistCardResearch: React.FC = () => {
             name: item.name || "No Name",
             major: item.major || "Unknown Major",
             role: item.role || "Unknown Role",
-            division: item.divisi || "Unknown Division",
+            division: item.division || "Unknown Division",
             instagram: item.instagram || "",
             linkedin: item.linkedin || "",
             github: item.github || "",
           }));
 
           setAssistants(fetchedAssistants);
+          console.log(data);
           setLoading(false);
         } else {
           setError("No data found");
@@ -89,11 +89,13 @@ export const AssistCardResearch: React.FC = () => {
           university="Telkom University" // Static data
           major={assistant.major}
           rotate="y" // Assuming all cards rotate in the y-axis
+          division="Research Assistant"
           role={assistant.role}
-          instagram="https://www.instagram.com/hoka.csa/"
-          linkedIn=""
-          gitHub="https://github.com/hokacristian"
-          className="" division={assistant.division}        />
+          instagram={assistant.instagram}
+          linkedin={assistant.linkedin}
+          github={assistant.github}
+          className=""
+        />
       ))}
     </div>
   );
