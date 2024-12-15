@@ -249,7 +249,7 @@ const RecruitmentFormPrac: React.FC<RecruitmentFormProps> = ({ onClose }) => {
                   readOnly
                   value={`Pastikan semua dokumen rekrutmen yang diunggah sesuai dengan syarat dan ketentuan yang telah ditentukan. Berikut adalah dokumen yang perlu disiapkan:\n\n- CV dalam format ATS-Friendly\n- Foto Formal 4x6 \n- Portfolio (opsional)\n- KHS sebagai bukti pencapaian akademik\n- Essay sesuai dengan pilihan topik Anda\n- Commitment letter yang menegaskan komitmen Anda\n- Bukti Twibbon yang diunggah di Instagram\n\nGabungkan semua dokumen ke dalam satu tautan publik agar lebih mudah diakses oleh tim penilai.Terima kasih!`}
                   style={{
-                    height: "270px", // Set tinggi tetap untuk menampung semua konten
+                    height: "300px", // Set tinggi tetap untuk menampung semua konten
                     overflow: "hidden", // Hilangkan scroll
                     resize: "none", // Nonaktifkan kemampuan untuk resize
                   }}
