@@ -81,7 +81,7 @@ const RecruitmentFormResearch: React.FC<RecruitmentFormProps> = ({
         toast.success(`Success! Your application has been submitted.`);
         setTimeout(() => {
           onClose();
-        }, 1000);
+        }, 2000);
       } else {
         toast.error(`Submission failed: ${result.message}`);
       }
