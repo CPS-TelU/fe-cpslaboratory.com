@@ -58,14 +58,17 @@ const AboutHero: React.FC = () => {
             animate="visible"
             variants={zoomIn} // Applying the zoomIn animation
           >
-            <Image
-              src="/LogoAbout.png"
-              alt="Cyber Physical System Laboratory Logo"
-              width={700}
-              height={400}
-              priority
-              className="md:w-[400px] md:h-[200px] md:ml-14 lg:w-[600px] lg:h-[200px] xl:w-[700px] xl:h-[230px] lg:ml-0 mr-4 "
-            />
+            <div className="relative w-full h-[300px]">
+              <div className="relative w-full h-[300px]">
+                <Image
+                  src="/LogoAbout.png"
+                  alt="Cyber Physical System Laboratory Logo"
+                  layout="fill"
+                  priority
+                  className="object-contain"
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
       </motion.div>
