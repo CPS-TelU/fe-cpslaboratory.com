@@ -13,32 +13,29 @@ const Research = () => {
   const closeForm = () => setIsFormOpen(false);
 
   return (
-    <div className={`${poppins.className} flex flex-col items-center py-4`}>
+    <div
+      className={`${poppins.className} flex flex-col items-center py-4 px-2 sm:px-4 md:px-6 lg:px-8`}
+    >
       {/* Container Utama */}
-      <div className="w-full p-8 max-w-[1200px]">
+      <div className="w-full max-w-[1200px] p-4 sm:p-6 md:p-8">
         {/* Header */}
-        <div className="flex justify-between items-center">
-          <div>
-            <h1 className="text-3xl font-semibold text-gray-900">
-              <span className="gradient-text-2 to-[#BA2025] text-transparent bg-clip-text">
-                Research Division
-              </span>{" "}
-            </h1>
-          </div>
+        <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <h1 className="text-2xl md:text-3xl font-semibold text-gray-900 text-center sm:text-left">
+            <span className="gradient-text-2 to-[#BA2025] text-transparent bg-clip-text">
+              Research Division
+            </span>
+          </h1>
 
           {/* Tombol */}
-          <div className="flex mt-2 mb-6 mx-4 space-x-2 ">
+          <div className="flex flex-wrap justify-center sm:justify-end space-x-2">
             <Button
               onClick={openForm}
-              className="relative rounded-full px-5 py-2.5 overflow-hidden group bg-[#BA2025] relative hover:bg-gradient-to-r hover:from-[#ba2025] hover:to-red-600 text-white hover:ring-2 hover:ring-offset-2 hover:ring-red-600 transition-all ease-out duration-300"
+              className="rounded-full px-4 py-2 text-sm md:text-base bg-[#BA2025] text-white hover:bg-red-600 transition duration-300"
             >
-              <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-              <span className="relative">
-                Apply Now <span className="ml-1">&rarr;</span>
-              </span>
+              Apply Now <span className="ml-1">&rarr;</span>
             </Button>
             <Link href="/recruitment" passHref>
-              <Button className="px-6 py-2 bg-white text-gray-700 font-medium rounded-full shadow-md hover:bg-gray-300 transition duration-300">
+              <Button className="px-4 py-2 text-sm md:text-base bg-white text-gray-700 font-medium rounded-full shadow-md hover:bg-gray-300 transition duration-300">
                 Back
               </Button>
             </Link>
@@ -46,105 +43,96 @@ const Research = () => {
         </div>
 
         {/* Garis Bawah */}
-        <div className="w-full p-2 mb-8 border-b border-gray-300"></div>
+        <div className="w-full my-6 border-b border-gray-300"></div>
 
-        {/* Grid Layout: Job Description, Requirements, Benefit */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-xl border border-gray-300">
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white rounded-xl border border-gray-300">
           {/* Kolom Kiri */}
-          <div className="p-4 space-y-8 ">
+          <div className="p-4 sm:p-6 space-y-6">
             {/* Job Description */}
             <div>
-              <h3 className="text-lg font-semibold text-gray-800 pb-2 border-b border-gray-300">
+              <h3 className="text-lg md:text-xl font-semibold text-gray-800">
                 Job Description
               </h3>
-              <p className="text-gray-600 mt-4 leading-relaxed">
-                The Research Group Assistant will collaborate in organizing and
-                <span className="gradient-text-2 text-transparent bg-clip-text">
-                  {" "}
-                  conducting impactful research activities.
-                </span>{" "}
-                This role includes assisting in preparing research proposals,
-                conducting experiments, analyzing data, and ensuring that all
-                research objectives are achieved efficiently. You will work
-                closely with mentors and peers to foster a collaborative and
-                innovative research environment.
+              <p className="text-gray-600 mt-2 text-sm md:text-base leading-relaxed">
+                The Research Group Assistant will play a key role in exploring
+                emerging technologies, including Internet of Things (IoT)
+                for transforming industries, Web Development for building
+                innovative platforms, and Machine Learning for data analysis
+                and automation. This involves preparing research proposals,
+                conducting experiments, analyzing data, and fostering a
+                collaborative environment to drive impactful research outcomes.
               </p>
             </div>
 
             {/* Benefit */}
             <div>
-              <h3 className="text-lg font-semibold text-gray-800 pb-2 border-b border-gray-300">
+              <h3 className="text-lg md:text-xl font-semibold text-gray-800">
                 Benefits
               </h3>
-              <p className="text-gray-600 mt-4 leading-relaxed">
-                By joining the Research Group, you will enhance your analytical
-                and problem-solving skills, gain hands-on experience in advanced
-                research techniques, and have the opportunity to collaborate
-                with leading researchers. You will also strengthen your
-                professional network and develop a deeper understanding of your
-                field of study, giving you a competitive edge in your academic
-                and professional journey.
+              <p className="text-gray-600 mt-2 text-sm md:text-base leading-relaxed">
+                Enhance your skills, collaborate with professionals, and gain a
+                competitive edge in advanced research fields. Strengthen your
+                resume and professional network through valuable experiences.
               </p>
             </div>
           </div>
 
           {/* Kolom Kanan */}
-          <div className="p-4">
+          <div className="p-4 sm:p-6">
             {/* Requirements */}
-            <h3 className="text-lg font-semibold text-gray-800 pb-2 border-b border-gray-300">
+            <h3 className="text-lg md:text-xl font-semibold text-gray-800">
               Requirements
             </h3>
-            <ul className="list-decimal list-inside text-gray-600 mt-4 space-y-1 leading-relaxed">
+            <ul className="list-decimal list-inside text-gray-600 mt-4 text-sm md:text-base space-y-2">
               <li>
                 <span className="font-semibold text-[#ba2025]">Essay</span> -
-                Choose one of the following topics and ensure it is 2 pages long :
-                <ul className="mt-2 ml-10 list-disc">
+                Choose one of the following topics and ensure it is 2 pages long
+                :
+                <ul className="ml-6 list-disc mt-2">
                   <li>
-                    The Internet of Things and Its Role in Transforming Modern
+                    Internet of Things and Its Role in Transforming Modern
                     Industries.
                   </li>
                   <li>
-                    Advancing Artificial Intelligence Through Machine Learning
-                    Applications.
+                    Advancing Artificial Intelligence Through Machine Learning.
                   </li>
                   <li>
-                    inovations in Web Development for Enhanced User Experiences.
+                    Innovations in Web Development for Enhanced User
+                    Experiences.
                   </li>
                 </ul>
               </li>
               <li>
                 <span className="font-semibold text-[#ba2025]">CV ATS</span> -
-                ATS Curriculum Vitae (CV) reflecting your educational
-                background, experience, and skills.
+                Your background, experience, and skills.
               </li>
               <li>
                 <span className="font-semibold text-[#ba2025]">
                   Formal Photo 4x6
-                </span>{" "}
-                - A recent formal 4x6 photo.
+                </span>
               </li>
               <li>
-                <span className="font-semibold text-[#ba2025]">KHS</span> - The
-                latest semester transcript should include detailed course grades
-                and formal proof of the student's academic performance.
+                <span className="font-semibold text-[#ba2025]">KHS</span> -
+                Academic performance transcript.
               </li>
               <li>
                 <span className="font-semibold text-[#ba2025]">
                   Commitment Letter
-                </span>{" "}
-                - Your commitment to participating in Cyber Recruitment.
+                </span>
               </li>
               <li>
                 <span className="font-semibold text-[#ba2025]">
-                  Student of Telkom University
+                  Telkom University Students
                 </span>{" "}
-                - Only for 2022, 2023, 2024.
+                - Batch 2022, 2023, 2024.
               </li>
             </ul>
           </div>
         </div>
       </div>
 
+      {/* Form Modal */}
       {isFormOpen && <RecruitmentFormResearch onClose={closeForm} />}
     </div>
   );
