@@ -27,10 +27,10 @@ const Practicum = () => {
           </div>
 
           {/* Tombol */}
-          <div className="flex mt-2 mb-6 mx-2 space-x-2">
+          <div className="flex mt-2 mb-6 mx-4 space-x-2">
             <Button
               onClick={openForm}
-              className="relative rounded-full px-5 py-2.5 overflow-hidden group bg-[#BA2025]hover:bg-gradient-to-r hover:from-[#ba2025] hover:to-red-600 text-white hover:ring-2 hover:ring-offset-2 hover:ring-red-600 transition-all ease-out duration-300"
+              className="relative rounded-full px-5 py-2.5 overflow-hidden group bg-[#BA2025] hover:bg-gradient-to-r hover:from-[#ba2025] hover:to-red-600 text-white hover:ring-2 hover:ring-offset-2 hover:ring-red-600 transition-all ease-out duration-300"
             >
               <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
               <span className="relative">
@@ -92,7 +92,7 @@ const Practicum = () => {
             <h3 className="text-lg font-semibold text-gray-800 pb-2 border-b border-gray-300">
               Requirements
             </h3>
-            <ul className="list-decimal list-inside text-gray-600 mt-4 space-y-4 leading-relaxed">
+            <ul className="list-decimal list-inside text-gray-600 mt-4 space-y-1 leading-relaxed">
               <li>
                 <span className="font-semibold text-[#ba2025]">Essay</span> -
                 Choose one of the following topics:
@@ -115,9 +115,9 @@ const Practicum = () => {
               </li>
               <li>
                 <span className="font-semibold text-[#ba2025]">
-                  Full Body Photo
+                  Formal Photo 4x6
                 </span>{" "}
-                - A recent full body photo that clearly shows your appearance.
+                - A recent formal 4x6 photo.
               </li>
               <li>
                 <span className="font-semibold text-[#ba2025]">KHS</span> - The
