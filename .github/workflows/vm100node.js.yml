@@ -21,6 +21,7 @@ jobs:
     env:
       NEXT_PUBLIC_API_BASE_URL: ${{secrets.NEXT_PUBLIC_API_BASE_URL}}
       RESEND_API_KEY: ${{secrets.RESEND_API_KEY}}
+      NEXT_PUBLIC_API_REKRU_URL: ${{secrets.NEXT_PUBLIC_API_REKRU_URL}}
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
