@@ -10,7 +10,7 @@ const AboutLayout = () => {
         <SectionContainer fullWidth>
           <AboutHero />
           <Gallery/>
-          <AssistCard/>
+          {/* <AssistCard/> */}
         </SectionContainer>
       </div>
     );

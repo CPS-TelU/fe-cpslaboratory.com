@@ -3,100 +3,129 @@
 import React, { useState } from "react";
 import { poppins } from "@/styles/font";
 import Link from "next/link";
-import RecruitmentForm from "../RecruitmentForm";
+import { Button } from "@/components/ui/button";
+import RecruitmentFormPrac from "../RecruitmentFormPrac";
 
 const Practicum = () => {
-const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
   const openForm = () => setIsFormOpen(true);
   const closeForm = () => setIsFormOpen(false);
 
-
   return (
-    <div className={`${poppins.className} min-h-screen flex flex-col items-center py-8`}>
+    <div className={`${poppins.className} flex flex-col items-center py-4 px-2 md:px-4 lg:px-6`}>
       {/* Container Utama */}
-      <div className="w-full p-8 max-w-[1200px]">
+      <div className="w-full p-4 sm:p-6 md:p-8 max-w-[1200px]">
         {/* Header */}
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row justify-between items-center">
           <div>
-            <h1 className="text-3xl font-semibold text-gray-900">
-              <span className="bg-gradient-to-r from-[#000000] to-[#BA2025] text-transparent bg-clip-text">
-                Practicum
-              </span>{" "}
-              Division
+            <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">
+              <span className="gradient-text-2 text-transparent bg-clip-text">
+                Practicum Division
+              </span>
             </h1>
-            <h2 className="text-sm font-medium text-gray-500 mt-1 mb-6">
-              CYBER RECRUITMENT (Laboratory)
-            </h2>
           </div>
 
           {/* Tombol */}
-          <div className="flex mt-2 mb-6 space-x-4">
-            <button 
+          <div className="flex flex-wrap mt-4 sm:mt-0 mb-6 space-x-2">
+            <Button
               onClick={openForm}
-              className="relative rounded-full px-5 py-2.5 overflow-hidden group bg-[#BA2025] relative hover:bg-gradient-to-r hover:from-[#ba2025] hover:to-red-600 text-white hover:ring-2 hover:ring-offset-2 hover:ring-red-600 transition-all ease-out duration-300"
+              className="relative rounded-full px-4 py-2 md:px-5 md:py-2.5 bg-[#BA2025] text-white hover:bg-red-700 transition-all duration-300"
             >
-              <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-              <span className="relative">Apply Now <span className="ml-1">&rarr;</span></span>
-            </button>
+              Apply Now <span className="ml-1">&rarr;</span>
+            </Button>
             <Link href="/recruitment" passHref>
-              <button className="px-6 py-2 bg-white text-gray-700 font-medium rounded-full shadow-md hover:bg-gray-300 transition duration-300">
+              <Button className="px-4 py-2 bg-white text-gray-700 font-medium rounded-full shadow-md hover:bg-gray-300 transition duration-300">
                 Back
-              </button>
+              </Button>
             </Link>
           </div>
         </div>
 
-
         {/* Garis Bawah */}
-        <div className="w-full p-2 mb-8 border-b border-gray-300"></div>
+        <div className="w-full mb-8 border-b border-gray-300"></div>
 
         {/* Grid Layout: Job Description, Requirements, Benefit */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-xl border border-gray-300">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 bg-white rounded-xl border border-gray-300">
           {/* Kolom Kiri */}
-          <div className="p-4 space-y-8 ">
+          <div className="p-4 sm:p-6 space-y-6">
             {/* Job Description */}
             <div>
-              <h3 className="text-lg font-semibold text-gray-800 pb-2 border-b border-gray-300">
+              <h3 className="text-base md:text-lg font-semibold text-gray-800 pb-2 border-b border-gray-300">
                 Job Description
               </h3>
-              <p className="text-gray-600 mt-4 leading-relaxed">
-                The Practicum Division Assistant is responsible for organizing and{" "}
-                <span className="bg-gradient-to-r from-[#BA2025] to-[#000000] text-transparent bg-clip-text">managing hands-on learning experiences</span>{" "}
-                in the laboratory. This role includes assisting
-                in preparing materials, guiding students during practical sessions, ensuring proper use of
-                equipment, and maintaining a safe and productive learning environment.
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                The Practicum Division Assistant is responsible for organizing
+                and managing hands-on learning experiences in the laboratory.
+                This role includes assisting in preparing materials, guiding
+                students during practical sessions, ensuring proper use of
+                equipment, and maintaining a safe and productive learning
+                environment.
               </p>
             </div>
 
             {/* Benefit */}
             <div>
-              <h3 className="text-lg font-semibold text-gray-800 pb-2 border-b border-gray-300">Benefit</h3>
-              <p className="text-gray-600 mt-4 leading-relaxed">
-                Becoming a Practicum Assistant provides hands-on experience, enhances your communication and
-                leadership skills, and boosts your resume. You’ll access advanced resources, network with peers
-                and lecturers, and make a meaningful impact by guiding students in their learning journey.
+              <h3 className="text-base md:text-lg font-semibold text-gray-800 pb-2 border-b border-gray-300">
+                Benefit
+              </h3>
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                Becoming a Practicum Assistant provides hands-on experience,
+                enhances your communication and leadership skills, and boosts
+                your resume. Additionally, you will receive financial
+                compensation for your teaching efforts, making it a rewarding
+                opportunity both professionally and monetarily.
               </p>
             </div>
           </div>
 
           {/* Kolom Kanan */}
-          <div className="p-4">
+          <div className="p-4 sm:p-6">
             {/* Requirements */}
-            <h3 className="text-lg font-semibold text-gray-800 pb-2 border-b border-gray-300">Requirements</h3>
-            <ul className="list-disc list-inside text-gray-600 mt-4 space-y-1 leading-relaxed">
-              <li>Iman kepada Allah SWT</li>
-              <li>Iman kepada malaikat</li>
-              <li>Iman kepada kitab</li>
-              <li>Iman kepada rasul</li>
-              <li>Iman kepada hari akhir</li>
-              <li>Iman kepada qada dan qadar</li>
+            <h3 className="text-base md:text-lg font-semibold text-gray-800 pb-2 border-b border-gray-300">
+              Requirements
+            </h3>
+            <ul className="list-decimal list-inside text-gray-600 mt-4 space-y-2 text-sm md:text-base leading-relaxed">
+              <li>
+                <span className="font-semibold text-[#ba2025]">Essay</span> -
+                Choose one of the following topics and ensure it is 2 pages long :
+                <ul className="mt-2 ml-6 list-disc space-y-1">
+                  <li>5G Components and Their Integration with IMS.</li>
+                  <li>Exploring Voice over Internet Protocol (VoIP).</li>
+                  <li>Queueing Systems in Modern Networks.</li>
+                </ul>
+              </li>
+              <li>
+                <span className="font-semibold text-[#ba2025]">CV ATS</span> -
+                Reflecting your educational background, experience, and skills.
+              </li>
+              <li>
+                <span className="font-semibold text-[#ba2025]">
+                  Formal Photo 4x6
+                </span>
+              </li>
+              <li>
+                <span className="font-semibold text-[#ba2025]">KHS</span> - The
+                latest semester transcript.
+              </li>
+              <li>
+                <span className="font-semibold text-[#ba2025]">
+                  Commitment Letter
+                </span>
+              </li>
+              <li>
+                <span className="font-semibold text-[#ba2025]">
+                  S1 Telecommunication Engineering
+                </span>{" "}
+                - Batch 2022 and 2023.
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
-      {isFormOpen && <RecruitmentForm onClose={closeForm} />}
+      {/* Modal Form */}
+      {isFormOpen && <RecruitmentFormPrac onClose={closeForm} />}
     </div>
   );
 };

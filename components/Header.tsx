@@ -152,7 +152,7 @@ const Header = () => {
             href="https://lms.cpslaboratory.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"
+            className="bg-[#BA2025] text-white px-4 py-2 rounded-full hover:from-[#ba2025] hover:to-red-600 text-white hover:ring-2 hover:ring-offset-2 hover:ring-red-600 transition-all ease-out duration-300"
           >
             e-Learning
           </a>

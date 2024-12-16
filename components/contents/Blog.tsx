@@ -25,7 +25,7 @@ const BlogPosts: React.FC = () => {
     const [limit, setLimit] = useState<number>(6);
 
     const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
-    const ALLBLOGS_API_URL = `${API_BASE_URL}`;
+    const ALLBLOGS_API_URL = `${API_BASE_URL}/blog`;
 
     useEffect(() => {
         const fetchPosts = async () => {

@@ -18,12 +18,11 @@ export function AssistCard() {
             <div className="flex-grow border-t-4 border-gray-400 max-w-[200px] lg:max-w-[400px] md:max-w-[400px]" />
         </div>
         <ScrollingCards direction="left" speed="slow">
-            <AssistCardPracticum/>
+            <AssistCardResearch/>
         </ScrollingCards>
           <ScrollingCards direction="right" speed="fast" className="relative transform ">
             <AssistCardResearch/>
-          </ScrollingCards>
-          
+          </ScrollingCards>           
       </section>
     
   );

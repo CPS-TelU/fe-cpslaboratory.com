@@ -44,7 +44,7 @@
   }
 }
 .gradient-text {
-  background: linear-gradient(90deg, #BA2025, #FFDCDC);
+  background: linear-gradient(90deg, #BA2025 40%, #FFDCDC 110%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -56,7 +56,7 @@
 
 
 .gradient-text-2 {
-  background: linear-gradient(90deg, #BA2025 50%, #000000 70%);
+  background: linear-gradient(90deg, #000000 , #BA2025 );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
