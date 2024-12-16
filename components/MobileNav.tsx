@@ -190,7 +190,7 @@ const Navbar = () => {
                     Open Laboratory CPS
                   </Link>
                   <Link
-                    href="https://cyberrecruitment.cpsrg.org/"
+                    href="https://cyberacademy.cpslaboratory.com/"
                     onClick={closeMenu}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-700"
                     target="_blank"
