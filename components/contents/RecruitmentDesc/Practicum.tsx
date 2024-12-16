@@ -90,8 +90,8 @@ const Practicum = () => {
                 <span className="font-semibold text-[#ba2025]">Essay</span> -
                 Choose one of the following topics and ensure it is 2 pages long :
                 <ul className="mt-2 ml-6 list-disc space-y-1">
-                  <li>5G Components and Their Integration with IMS.</li>
-                  <li>Exploring Voice over Internet Protocol (VoIP).</li>
+                  <li>5G Components and Their Integration with IMS (IP Multimedia Subsystem).</li>
+                  <li>Exploring Voice over Internet Protocol (VoIP) in Modern Communication Systems.</li>
                   <li>Queueing Systems in Modern Networks.</li>
                 </ul>
               </li>
