@@ -79,10 +79,10 @@ const SkeletonFive = () => {
     return (
       <div>
         <p className="font-bold md:text-4xl text-xl text-white">
-          Building Future Technologies
+        ProBox: Tempat Penyimpanan dengan Keamanan Cerdas Menggunakan Teknologi RFID
         </p>
         <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          Dive into the world of advanced technology and innovation as we shape the solutions of tomorrow.
+        ProBox bukan hanya sekedar kotak keamanan, tetapi juga kumpulan teknologi canggih yang dirancang untuk memberikan tingkat keamanan tertinggi serta kemudahan penggunaan.
         </p>
       </div>
     );
@@ -103,14 +103,108 @@ const SkeletonFive = () => {
     return (
       <div>
         <p className="font-bold md:text-4xl text-xl text-white">
-          Startup or Corporate?
+          Explore the World of Technology
         </p>
         <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          Are you debating between joining a startup or a corporate environment? Hear inspiring insights and advice to help you decide your future path.
+          Here in CPS Laboratory we explore expand and dive into the unknown world of technology
         </p>
       </div>
     );
   };
+  const SkeletonNine = () => {
+    return (
+      <div>
+        <p className="font-bold md:text-4xl text-xl text-white">
+          BOOSTIFY: Inovasi Absensi yang Membawa Kebahagiaan ke Tempat Kerja
+        </p>
+        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+          Combining Machine Learning, Internet of Things and Software Dev. Boostify is one of our recent Research Project
+        </p>
+      </div>
+    );
+  };
+  const SkeletonTen = () => {
+    return (
+      <div>
+        <p className="font-bold md:text-4xl text-xl text-white">
+        Integrity and Values
+        </p>
+        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+        Reflects the Laboratory's dedication to ethical practices and maintaining high standards in every action.
+        </p>
+      </div>
+    );
+  };
+  const SkeletonTwelve = () => {
+    return (
+      <div>
+        <p className="font-bold md:text-4xl text-xl text-white">
+        Empowering Through Knowledge
+        </p>
+        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+        Knowledge fuels progress. We equip people with the skills they need to build, innovate, and make a difference.
+        </p>
+      </div>
+    );
+  };
+  const SkeletonThirteen = () => {
+    return (
+      <div>
+        <p className="font-bold md:text-4xl text-xl text-white">
+        Empowering Visionaries, Inspiring Leaders
+        </p>
+        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+        We foster a culture where ideas thrive, turning vision into reality and creating opportunities for leadership at every level.
+        </p>
+      </div>
+    );
+  };const SkeletonFourteen = () => {
+    return (
+      <div>
+        <p className="font-bold md:text-4xl text-xl text-white">
+        Challenges Drive Us, Resilience Defines Us
+        </p>
+        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+        Change is our ally, and every obstacle is an opportunity to grow stronger and smarter in everything we do.
+        </p>
+      </div>
+    );
+  };const SkeletonElev = () => {
+    return (
+      <div>
+        <p className="font-bold md:text-4xl text-xl text-white">
+        Together, We Achieve More
+        </p>
+        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+        Unity and collaboration are the pillars of our success. Together, we turn ambitious goals into remarkable achievements.
+        </p>
+      </div>
+    );
+  };
+  const SkeletonFifteen = () => {
+  return (
+    <div>
+      <p className="font-bold md:text-4xl text-xl text-white">
+      Continuous Learning
+      </p>
+      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+      Technology evolves every day, and so do we. Growth comes from staying curious and embracing lifelong learning.
+      </p>
+    </div>
+  );
+};
+const SkeletonSixteen = () => {
+  return (
+    <div>
+      <p className="font-bold md:text-4xl text-xl text-white">
+      Passion and Purpose
+      </p>
+      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+      What drives us is not just what we do, but why we do it. We are committed to making a difference through purposeful work.
+      </p>
+    </div>
+  );
+};
  
 const cards = [
   {
@@ -134,7 +228,7 @@ const cards = [
   {
     id: 4,
     content: <SkeletonFour />,
-    className: "col-span-3 md:col-span-5 sm:col-span-1 lg:col-span-2 xl:col-span-4",
+    className: "col-span-3 md:col-span-5 sm:col-span-1 lg:col-span-2 xl:col-span-2",
     thumbnail:"/gallery4.png",
   },
   {
@@ -147,7 +241,7 @@ const cards = [
     id: 6,
     content: <SkeletonSix />,
     className: "col-span-1 lg:col-span-1 md:col-span-3 sm:col-span-1 xl:col-span-2",
-    thumbnail:"/probox-logo.png",
+    thumbnail:"/probox-image2.jpg",
   },
   {
     id: 7,
@@ -159,7 +253,55 @@ const cards = [
     id: 8,
     content: <SkeletonEight />,
     className: "col-span-2 lg:col-span-1 md:col-span-5 sm:col-span-1 xl:col-span-2",
-    thumbnail:"/ion.png",
+    thumbnail:"/MFT-oplab.JPG",
+  },
+  {
+    id: 9,
+    content: <SkeletonNine />,
+    className: "col-span-3 lg:col-span-1 md:col-span-5 sm:col-span-1 xl:col-span-3", 
+    thumbnail:"/boostify.jpg",
+  },
+  {
+    id: 10,
+    content: <SkeletonTen />,
+    className: "col-span-1 lg:col-span-2 md:col-span-3 sm:col-span-1 xl:col-span-3",
+    thumbnail: "/IBE-oplab.jpg",
+  },
+  {
+    id: 11,
+    content: <SkeletonElev />,
+    className: "col-span-2 lg:col-span-2 md:col-span-5 sm:col-span-1 xl:col-span-2",
+    thumbnail:"/audience.jpg",
+  },
+  {
+    id: 12,
+    content: <SkeletonTwelve />,
+    className: "col-span-3 lg:col-span-1 md:col-span-5 sm:col-span-1 xl:col-span-2", 
+    thumbnail:"/AWP-oplab.jpg",
+  },
+  {
+    id: 13,
+    content: <SkeletonThirteen />,
+    className: "col-span-1 lg:col-span-2 md:col-span-3 sm:col-span-1 xl:col-span-2",
+    thumbnail: "/pal.jpg",
+  },
+  {
+    id: 14,
+    content: <SkeletonFourteen />,
+    className: "col-span-2 lg:col-span-1 md:col-span-3 sm:col-span-1 xl:col-span-2",
+    thumbnail:"/AWP2.jpg",
+  },
+  {
+    id: 15,
+    content: <SkeletonFifteen />,
+    className: "col-span-1 lg:col-span-2 md:col-span-3 sm:col-span-1 xl:col-span-2",
+    thumbnail: "/IBE2-oplab.jpg",
+  },
+  {
+    id: 16,
+    content: <SkeletonSixteen />,
+    className: "col-span-2 lg:col-span-1 md:col-span-3 sm:col-span-1 xl:col-span-2",
+    thumbnail:"/JIN.jpg",
   },
 
 ];
