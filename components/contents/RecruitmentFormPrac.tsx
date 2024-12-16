@@ -84,7 +84,6 @@ const RecruitmentFormPrac: React.FC<RecruitmentFormProps> = ({ onClose }) => {
         toast.error(`Submission failed: ${result.message}`);
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
       toast.error("An error occurred while submitting the form. Please try again.");
     } finally {
       setIsLoading(false); // Nonaktifkan loading setelah proses selesai
