@@ -53,7 +53,7 @@ const Information = () => {
         We focus on many things such as:
       </p>
 
-      <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8 px-3">
+      <div className="mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-3">
         <div
           className="bg-white w-full sm:w-[30vw] md:w-[28vw] lg:w-[26vw] xl:w-[300px] h-[40vw] sm:h-[22vw] md:h-[30vw] lg:h-[20vw] xl:h-[15vw] rounded-lg shadow-lg overflow-hidden"
         
@@ -105,6 +105,23 @@ const Information = () => {
           </div>
           <div className="p-2">
             <h3 className="text-center text-[4vw] md:text-[3vw] lg:text-[2vw] xl:text-[40px] font-semibold gradient-text">IoT</h3>
+          </div>
+        </div>
+
+        <div
+          className="bg-white  w-full sm:w-[30vw] md:w-[28vw] lg:w-[26vw] xl:w-[300px] h-[40vw] sm:h-[22vw] md:h-[30vw] lg:h-[20vw] xl:h-[15vw] rounded-lg shadow-lg overflow-hidden"
+        >
+          <div className="relative w-full sm:w-[30vw] md:w-[28vw] lg:w-[30vw] xl:w-[300px] h-[30vw] sm:h-[24vw] md:h-[22vw] lg:h-[15vw] xl:h-[10vw]">
+            <Image
+              src="/machine-learning.jpg"
+              alt="ML"
+              layout="fill"
+              objectFit="cover"
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <div className="p-2 pt-3">
+            <h3 className="text-center items-center text-[4vw] md:text-[3vw] lg:text-[2vw] xl:text-[30px] font-semibold gradient-text">Machine Learning</h3>
           </div>
         </div>
       </div>

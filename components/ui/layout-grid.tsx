@@ -27,7 +27,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-full p-10 grid grid-cols-3 md:grid-cols-8 lg:grid-cols-6 xl:grid-cols-8 max-w-7xl mx-auto gap-4 relative cursor-pointer">
+    <div className="w-full h-full p-10 grid grid-cols-3 md:grid-cols-8 lg:grid-cols-8 xl:grid-cols-10 max-w-7xl mx-auto gap-4 relative cursor-pointer">
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
@@ -85,7 +85,7 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
         animate={{
           opacity: 0.6,
         }}
-        className="absolute inset-0 h-full w-full bg-black opacity-60 z-10"
+        className="absolute inset-0 h-full w-full bg-black opacity-40 z-10"
       />
       <motion.div
         layoutId={`content-${selected?.id}`}
