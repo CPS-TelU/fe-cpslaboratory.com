@@ -25,15 +25,15 @@ const Activity = () => {
       link: "https://bit.ly/OpenLabCPS2024",
     },
     {
-      image: "/image.png",
+      image: "/cyber-academy.jpg",
       title: "Cyber Academy 2025",
       description: "Berminat untuk mempelajari lebih dalam tentang LINUX, IOT & WEB DEV❓ Yuk kita belajar bareng di CYBER ACADEMY!",
       link: "https://cyberacademy.cpsrg.org/",
     },
     {
-      image: "/image.png",
+      image: "/ComingSoon_Cyber Recruitment_SG.jpg",
       title: "Cyber Recruitment",
-      description: " OPEN RECRUITMENT ASSISTANT OF CYBER PHYSICAL SYSTEM 2024 🏕️ Let’s join our journey for anyone who wants to give their best! We are waiting for you to become the best laboratory assistant from Cyber Physical System Laboratory to learn together.",
+      description: " OPEN RECRUITMENT ASSISTANT OF CYBER PHYSICAL SYSTEM. Let’s join our journey for anyone who wants to give their best! ",
       link: "https://cyberrecruitment.cpsrg.org/",
     },
   ];

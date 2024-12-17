@@ -135,8 +135,8 @@ export function SkeletonHomeInformation() {
           <Skeleton className="h-4 md:h-6 lg:h-6 xl:h-6 w-[350px] xl:w-[600px] lg:w-[500px] md:w-[500px] bg-gray-300 rounded-md mb-2" />
           <Skeleton className="h-4 md:h-6 lg:h-6 xl:h-6 w-[300px] xl:w-[500px] lg:w-[445px] md:w-[445px] bg-gray-300 rounded-md mb-10" />
         </div>
-        <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8 px-3">
-          {Array(3).fill(0).map((_, index) => (
+        <div className="mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-3">
+          {Array(4).fill(0).map((_, index) => (
             <div
               key={index}
               className=" w-full sm:w-[30vw] md:w-[28vw] lg:w-[26vw] xl:w-[300px] h-[40vw] sm:h-[22vw] md:h-[30vw] lg:h-[20vw] xl:h-[15vw] rounded-lg bg-gray-300 overflow-hidden"
