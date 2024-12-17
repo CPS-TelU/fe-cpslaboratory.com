@@ -259,7 +259,7 @@ const cards = [
     id: 9,
     content: <SkeletonNine />,
     className: "col-span-3 lg:col-span-1 md:col-span-5 sm:col-span-1 xl:col-span-3", 
-    thumbnail:"/boostify.JPG",
+    thumbnail:"/boostify.jpg",
   },
   {
     id: 10,
